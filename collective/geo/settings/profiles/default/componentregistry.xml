@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<componentregistry>
+    <utilities>
+     <utility
+        interface="collective.geo.settings.interfaces.IGeoSettings"
+        factory="collective.geo.settings.geoconfig.GeoSettings"
+        />
+    </utilities>
+</componentregistry>

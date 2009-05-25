@@ -1,0 +1,18 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+          xmlns:browser="http://namespaces.zope.org/browser"
+          xmlns:zope="http://namespaces.zope.org/zope"
+          xmlns:five="http://namespaces.zope.org/five">
+ 
+    <browser:page
+                 name="geosettings-controlpanel"
+                 for="*"
+                 class=".controlpanel.GeoControlpanel"
+                 permission = "cmf.ManagePortal" />
+
+
+    <browser:resource
+        name="geosettings.png"
+        file="geosettings.png"
+    />
+
+</configure>
