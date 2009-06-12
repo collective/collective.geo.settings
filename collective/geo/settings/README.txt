@@ -1,5 +1,5 @@
 collective.geo.settings
-================
+=======================
 
 Overview
 --------
@@ -16,9 +16,7 @@ we start the tests with the usual boilerplate
     >>> from Products.PloneTestCase.setup import portal_owner, default_password
     >>> browser.open(portal_url)
 
-
-and verifiy the registration of configuration utility
-Verifico che sia registrata l'utility di configurazione
+verifiy the registration of the configuration utility
     >>> import zope.component
     >>> from collective.geo.settings.interfaces import IGeoSettings
     >>> config = zope.component.getUtility(IGeoSettings)
@@ -31,9 +29,7 @@ we get some properties in that utility
     >>> config.googlemaps
     True
 
-Controllo la form del controlpanel, modifico il parametro google maps
 we log in and verify the functionality of collective.geo.settings control panel form;
-
     >>> browser.getControl(name='__ac_name').value = portal_owner
     >>> browser.getControl(name='__ac_password').value = default_password
     >>> browser.getControl(name='submit').click()
@@ -45,6 +41,7 @@ we set 'use google maps' property to 'No' and save data
     >>> browser.getControl(name = 'form.widgets.googlemaps:list').value = ['false']
     >>> browser.getControl('Apply').click()
 
-controllo che le modifiche siano state applicate
+and check the modifications in the configuration utility
     >>> config.googlemaps
     False
+

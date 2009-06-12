@@ -94,3 +94,4 @@ class GeoControlpanel(BrowserView):
         form = GeoControlpanelForm(self.context, self.request)
         form.update()
         return form.render()
+

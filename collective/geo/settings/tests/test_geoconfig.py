@@ -3,7 +3,6 @@ from zope.testing import doctest, doctestunit
 from collective.geo.settings.tests import base
 
 import collective.geo.settings.geoconfig
-import zope.component
 
 from zope.component import provideUtility
 from collective.geo.settings import geoconfig 
