@@ -3,14 +3,8 @@ from zope.component import getUtility
 from collective.geo.settings.interfaces import IGeoSettings
 class GeoSettingsMacros(object):
     """ Geo Settings macros """
-    #template = viewpagetemplatefile.ViewPageTemplateFile('geopointmacros.pt')
-
     def __init__(self, context, request):
         self.geosettings = getUtility(IGeoSettings)
-
-    #def __getitem__(self, key):
-        #return self.template.macros[key]
-
 
     @property
     def zoom(self):

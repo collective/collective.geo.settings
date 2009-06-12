@@ -10,8 +10,6 @@
   </div>
 
   <div tal:attributes="class view/css_class|nothing">
-
-<!--    <h2 tal:replace="structure view/heading|nothing" /> -->
     
     <form action="." method="post"
           tal:attributes="action request/getURL"

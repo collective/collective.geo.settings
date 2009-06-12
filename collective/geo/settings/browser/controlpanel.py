@@ -21,17 +21,7 @@ def back_to_controlpanel(self):
     return dict(url=root.absolute_url() + '/plone_control_panel')
 
 class GeopointForm(GeopointBaseForm, subform.EditSubForm):
-    #template = viewpagetemplatefile.ViewPageTemplateFile('geopointform.pt')
-    #css_class = "geopointform"
-
-    #prefix = 'geopoint-testform'
-    #heading = 'Default center map point'
-
     fields = field.Fields(IGeoSettings).select('latitude', 'longitude')
-   
-    @property
-    def label(self):
-        return u"Add item to %s" % self.context.title
 
     def update(self):
         self.updateWidgets()
@@ -43,7 +33,7 @@ class GeoControlpanelForm(form.EditForm):
 
     fields = field.Fields(IGeoSettings).select('zoom', 'googlemaps', 'googleapi')
     
-    heading = 'Openlayers settings'
+    heading = _(u'Configure Collective Geo Settings')
     
     @property
     def css_class(self):
@@ -86,7 +76,7 @@ class GeoControlpanel(BrowserView):
     __call__ = ViewPageTemplateFile('controlpanel.pt')
 
     label = _(u'Geo Settings')
-    description = _(u"Geo default settings")
+    description = _(u"Collective Geo Default Settings")
     back_link = back_to_controlpanel
 
     def contents(self):

@@ -5,21 +5,21 @@ from zope.component import getUtility
 
 class GeoSettings(Persistent):
     """ 
-        GeoSettings ha un po' di proprieta' cui posso accedere direttamente
+        GeoSettings have some propreties. We can get its propterties directly
         >>> config = GeoSettings()
         >>> config.zoom
         10
 
-        o attraverso il metogo get
+        or by the 'get' method
         >>> config.get('googlemaps')
         True
 
-        posso anche cambiare le proprieta direttamente
+        we can set GeoSettins in this way
         >>> config.zoom = 9
         >>> config.zoom
         9
 
-        o attraverso il metodo set
+        or by the 'set' method
         >>> config.set('zoom', 10)
         >>> config.zoom
         10
@@ -45,12 +45,12 @@ class GeoSettings(Persistent):
 class GeoConfig(object):
     """
         Non ho ancora capito a cosa serva sto coso
-        comunque questa e' la mia utility
+        We get the IGeoSettings utility
         >>> config = GeoConfig()
         >>> config.getSettings()
         <class 'collective.geo.settings.geoconfig.GeoSettings'>
 
-        e queste sono le sue proprieta
+        and its properties
         >>> config.getSettings().zoom
         10
 
