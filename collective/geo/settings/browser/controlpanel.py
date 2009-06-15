@@ -1,5 +1,4 @@
 from z3c.form import field,  form, subform, button
-import z3c.form.interfaces
 from plone.z3cform import z2
 
 from Products.Five import BrowserView
@@ -28,13 +27,13 @@ class GeopointForm(GeopointBaseForm, subform.EditSubForm):
 
 
 
-class GeoControlpanelForm(form.EditForm):    
+class GeoControlpanelForm(form.EditForm):
     template = viewpagetemplatefile.ViewPageTemplateFile('form-with-subforms.pt')
 
     fields = field.Fields(IGeoSettings).select('zoom', 'googlemaps', 'googleapi')
-    
+
     heading = _(u'Configure Collective Geo Settings')
-    
+
     @property
     def css_class(self):
         return "subform openlayers-level-%s" % self.level
@@ -43,7 +42,7 @@ class GeoControlpanelForm(form.EditForm):
 
     def __init__(self, context, request):
         super(GeoControlpanelForm,self).__init__(context,request)
-        
+ 
         subform = GeopointForm(self.context,  self.request, self)
         subform.update()
         subform.level = self.level + 1
@@ -68,7 +67,7 @@ class GeoControlpanelForm(form.EditForm):
         utility = IGeoSettings(self.context)
         for key, val in data.items():
             utility.set(key, val)
-        
+
         for key, val in subdata.items():
             utility.set(key, val)
 

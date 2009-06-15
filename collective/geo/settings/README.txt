@@ -3,7 +3,7 @@ collective.geo.settings
 
 Overview
 --------
-collective.geo.settings provide a graphical user interface for store a setting for collective.geo application
+collective.geo.settings provides a graphical user interface to store settings for collective.geo applications.
 
 Tests
 -----
