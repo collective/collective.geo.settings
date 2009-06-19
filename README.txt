@@ -1,7 +1,7 @@
 Introduction
 ============
 
-collective.geo.settings provide a graphical user interface for store a setting for collective.geo application
+collective.geo.settings provides a graphical user interface to store settings of collective.geo packages.
 
 Requirements
 ------------
@@ -29,4 +29,10 @@ Alternatively, buildout users can install collective.geo.settings as part of a s
 
 Install this product from the Plone control panel.
 
+
+Contributors
+============
+
+* Giorgio Borelli - gborelli
+* Silvio Tomatis - silviot
 
