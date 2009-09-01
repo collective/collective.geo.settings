@@ -4,7 +4,10 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+* Fixed the Google Maps url that is being returned and rendered, producing
+  an incorrect API key message each time Google Maps is loaded.
+  Fixes http://plone.org/products/collective.geo/issues/2/view
+  [rockdj]
 
 
 0.1 (2009-06-19)

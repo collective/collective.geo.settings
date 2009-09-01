@@ -31,6 +31,6 @@ class GeoSettingsMacros(object):
     @property
     def google_maps_js(self):
         if self.googlemaps:
-            return 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=%s' % self.googleapi
+            return 'http://maps.google.com/maps?file=api&v=2&key=%s' % self.googleapi
         else:
             return None
