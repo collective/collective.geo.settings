@@ -21,7 +21,7 @@ class TestSetup(base.GeoSettingsTestCase):
     def test_property_jsgooglemaps(self):
         # IGeoSettings googlemaps == True
         self.assertEquals(self.settings.google_maps_js,
-                          'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw')
+                          'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw')
 
         # when IGeoSettings.googlemaps equals False self.settings.googleapi must be ''
         IGeoSettings(self.portal).googlemaps  = False
