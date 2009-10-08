@@ -20,7 +20,7 @@ def back_to_controlpanel(self):
     return dict(url=root.absolute_url() + '/plone_control_panel')
 
 class GeopointForm(GeopointBaseForm, subform.EditSubForm):
-    fields = field.Fields(IGeoSettings).select('latitude', 'longitude')
+    fields = field.Fields(IGeoSettings).select('longitude', 'latitude')
 
     def update(self):
         self.updateWidgets()

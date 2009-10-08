@@ -7,9 +7,9 @@ class IGeoConfig(Interface):
     """ marker interface """
 
 class IGeoSettings(IGeoPoint):
-    zoom = schema.Int(title=_(u"Zoom"),
+    zoom = schema.Float(title=_(u"Zoom"),
                           description=_(u"Default map's zoom level"),
-                          default=None,
+                          default=10.0,
                           required=True)
 
     googlemaps = schema.Bool(title=_(u"Use Google maps layer?"),

@@ -25,7 +25,7 @@ verifiy the registration of the configuration utility
 
 we get some properties in that utility
     >>> config.zoom
-    10
+    10.0
     >>> config.googlemaps
     True
 
@@ -35,11 +35,16 @@ we log in and verify the functionality of collective.geo.settings control panel 
     >>> browser.getControl(name='submit').click()
     >>> browser.open('%s/@@geosettings-controlpanel' % portal_url)
     >>> browser.getControl(name = 'form.widgets.zoom').value
-    '10'
+    '10.0'
 
 we set 'use google maps' property to 'No' and save data
     >>> browser.getControl(name = 'form.widgets.googlemaps:list').value = ['false']
     >>> browser.getControl('Apply').click()
+
+Check that there weren't any errors
+
+    >>> '<div class="error">' in browser.contents
+    False
 
 and check the modifications in the configuration utility
     >>> config.googlemaps

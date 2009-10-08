@@ -8,28 +8,28 @@ class GeoSettings(Persistent):
         GeoSettings have some propreties. We can get its propterties directly
         >>> config = GeoSettings()
         >>> config.zoom
-        10
+        10.0
 
         or by the 'get' method
         >>> config.get('googlemaps')
         True
 
         we can set GeoSettins in this way
-        >>> config.zoom = 9
+        >>> config.zoom = 9.5
         >>> config.zoom
-        9
+        9.5
 
         or by the 'set' method
-        >>> config.set('zoom', 10)
+        >>> config.set('zoom', 10.0)
         >>> config.zoom
-        10
+        10.0
 
     """ 
     implements(IGeoSettings)
 
     latitude = 45.682143
     longitude = 7.68047
-    zoom = 10
+    zoom = 10.0
     googlemaps = True
     googleapi = 'ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw'
 
@@ -52,7 +52,7 @@ class GeoConfig(object):
 
         and its properties
         >>> config.getSettings().zoom
-        10
+        10.0
 
     """
     def getSettings(self):

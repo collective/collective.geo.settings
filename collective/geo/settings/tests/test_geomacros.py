@@ -9,7 +9,7 @@ class TestSetup(base.GeoSettingsTestCase):
         self.settings = self.portal.restrictedTraverse('@@geosettings-macros')
 
     def test_property_zoom(self):
-        self.assertEquals(self.settings.zoom, 10)
+        self.assertEquals(self.settings.zoom, 10.0)
 
     def test_property_googleapi(self):
         self.assertEquals(self.settings.googleapi,
@@ -31,7 +31,7 @@ class TestSetup(base.GeoSettingsTestCase):
     def test_property_geosettingjs(self):
         IGeoSettings(self.portal).googlemaps  = True
         self.assertEquals(self.settings.geo_setting_js,
-                          'var lat = 45.682143;\nvar lon = 7.680470;\nvar googlemaps = true;\nvar zoom = 10;\n')
+                          'var lon = 7.680470;\nvar lat = 45.682143;\nvar googlemaps = true;\nvar zoom = 10.000000;\n')
 
 
 

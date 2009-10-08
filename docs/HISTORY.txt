@@ -4,6 +4,10 @@ Changelog
 0.2 (unreleased)
 ----------------
 
+* Updated coordinate references to be consistent with WGS 1984 
+  reference system.  This involves standardising the coordinate order 
+  to be [longitude, latitude] rather than [latitude, longitude].
+  [rockdj]
 * Fixed the Google Maps url that is being returned and rendered, producing
   an incorrect API key message each time Google Maps is loaded.
   Fixes http://plone.org/products/collective.geo/issues/2/view

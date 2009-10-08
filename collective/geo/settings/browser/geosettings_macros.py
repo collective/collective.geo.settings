@@ -20,13 +20,13 @@ class GeoSettingsMacros(object):
 
     @property
     def map_center(self):
-        return  self.geosettings.latitude, self.geosettings.longitude
+        return  self.geosettings.longitude, self.geosettings.latitude
 
     @property
     def geo_setting_js(self):
         googlemaps = self.googlemaps and 'true' or 'false'
         map_center = self.map_center
-        return "var lat = %7f;\nvar lon = %7f;\nvar googlemaps = %s;\nvar zoom = %d;\n" % (map_center[0], self.map_center[1], googlemaps, self.zoom)
+        return "var lon = %7f;\nvar lat = %7f;\nvar googlemaps = %s;\nvar zoom = %f;\n" % (map_center[0], self.map_center[1], googlemaps, self.zoom)
 
     @property
     def google_maps_js(self):
