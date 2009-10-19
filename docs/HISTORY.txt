@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.2 (2009-10-19)
 ----------------
 
 * Updated coordinate references to be consistent with WGS 1984 
