@@ -29,7 +29,6 @@ var cgmap = function($)
         cgmap.initmap(mapid, mapoptions);
 
         $(map).parents().bind("scroll", mapid, function(evt) {
-                                console.log('Clear Mouse Cache for: ' + evt.data);
                                 cgmap.config[evt.data].map.events.clearMouseCache();
                               });
 
@@ -64,7 +63,6 @@ var cgmap = function($)
 
   function map_moveend(evt)
   {
-    console.log('Map moved');
     var forms = jq("form");
     // set center
     var lonlat = evt.object.getCenter();
@@ -135,7 +133,6 @@ var cgmap = function($)
 
     initmap: function(mapid, map_options)
     {
-      console.log("Init map:" + mapid);
       var map = new OpenLayers.Map(mapid, map_options);
       var layers = [];
 
