@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="collective.geo.openlayers"
+      tal:omit-tag="">
+  <head>
+  </head>
+
+  <body>
+
+    <tal:commont>A macro to include all necessary javascript files</tal:commont>
+    <metal:define define-macro="openlayers"
+                  tal:define="geosettings python:context.restrictedTraverse('@@geosettings-view');
+                              google_maps_js python:geosettings.google_maps_js;
+                              yahoo_maps_js python:geosettings.yahoo_maps_js">
+      <script type="text/javascript" src="./OpenLayers.js"></script>
+      <script type="text/javascript" src="++resource++geo-settings.js"></script>
+      <script type="text/javascript"
+              tal:condition="google_maps_js"
+              tal:attributes="src google_maps_js"></script>
+      <script type="text/javascript"
+              tal:condition="yahoo_maps_js"
+              tal:attributes="src yahoo_maps_js"></script>
+      <script type="text/javascript"
+              tal:condition="geosettings/bingmaps"
+              tal:attributes="src geosettings/bing_maps_js"></script>
+      <script type="text/javascript"
+              tal:content="structure geosettings/geo_setting_js"></script>
+      <script type="text/javascript"
+              tal:content="structure geosettings/layers"></script>
+    </metal:define>
+
+    <tal:comment>This macro needs a variable 'map' in the namespace</tal:comment>
+    <metal:define define-macro="map-widget">
+      <div id="map" class="widget-map cgmap" style="witdh: 100%; height: 350px;"
+           tal:attributes="id map/mapid | string:map;
+                           style map/mapstyle | nothing">
+        <!--   openlayers map     -->
+      </div>
+      <script type="text/javascript"
+              tal:content="structure map/map_js | nothing"><!-- additional javascript --></script>
+    </metal:define>
+
+  </body>
+
+</html>

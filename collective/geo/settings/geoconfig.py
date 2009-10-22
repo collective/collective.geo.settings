@@ -43,14 +43,14 @@ class GeoSettings(Persistent):
                            'OpenStreetMap',
                            'http://tile.openstreetmap.org/',
                            { type : 'png',
-                             getURL: osm_getTileURL,
+                             getURL: cgmap.osm_getTileURL,
                              displayOutsideMaxExtent: true,
                              attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'})""",
               # 'oam': """new OpenLayers.Layer.TMS(
               #              'OpenAerialMap',
               #              'http://tile.openaerialmap.org/tiles/1.0.0/openaerialmap-900913/',
               #              { type: 'png',
-              #                getURL: osm_getTileURL })""",
+              #                getURL: cgmap.osm_getTileURL })""",
               'bmap': """new OpenLayers.Layer.VirtualEarth(
                               'Bing Streets',
                               { type: VEMapStyle.Shaded,

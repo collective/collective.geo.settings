@@ -42,7 +42,7 @@ class GeoControlpanelForm(form.EditForm):
 
     def __init__(self, context, request):
         super(GeoControlpanelForm,self).__init__(context,request)
- 
+
         subform = GeopointForm(self.context,  self.request, self)
         subform.update()
         subform.level = self.level + 1
