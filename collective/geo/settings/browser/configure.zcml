@@ -2,22 +2,36 @@
           xmlns:browser="http://namespaces.zope.org/browser"
           xmlns:zope="http://namespaces.zope.org/zope"
           xmlns:five="http://namespaces.zope.org/five">
- 
+
     <browser:page
         name="geosettings-controlpanel"
-        for="*"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".controlpanel.GeoControlpanel"
-        permission = "cmf.ManagePortal" />
+        permission = "cmf.ManagePortal"
+        />
+
+    <browser:page
+        name="geosettings-view"
+        for="*"
+        class=".geosettings_macros.GeoSettingsView"
+        permission = "zope2.View"
+        />
 
     <browser:page
         name="geosettings-macros"
         for="*"
         class=".geosettings_macros.GeoSettingsMacros"
-        permission = "zope2.View" />
+        permission="zope2.View"
+        />
 
     <browser:resource
         name="geosettings.png"
         file="geosettings.png"
-    />
+        />
+
+    <browser:resource
+        name="geo-settings.js"
+        file="geo-settings.js"
+        />
 
 </configure>
