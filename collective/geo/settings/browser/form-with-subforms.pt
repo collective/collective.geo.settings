@@ -12,22 +12,26 @@
   <div tal:attributes="class view/css_class|nothing">
     
     <form action="." method="post"
-          tal:attributes="action request/getURL"
+          tal:attributes="action request/getURL;
+                          enctype view/enctype;"
           tal:omit-tag="not:view/actions|nothing">
 
         <metal:use use-macro="context/@@ploneform-macros/fields" />
 
+      <tal:fieldsets tal:repeat="form view/subforms">
       <fieldset class="subforms">
-        
-        <div tal:repeat="form view/subforms"
+        <legend tal:content="form/form_name">Form name</legend>
+        <div class="discreet" tal:content="form/label">Form Label</div>
+        <div 
              tal:replace="structure form/render">
         </div>
 
       </fieldset>
+      </tal:fieldsets>
       
-      <div class="action" tal:repeat="action view/actions/values|nothing">
+      <span class="action" tal:repeat="action view/actions/values|nothing">
         <input type="submit" tal:replace="structure action/render" />
-      </div>
+      </span>
 
     </form>
 

@@ -5,5 +5,9 @@
         interface="collective.geo.settings.interfaces.IGeoSettings"
         factory="collective.geo.settings.geoconfig.GeoSettings"
         />
+     <utility
+        interface="collective.geo.settings.interfaces.IGeoContainerSettings"
+        factory="collective.geo.settings.geoconfig.GeoContainerSettings"
+        />
     </utilities>
 </componentregistry>

@@ -20,6 +20,9 @@ def back_to_controlpanel(self):
     return dict(url=root.absolute_url() + '/plone_control_panel')
 
 class GeopointForm(GeopointBaseForm, subform.EditSubForm):
+    label = u"Select the default centre for the OpenLayers view."
+    form_name = u"Central view point"
+  
     fields = field.Fields(IGeoSettings).select('longitude', 'latitude')
 
     def update(self):

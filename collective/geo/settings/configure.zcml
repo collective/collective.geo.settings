@@ -6,7 +6,6 @@
     
     <i18n:registerTranslations directory="locales" />
 
-    
     <include package="plone.app.z3cform" />
     <include package="collective.geo.geopoint" />
     <include package="collective.geo.openlayers" />
@@ -25,5 +24,29 @@
         provides=".interfaces.IGeoSettings"
         factory=".browser.controlpanel.geo_settings"
     />
-    
+
+    <utility
+        provides=".interfaces.IGeoContainerConfig"
+        factory=".geoconfig.GeoContainerConfig"
+        name="collective.geo.geocontainerconfig"
+        />
+
+    <adapter
+        for="Products.ATContentTypes.interface.IATTopic"
+        provides=".interfaces.IGeoContainerSettings"
+        factory=".browser.container.geo_container_settings"
+    />
+
+    <adapter
+        for="Products.ATContentTypes.interface.IATFolder"
+        provides=".interfaces.IGeoContainerSettings"
+        factory=".browser.container.geo_container_settings"
+    />
+
+    <adapter
+        for="Products.ATContentTypes.interface.IATBTreeFolder"
+        provides=".interfaces.IGeoContainerSettings"
+        factory=".browser.container.geo_container_settings"
+    />
+
 </configure>

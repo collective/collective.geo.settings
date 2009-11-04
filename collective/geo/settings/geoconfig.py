@@ -1,6 +1,6 @@
 from persistent import Persistent
 from zope.interface import implements
-from collective.geo.settings.interfaces import IGeoSettings
+from collective.geo.settings.interfaces import IGeoSettings, IGeoContainerSettings
 from zope.component import getUtility
 
 class GeoSettings(Persistent):
@@ -57,3 +57,28 @@ class GeoConfig(object):
     """
     def getSettings(self):
         return getUtility(IGeoSettings)
+
+
+class GeoContainerSettings(Persistent):
+    """ Make our own shortly... """
+    implements(IGeoContainerSettings)
+
+    latitude = 45.682143
+    longitude = 7.68047
+    zoom = 10.0
+    googlemaps = True
+
+    def set(self, key,  val):
+        return self.__setattr__(key, val)
+
+    def get(self, key,  default=False):
+        try:
+            return self.__getattribute__(key)
+        except:
+            return default
+
+class GeoContainerConfig(object):
+    """ Make our own shortly
+    """
+    def getSettings(self):
+        return getUtility(IGeoContainerSettings)

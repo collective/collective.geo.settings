@@ -20,4 +20,22 @@
         file="geosettings.png"
     />
 
+    <browser:page
+        for="Products.ATContentTypes.interface.IATTopic"
+        name="geosettings-container"
+        class=".container.geoContainerSettings"
+        permission="cmf.ModifyPortalContent" />
+
+    <browser:page
+        for="Products.ATContentTypes.interface.IATFolder"
+        name="geosettings-container"
+        class=".container.geoContainerSettings"
+        permission="cmf.ModifyPortalContent" />
+
+    <browser:page
+        for="Products.ATContentTypes.interface.IATBTreeFolder"
+        name="geosettings-container"
+        class=".container.geoContainerSettings"
+        permission="cmf.ModifyPortalContent" />
+
 </configure>
