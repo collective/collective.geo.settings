@@ -1,7 +1,12 @@
 from persistent import Persistent
 from zope.interface import implements
-from collective.geo.settings.interfaces import IGeoSettings, IGeoContainerSettings
 from zope.component import getUtility
+from zope.annotation.interfaces import IAnnotations
+from persistent.dict import PersistentDict
+
+from collective.geo.settings.interfaces import IGeoSettings, IGeoContainerSettings
+from collective.geo.settings.config import KEY
+from collective.geo.settings.event import GeoContainerSettingsModifiedEvent
 
 class GeoSettings(Persistent):
     """ 
@@ -60,25 +65,45 @@ class GeoConfig(object):
 
 
 class GeoContainerSettings(Persistent):
-    """ Make our own shortly... """
+    """ Manage container-specific settings that may get applied """
     implements(IGeoContainerSettings)
 
-    latitude = 45.682143
-    longitude = 7.68047
-    zoom = 10.0
-    googlemaps = True
+    def __init__(self, context=None, form=None):
+        self.context = context
+        self.form = form
 
+    def initialiseSettings(self, context):
+        annotations = IAnnotations(context)
+        self.geo = annotations.get(KEY, None)
+
+        if self.geo is None:
+            annotations[KEY] = PersistentDict()
+            self.geo = annotations[KEY]
+
+        if not self.geo.has_key('container_settings'):
+            self.geo['container_settings'] = {}
+            self.geo_container_settings = self.geo['container_settings']
+            self.geo_container_settings['latitude'] = 45.682143
+            self.geo_container_settings['longitude'] = 7.68047
+            self.geo_container_settings['zoom'] = 999.0
+            self.geo_container_settings['googlemaps'] = True
+            self.geo_container_settings['use_custom_settings'] = False
+
+    #Watch out here, since we're modifying our dictionary.
+    #Set the 'dirty bit' manually here as per
+    #http://docs.zope.org/zodb/zodbguide/prog-zodb.html#modifying-mutable-objects
     def set(self, key,  val):
-        return self.__setattr__(key, val)
+        self.geo['container_settings'][key] = val
+        self.geo._p_changed = True
+
+    def getSettings(self, context):
+        self.initialiseSettings(context)
+        return self.geo['container_settings']
 
     def get(self, key,  default=False):
         try:
-            return self.__getattribute__(key)
+            return self.geo['container_settings'].get(key)
         except:
             return default
 
-class GeoContainerConfig(object):
-    """ Make our own shortly
-    """
-    def getSettings(self):
-        return getUtility(IGeoContainerSettings)
+

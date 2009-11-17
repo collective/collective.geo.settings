@@ -2,12 +2,14 @@
 <componentregistry>
     <utilities>
      <utility
-        interface="collective.geo.settings.interfaces.IGeoSettings"
         factory="collective.geo.settings.geoconfig.GeoSettings"
+        id="geo_config_settings"
+        interface="collective.geo.settings.interfaces.IGeoSettings"
         />
      <utility
-        interface="collective.geo.settings.interfaces.IGeoContainerSettings"
         factory="collective.geo.settings.geoconfig.GeoContainerSettings"
+        id="geo_config_container_settings"
+        interface="collective.geo.settings.interfaces.IGeoContainerSettings"
         />
     </utilities>
 </componentregistry>

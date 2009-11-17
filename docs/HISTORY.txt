@@ -4,6 +4,11 @@ Changelog
 0.2 (2009-10-19)
 ----------------
 
+* Allowed container-specific geo settings to be specified through an
+  appropriate form and recorded via an annotation on the Folder/Collection.
+  Users can select the same options as available in the control panel
+  (zoom, Google Maps, focus point) now on a per-container basis.
+  [rockdj]
 * Updated coordinate references to be consistent with WGS 1984 
   reference system.  This involves standardising the coordinate order 
   to be [longitude, latitude] rather than [latitude, longitude].

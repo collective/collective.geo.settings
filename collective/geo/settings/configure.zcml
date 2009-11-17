@@ -25,28 +25,38 @@
         factory=".browser.controlpanel.geo_settings"
     />
 
-    <utility
+<!--    <utility
         provides=".interfaces.IGeoContainerConfig"
         factory=".geoconfig.GeoContainerConfig"
         name="collective.geo.geocontainerconfig"
-        />
+        /> -->
 
     <adapter
         for="Products.ATContentTypes.interface.IATTopic"
         provides=".interfaces.IGeoContainerSettings"
-        factory=".browser.container.geo_container_settings"
+        factory=".geoconfig.GeoContainerSettings"
     />
 
     <adapter
         for="Products.ATContentTypes.interface.IATFolder"
         provides=".interfaces.IGeoContainerSettings"
-        factory=".browser.container.geo_container_settings"
+        factory=".geoconfig.GeoContainerSettings"
     />
 
     <adapter
         for="Products.ATContentTypes.interface.IATBTreeFolder"
         provides=".interfaces.IGeoContainerSettings"
-        factory=".browser.container.geo_container_settings"
+        factory=".geoconfig.GeoContainerSettings"
     />
+
+    <adapter factory='.zgeo_geometry_settings_value'
+        name='zgeo_geometry_settings'
+    />
+
+    <subscriber
+        handler=".event.reindexContainerSettingsSubscriber"
+        for=".event.IGeoContainerSettingsModifiedEvent"
+    />
+
 
 </configure>

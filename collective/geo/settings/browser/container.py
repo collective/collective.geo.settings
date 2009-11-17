@@ -1,4 +1,4 @@
-from z3c.form import field,  form, subform, button, action
+from z3c.form import field, form, subform, button, action, interfaces
 from plone.z3cform import z2
 from plone.z3cform.layout import wrap_form
 
@@ -7,21 +7,29 @@ from Products.CMFPlone.utils import getToolByName
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from zope import interface
+from zope import interface, component
+from zope.event import notify
 from zope.component import getUtility
 from zope.app.pagetemplate import viewpagetemplatefile
 from zope.app.component.hooks import getSite
 
 from collective.geo.geopoint.geopointform import GeopointBaseForm
+from collective.geo.settings.geoconfig import GeoContainerSettings
 from collective.geo.settings.interfaces import IGeoContainerSettings
 from collective.geo.settings.browser.interfaces import IGeoContainerSettingsForm
 from collective.geo.settings import GeoSettingsMessageFactory as _
+from collective.geo.settings.event import GeoContainerSettingsModifiedEvent
+
+from zgeo.geographer.geo import KEY
 
 
-def geo_container_settings(context):
-    return getUtility(IGeoContainerSettings)
+def geo_container_settings():
+     return ''
+#    return getUtility(IGeoContainerSettings)
 
 class GeopointContainerForm(GeopointBaseForm, subform.EditSubForm):
+    component.adapts(interfaces.IEditForm)
+
     label = u"Select where to centre the OpenLayers view for this container."
     form_name = u"Central view point"
 
@@ -34,6 +42,10 @@ class GeopointContainerForm(GeopointBaseForm, subform.EditSubForm):
     def update(self):
         super(GeopointContainerForm, self).update()
         self.updateWidgets()
+
+    def getContent(self):
+        '''See interfaces.IForm'''
+        return self.parentForm.getContent()
 
 
 class GeoContainerSettingsForm(form.Form):
@@ -50,9 +62,14 @@ class GeoContainerSettingsForm(form.Form):
     message_cancel = _(u'No changes made.')
 
     level = 1
+        
+    containersettings = GeoContainerSettings()
 
     def __init__(self, context, request):
         super(GeoContainerSettingsForm,self).__init__(context,request)
+
+        self.context = context
+        self.containersettings.context = self.context
 
         portal_url = getToolByName(self.context, 'portal_url')
         portal = portal_url.getPortalObject()
@@ -94,7 +111,6 @@ class GeoContainerSettingsForm(form.Form):
         ptool = getToolByName(self.context,'plone_utils')
         ptool.addPortalMessage(message)
 
-    #@button.handler(form.EditForm.buttons['apply'])
     @button.buttonAndHandler(_(u'Save'))
     def handleApply(self, action):
         subdata,  suberrors = self.subforms[0].extractData()
@@ -102,14 +118,15 @@ class GeoContainerSettingsForm(form.Form):
         if errors or suberrors:
             return
 
-        #utility = IGeoContainerSettings(self.context)
+        self.containersettings.initialiseSettings(self.context)
+
         for key, val in data.items():
-            print str(key) + ', ' + str(val)
-            #utility.set(key, val)
+            self.containersettings.set(key, val)
 
         for key, val in subdata.items():
-            print str(key) + ', ' + str(val)
-            #utility.set(key, val)
+            self.containersettings.set(key, val)
+
+        notify(GeoContainerSettingsModifiedEvent(self.context))
 
         self.setStatusMessage(self.message_ok)
         self.redirectAction()
@@ -122,9 +139,9 @@ class GeoContainerSettingsForm(form.Form):
     def updateWidgets(self):
         super(GeoContainerSettingsForm, self).updateWidgets()
 
-#    def getContent(self):
-#        '''See interfaces.IForm'''
-#        return {}
+    def getContent(self):
+        '''See interfaces.IForm'''
+        return self.containersettings.getSettings(self.context)
 
 geoContainerSettings = wrap_form(GeoContainerSettingsForm, 
          label=_(u'Container-Specific Geo Settings'),
