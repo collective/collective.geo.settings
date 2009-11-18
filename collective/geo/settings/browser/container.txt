@@ -285,3 +285,28 @@ doubly-sure things got saved okay.
     '111.111'
     >>> str(container_settings['latitude'])
     '-222.222'
+
+As a final aside, we should also check what happens when we disable 'Use
+Custom Settings' and make sure our settings revert back to what's in the
+control panel.
+
+    >>> browser.open(topic.absolute_url())
+    >>> browser.getLink('OpenLayers').click()
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value = ['false']
+    >>> browser.getControl('Save').click()
+
+    >>> 'Changes saved.' in browser.contents
+    True
+
+All these values should match up what's coming off the original control panel
+configuration object, since we turned off 'Use Custom Settings'.
+
+    >>> ('var lon = '+str(config.longitude)) in browser.contents
+    True
+    >>> ('var lat = '+str(config.latitude)) in browser.contents
+    True
+    >>> ('var googlemaps = '+str(config.googlemaps).lower()) in browser.contents
+    True
+    >>> ('var zoom = '+str(config.zoom)) in browser.contents
+    True
+
