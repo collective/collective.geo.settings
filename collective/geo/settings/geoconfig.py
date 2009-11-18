@@ -8,6 +8,8 @@ from collective.geo.settings.interfaces import IGeoSettings, IGeoContainerSettin
 from collective.geo.settings.config import KEY
 from collective.geo.settings.event import GeoContainerSettingsModifiedEvent
 
+from Products.CMFCore.utils import getToolByName
+
 class GeoSettings(Persistent):
     """ 
         GeoSettings have some propreties. We can get its propterties directly
@@ -72,6 +74,14 @@ class GeoContainerSettings(Persistent):
         self.context = context
         self.form = form
 
+        if self.context is not None:
+            #get our site's config to set the default values from it
+            portal_url = getToolByName(self.context, 'portal_url')
+            portal = portal_url.getPortalObject()
+            self.siteconfig = IGeoSettings(portal)
+        else:
+            self.siteconfig = None
+
     def initialiseSettings(self, context):
         annotations = IAnnotations(context)
         self.geo = annotations.get(KEY, None)
@@ -83,11 +93,18 @@ class GeoContainerSettings(Persistent):
         if not self.geo.has_key('container_settings'):
             self.geo['container_settings'] = {}
             self.geo_container_settings = self.geo['container_settings']
-            self.geo_container_settings['latitude'] = 45.682143
-            self.geo_container_settings['longitude'] = 7.68047
-            self.geo_container_settings['zoom'] = 999.0
-            self.geo_container_settings['googlemaps'] = True
             self.geo_container_settings['use_custom_settings'] = False
+
+            if self.siteconfig is not None:
+                self.geo_container_settings['longitude'] = self.siteconfig.longitude
+                self.geo_container_settings['latitude'] = self.siteconfig.latitude
+                self.geo_container_settings['zoom'] = self.siteconfig.zoom
+                self.geo_container_settings['googlemaps'] = self.siteconfig.googlemaps
+            else:
+                self.geo_container_settings['longitude'] = 7.68047
+                self.geo_container_settings['latitude'] = 45.682143
+                self.geo_container_settings['zoom'] = 10.0 
+                self.geo_container_settings['googlemaps'] = True
 
     #Watch out here, since we're modifying our dictionary.
     #Set the 'dirty bit' manually here as per

@@ -15,5 +15,11 @@ def test_suite():
             optionflags=doctest.REPORT_ONLY_FIRST_FAILURE | doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
             ),
 
+        ztc.ZopeDocFileSuite(
+            'container.txt', package='collective.geo.settings.browser',
+            test_class=base.GeoSettingsFunctionalTestCase,
+            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE | doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
+            ),
+
 
         ])

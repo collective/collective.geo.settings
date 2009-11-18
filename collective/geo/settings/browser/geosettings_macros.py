@@ -1,18 +1,33 @@
 from zope.app.pagetemplate import viewpagetemplatefile
 from zope.component import getUtility
 from collective.geo.settings.interfaces import IGeoSettings
+from collective.geo.settings.geoconfig import GeoContainerSettings
 class GeoSettingsMacros(object):
     """ Geo Settings macros """
+
     def __init__(self, context, request):
         self.geosettings = getUtility(IGeoSettings)
+        self.context = context
+        self.containersettings = GeoContainerSettings(self.context)
+        self.containersettings.initialiseSettings(self.context)
+
+    @property
+    def use_custom_settings(self):
+        return self.containersettings.get('use_custom_settings')
 
     @property
     def zoom(self):
-        return  self.geosettings.zoom
+        if self.use_custom_settings:
+            return  self.containersettings.get('zoom')
+        else:
+            return  self.geosettings.zoom
 
     @property
     def googlemaps(self):
-        return  self.geosettings.googlemaps
+        if self.use_custom_settings:
+            return  self.containersettings.get('googlemaps')
+        else:
+            return  self.geosettings.googlemaps
 
     @property
     def googleapi(self):
@@ -20,7 +35,10 @@ class GeoSettingsMacros(object):
 
     @property
     def map_center(self):
-        return  self.geosettings.longitude, self.geosettings.latitude
+        if self.use_custom_settings:
+            return  self.containersettings.get('longitude'), self.containersettings.get('latitude')
+        else:
+            return  self.geosettings.longitude, self.geosettings.latitude
 
     @property
     def geo_setting_js(self):

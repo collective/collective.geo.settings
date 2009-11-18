@@ -15,7 +15,7 @@ from zope import interface
 @indexer(interface.Interface)
 def zgeo_geometry_settings_value(object):
     try:
-        settings = GeoContainerSettings()
+        settings = GeoContainerSettings(object)
         return dict(container_settings=settings.getSettings(object))
     except (ComponentLookupError, TypeError, ValueError, KeyError, IndexError):
         # The catalog expects AttributeErrors when a value can't be found

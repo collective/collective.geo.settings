@@ -50,24 +50,4 @@ and check the modifications in the configuration utility
     >>> config.googlemaps
     False
 
-Tests on a KML view Folder
---------------------------
-
-Modify a given container and check to see if we're looking at an event
-
-<Modify container here>
-
-Check that an event was generated
-
-from zope.component.eventtesting import getEvents
-from zope.lifecycleevent.interfaces import IObjectModifiedEvent
-events = getEvents(IObjectModifiedEvent)
-len(events)
-1
-events[0].object is placemark
-True
-
-Tests on a KML view Collection
-------------------------------
-
 

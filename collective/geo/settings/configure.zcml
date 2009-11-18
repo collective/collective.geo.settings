@@ -25,12 +25,6 @@
         factory=".browser.controlpanel.geo_settings"
     />
 
-<!--    <utility
-        provides=".interfaces.IGeoContainerConfig"
-        factory=".geoconfig.GeoContainerConfig"
-        name="collective.geo.geocontainerconfig"
-        /> -->
-
     <adapter
         for="Products.ATContentTypes.interface.IATTopic"
         provides=".interfaces.IGeoContainerSettings"

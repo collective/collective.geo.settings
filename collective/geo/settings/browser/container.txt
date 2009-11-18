@@ -1,0 +1,287 @@
+collective.geo.settings.browser.container
+=========================================
+
+Overview
+--------
+collective.geo.settings.browser.container provides a graphical user interface to store settings on a container-centric basis collective.geo applications.  Settings provided through this GUI are able to allow containers (folder/collections) to appear different than the site-wide settings.
+
+Tests to set up environment
+---------------------------
+we start the tests with the usual boilerplate
+    >>> from Products.Five.testbrowser import Browser
+    >>> browser = Browser()
+    >>> portal_url = self.portal.absolute_url()
+    >>> self.portal.error_log._ignored_exceptions = ()
+
+    >>> from Products.PloneTestCase.setup import portal_owner, default_password
+    >>> browser.open(portal_url)
+
+We log in and verify the functionality of collective.geo.settings control panel form;
+    >>> browser.getControl(name='__ac_name').value = portal_owner
+    >>> browser.getControl(name='__ac_password').value = default_password
+    >>> browser.getControl(name='submit').click()
+    >>> browser.open('%s/@@geosettings-controlpanel' % portal_url)
+    >>> browser.getControl(name = 'form.widgets.zoom').value
+    '10.0'
+
+We set 'use google maps' property to 'No' and save data
+    >>> browser.getControl(name = 'form.widgets.zoom').value = '14.0'
+    >>> browser.getControl(name = 'form.widgets.googlemaps:list').value = ['false']
+    >>> browser.getControl(name = 'form.widgets.longitude').value = '153.459'
+    >>> browser.getControl(name = 'form.widgets.latitude').value = '-28.024'
+    >>> browser.getControl('Apply').click()
+
+Check that there weren't any errors
+
+    >>> '<div class="error">' in browser.contents
+    False
+
+and check the modifications in the configuration utility
+    >>> import zope.component
+    >>> from collective.geo.settings.interfaces import IGeoSettings
+    >>> config = zope.component.getUtility(IGeoSettings)
+
+    >>> str(config.zoom)
+    '14.0'
+    >>> config.googlemaps
+    False
+    >>> str(config.longitude)
+    '153.459'
+    >>> str(config.latitude)
+    '-28.024'
+
+Tests on a KML view Folder
+--------------------------
+
+Test configuring some OpenLayers settings on a Folder.  Start by getting our
+test folder that we've prepared earlier.
+
+    >>> oid = portal.test_folder.invokeFactory('Folder', 'settings', title='Settings')
+    >>> folder = portal.test_folder[oid]
+    >>> folder
+    <ATFolder at /plone/test_folder/settings>
+    >>> browser.open(folder.absolute_url())
+
+Check to make sure we can't see the OpenLayers link just yet.
+
+    >>> '@@geosettings-container">OpenLayers</a>' in browser.contents
+    False
+
+    >>> browser.getLink('Kml Openlayers View').click()
+
+Check to make sure we can see a map here now.
+
+    >>> '<div id="map" ' in browser.contents
+    True
+
+Click onto the OpenLayers tab to set some context-specific settings.
+  
+    >>> browser.getLink('OpenLayers').click()
+
+    >>> 'Container-Specific Geo Settings' in browser.contents
+    True
+
+Check for the default settings on the page which should have come from the
+site control panel.
+
+    >>> browser.getControl(name = 'form.widgets.zoom').value
+    '14.0'
+
+    >>> browser.getControl(name = 'form.widgets.googlemaps:list').value
+    ['false']
+
+    >>> browser.getControl(name = 'form.widgets.longitude').value
+    '153.459'
+
+    >>> browser.getControl(name = 'form.widgets.latitude').value
+    '-28.024'
+
+We also have our 'Use Custom Settings' option, which should be off by default.
+Temporarily set its value to be true so we can cancel a change.
+
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value
+    ['false']
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value = ['true']
+
+Let's click the cancel button to make sure things are okay.
+
+    >>> browser.getControl('Cancel').click()
+
+    >>> 'No changes made.' in browser.contents
+    True
+
+Okay, good.  So let's go back to the form and make sure the change we made
+didn't persist.
+
+    >>> browser.open(folder.absolute_url())
+    >>> browser.getLink('OpenLayers').click()
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value
+    ['false']
+
+Let's set some options for real and make sure they get saved.  
+    
+    >>> browser.getControl(name = 'form.widgets.zoom').value = '9.99'
+    >>> browser.getControl(name = 'form.widgets.googlemaps:list').value = ['true']
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value = ['true']
+    >>> browser.getControl(name = 'form.widgets.longitude').value = '111.111'
+    >>> browser.getControl(name = 'form.widgets.latitude').value = '-222.222'
+
+    >>> browser.getControl('Save').click()
+
+Check to make sure the settings were saved.
+ 
+    >>> 'Changes saved.' in browser.contents
+    True
+
+Look at the rendered Javascript on the page which affect the display. 
+
+    >>> 'var lon = 111.111000;' in browser.contents
+    True
+    >>> 'var lat = -222.222000;' in browser.contents
+    True
+    >>> 'var googlemaps = true;' in browser.contents
+    True
+    >>> 'var zoom = 9.990000;' in browser.contents
+    True
+
+Finally, we'll check the actual annotation on the object itself to make
+doubly-sure things got saved okay.
+
+    >>> from zope.annotation.interfaces import IAnnotations
+    >>> annotations = IAnnotations(folder)
+    >>> from collective.geo.settings.config import KEY
+    >>> KEY in annotations
+    True
+    >>> annotation = annotations[KEY]
+    >>> annotation
+    <persistent.dict.PersistentDict object at ...>
+
+    >>> container_settings = annotation['container_settings']
+    >>> str(container_settings['zoom'])
+    '9.99'
+    >>> container_settings['googlemaps']
+    True
+    >>> container_settings['use_custom_settings']
+    True
+    >>> str(container_settings['longitude'])
+    '111.111'
+    >>> str(container_settings['latitude'])
+    '-222.222'
+
+Tests on a KML view Collection
+------------------------------
+
+Test configuring some OpenLayers settings on a Collection (Topic) this time
+around.  Start by getting our test folder that we've prepared earlier.
+ 
+    >>> oid = portal.test_folder.invokeFactory('Topic', 'settings_topic', title='Settings Topic')
+    >>> topic = portal.test_folder[oid]
+    >>> topic
+    <ATTopic at /plone/test_folder/settings_topic>
+    >>> browser.open(topic.absolute_url())
+
+Check to make sure we can't see the OpenLayers link just yet.
+
+    >>> '@@geosettings-container">OpenLayers</a>' in browser.contents
+    False
+
+    >>> browser.getLink('Kml Openlayers View').click()
+
+Check to make sure we can see a map here now.
+
+    >>> '<div id="map" ' in browser.contents
+    True
+
+Click onto the OpenLayers tab to set some context-specific settings.
+  
+    >>> browser.getLink('OpenLayers').click()
+
+    >>> 'Container-Specific Geo Settings' in browser.contents
+    True
+
+Check for the default settings on the page which should have come from the
+site control panel.
+
+    >>> browser.getControl(name = 'form.widgets.zoom').value
+    '14.0'
+
+    >>> browser.getControl(name = 'form.widgets.googlemaps:list').value
+    ['false']
+
+    >>> browser.getControl(name = 'form.widgets.longitude').value
+    '153.459'
+
+    >>> browser.getControl(name = 'form.widgets.latitude').value
+    '-28.024'
+
+We also have our 'Use Custom Settings' option, which should be off by default.
+Temporarily set its value to be true so we can cancel a change.
+
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value
+    ['false']
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value = ['true']
+
+Let's click the cancel button to make sure things are okay.
+
+    >>> browser.getControl('Cancel').click()
+
+    >>> 'No changes made.' in browser.contents
+    True
+
+Okay, good.  So let's go back to the form and make sure the change we made
+didn't persist.
+
+    >>> browser.open(topic.absolute_url())
+    >>> browser.getLink('OpenLayers').click()
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value
+    ['false']
+
+Let's set some options for real and make sure they get saved.  
+    
+    >>> browser.getControl(name = 'form.widgets.zoom').value = '9.99'
+    >>> browser.getControl(name = 'form.widgets.googlemaps:list').value = ['true']
+    >>> browser.getControl(name='form.widgets.use_custom_settings:list').value = ['true']
+    >>> browser.getControl(name = 'form.widgets.longitude').value = '111.111'
+    >>> browser.getControl(name = 'form.widgets.latitude').value = '-222.222'
+
+    >>> browser.getControl('Save').click()
+
+Check to make sure the settings were saved.
+ 
+    >>> 'Changes saved.' in browser.contents
+    True
+
+Look at the rendered Javascript on the page which affect the display. 
+
+    >>> 'var lon = 111.111000;' in browser.contents
+    True
+    >>> 'var lat = -222.222000;' in browser.contents
+    True
+    >>> 'var googlemaps = true;' in browser.contents
+    True
+    >>> 'var zoom = 9.990000;' in browser.contents
+    True
+
+Finally, we'll check the actual annotation on the object itself to make
+doubly-sure things got saved okay.
+
+    >>> from zope.annotation.interfaces import IAnnotations
+    >>> annotations = IAnnotations(topic)
+    >>> from collective.geo.settings.config import KEY
+    >>> KEY in annotations
+    True
+    >>> annotation = annotations[KEY]
+    >>> annotation
+    <persistent.dict.PersistentDict object at ...>
+
+    >>> container_settings = annotation['container_settings']
+    >>> str(container_settings['zoom'])
+    '9.99'
+    >>> container_settings['googlemaps']
+    True
+    >>> container_settings['use_custom_settings']
+    True
+    >>> str(container_settings['longitude'])
+    '111.111'
+    >>> str(container_settings['latitude'])
+    '-222.222'

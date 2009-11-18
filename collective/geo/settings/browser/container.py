@@ -20,13 +20,6 @@ from collective.geo.settings.browser.interfaces import IGeoContainerSettingsForm
 from collective.geo.settings import GeoSettingsMessageFactory as _
 from collective.geo.settings.event import GeoContainerSettingsModifiedEvent
 
-from zgeo.geographer.geo import KEY
-
-
-def geo_container_settings():
-     return ''
-#    return getUtility(IGeoContainerSettings)
-
 class GeopointContainerForm(GeopointBaseForm, subform.EditSubForm):
     component.adapts(interfaces.IEditForm)
 
@@ -63,13 +56,11 @@ class GeoContainerSettingsForm(form.Form):
 
     level = 1
         
-    containersettings = GeoContainerSettings()
-
     def __init__(self, context, request):
         super(GeoContainerSettingsForm,self).__init__(context,request)
 
         self.context = context
-        self.containersettings.context = self.context
+        self.containersettings = GeoContainerSettings(self.context)
 
         portal_url = getToolByName(self.context, 'portal_url')
         portal = portal_url.getPortalObject()
