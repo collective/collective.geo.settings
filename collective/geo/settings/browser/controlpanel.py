@@ -7,13 +7,14 @@ from Acquisition import aq_inner
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from zope.component import getUtility
+from zope.interface import implements
+from zope.component import getUtility, getMultiAdapter
 from zope.app.pagetemplate import viewpagetemplatefile
 from zope.app.component.hooks import getSite
 
-from collective.geo.geopoint.geopointform import GeopointBaseForm
-from collective.geo.settings.interfaces import IGeoSettings
+from collective.geo.settings.interfaces import IGeoSettings, IMapView
 from collective.geo.settings import GeoSettingsMessageFactory as _
+from collective.geo.settings.browser.widget import MapWidget, MapLayer
 
 def geo_settings(context):
     return getUtility(IGeoSettings)
@@ -22,13 +23,17 @@ def back_to_controlpanel(self):
     root = getSite()
     return dict(url=root.absolute_url() + '/plone_control_panel')
 
-class GeopointForm(GeopointBaseForm, subform.EditSubForm):
+class GeopointForm(subform.EditSubForm):
+    template = viewpagetemplatefile.ViewPageTemplateFile('geopointform.pt')
+
+    implements(IMapView)
+
     fields = field.Fields(IGeoSettings).select('longitude', 'latitude')
+
+    mapfields = ['geosettings-cgmap']
 
     def update(self):
         self.updateWidgets()
-
-
 
 class GeoControlpanelForm(form.EditForm):
     template = viewpagetemplatefile.ViewPageTemplateFile('form-with-subforms.pt')
@@ -102,3 +107,36 @@ class GeoControlpanel(BrowserView):
         z2.switch_on(self)
         self.form_instance.update()
         return self.form_instance.render()
+
+class ControlPanelMapWidget(MapWidget):
+
+    mapid = 'geosettings-cgmap'
+    style = "height:450px; width:450px;"
+
+    _layers = ['markeredit']
+
+    def __init__(self, view, request, context):
+        super(ControlPanelMapWidget, self).__init__(view, request, context)
+        self.lonid = view.widgets['longitude'].id
+        self.latid = view.widgets['latitude'].id
+        self.zoomid = view.__parent__.widgets['zoom'].id
+
+    @property
+    def js(self):
+        return """
+    jq(function() {
+      var map = cgmap.config['geosettings-cgmap'].map;
+      var layer = map.getLayersByName('Marker')[0];
+      var elctl = new OpenLayers.Control.MarkerEditingToolbar(layer, {lonid: '%s', latid: '%s', zoomid: '%s'});
+      map.addControl(elctl);
+      elctl.activate();
+    });
+""" % (self.lonid, self.latid, self.zoomid)
+
+class MarkerEditLayer(MapLayer):
+
+    name = "markeredit"
+
+    jsfactory = """
+    function() { return new OpenLayers.Layer.Vector('Marker', {renderOptions: {yOrdering: true}});}
+    """

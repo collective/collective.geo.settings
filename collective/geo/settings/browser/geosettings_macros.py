@@ -52,9 +52,10 @@ class GeoSettingsView(object):
         for mapid in self.request.get('cgmap_state_mapids', '').split():
             map_state = self.request.get('cgmap_state.%s' % mapid)
             state = {'mapid': mapid}
-            for param in ('lon', 'lat', 'zoom'):
-                state[param] = map_state.get(param, 'undefined')
-            ret.append("cgmap.state['%(mapid)s'] = {lon: %(lon)s, lat: %(lat)s, zoom: %(zoom)s };" % state)
+            for param in ('lon', 'lat', 'zoom', 'activebaselayer', 'activelayers'):
+                val = map_state.get(param, None)
+                state[param] = (val is not None) and ("'%s'" % val) or 'undefined'
+            ret.append("cgmap.state['%(mapid)s'] = {lon: %(lon)s, lat: %(lat)s, zoom: %(zoom)s, activebaselayer: %(activebaselayer)s, activelayers: %(activelayers)s };" % state)
         return '\n'.join(ret)
 
     @property
@@ -67,7 +68,7 @@ class GeoSettingsView(object):
     @property
     def yahoo_maps_js(self):
         if self.yahoomaps:
-            return 'http://api.maps.yahoo.com/ajaxymap?v=3&appid=%s' % self.yahoomapapi
+            return 'http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=%s' % self.yahoomapapi
         else:
             return None
 
@@ -78,20 +79,20 @@ class GeoSettingsView(object):
         else:
             return None
 
-    def layers(self):
-        layers = ["cgmap.config['default'].layers = ["]
-        layers.append("function() { return %s; }," % self.geosettings.layers['osm'])
-        if self.googlemaps:
-            for layername in ('gmap', 'gsat', 'ghyb', 'gter'):
-                layers.append("function() { return %s; }," % self.geosettings.layers[layername])
-        if self.yahoomaps:
-            for layername in ('ymap', 'ysat', 'yhyb'):
-                layers.append("function() { return %s; }," % self.geosettings.layers[layername])
-        if self.bingmaps:
-            for layername in ('bmap', 'baer', 'bhyb'):
-                layers.append("function() { return %s; }," % self.geosettings.layers[layername])
-        layers.append("];")
-        return '\n'.join(layers)
+    # def layers(self):
+    #     layers = ["cgmap.config['default'].layers = ["]
+    #     layers.append("function() { return %s; }," % self.geosettings.layers['osm'])
+    #     if self.googlemaps:
+    #         for layername in ('gmap', 'gsat', 'ghyb', 'gter'):
+    #             layers.append("function() { return %s; }," % self.geosettings.layers[layername])
+    #     if self.yahoomaps:
+    #         for layername in ('ymap', 'ysat', 'yhyb'):
+    #             layers.append("function() { return %s; }," % self.geosettings.layers[layername])
+    #     if self.bingmaps:
+    #         for layername in ('bmap', 'baer', 'bhyb'):
+    #             layers.append("function() { return %s; }," % self.geosettings.layers[layername])
+    #     layers.append("];")
+    #     return '\n'.join(layers)
 
 class GeoSettingsMacros(BrowserView):
     template = ViewPageTemplateFile('macros.pt')
