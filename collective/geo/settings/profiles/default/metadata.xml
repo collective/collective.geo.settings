@@ -3,5 +3,5 @@
   <version>1.0</version>
   <dependencies>
     <dependency>profile-collective.geo.openlayers:default</dependency>
-  </dependencies>  
+  </dependencies>
 </metadata>

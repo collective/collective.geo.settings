@@ -66,10 +66,6 @@ class GeoControlpanelForm(form.EditForm):
         super(GeoControlpanelForm, self).updateWidgets()
         self.widgets['googleapi'].size = 80
 
-    @property
-    def parent_form(self):
-        return self
-
     @button.handler(form.EditForm.buttons['apply'])
     def handle_add(self, action):
         subdata,  suberrors = self.subforms[0].extractData()

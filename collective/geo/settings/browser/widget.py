@@ -4,16 +4,24 @@ from zope.component import getMultiAdapter, getUtility
 
 from Products.Five import BrowserView
 
-from collective.geo.settings.interfaces import IMaps, IMapWidget, IGeoSettings, IMapLayer, IMapLayers
+from collective.geo.settings.interfaces import (IMaps, IMapWidget, IGeoSettings,
+                                                IMapLayer, IMapLayers, IMapView)
 
 class GeoSettingsMapView(BrowserView):
+    '''
+    Helper view to look up mapwidgets for current view and context.
+    '''
+    # TODO: shall this be a IMapView or the view itself?
+    implements(IMapView)
 
-    # TODO: turn this into descriptor?
     @property
     def mapwidgets(self):
         return getMultiAdapter((self.context, self.request, self.context.context), IMaps)
 
 class MapWidgets(dict):
+    '''
+    IMaps adapter which initialises IMapWidgets for current view ad context.
+    '''
 
     implements(IMaps)
 
@@ -24,12 +32,22 @@ class MapWidgets(dict):
         mapfields = getattr(view, 'mapfields', None)
         if mapfields:
             for mapid in mapfields:
-                # TODO: if self[mapid] is already IMapWidget (not string) .. then do nothing
-                self[mapid] = getMultiAdapter((self.view, self.request, self.context), IMapWidget, name=mapid)
+                if IMapWidget.providedBy(mapid):
+                    # is already a MapWidget, just take it
+                    self[mapid.mapid] = mapid
+                elif isinstance(mapid, basestring):
+                    # is only a name... lookup the widget
+                    self[mapid] = getMultiAdapter((self.view, self.request, self.context), IMapWidget, name=mapid)
+                else:
+                    raise ValueError("Can't create IMapWidget for %s" % repr(mapid))
         else:
+            # there are no mapfields let's look up the default widget
             self['default-cgmap'] = getMultiAdapter((self.view, self.request, self.context), IMapWidget, name='default-cgmap')
 
 class MapWidget(object):
+    '''
+    The default IMapWidget, which also can serve as handy base class.
+    '''
 
     implements(IMapWidget)
 
@@ -48,20 +66,6 @@ class MapWidget(object):
     def layers(self):
         return getMultiAdapter((self.view, self.request, self.context, self), IMapLayers)
 
-
-# var tmslayername = '%s';
-# cgmap.extendconfig({
-#   'layers': [ function() { return new OpenLayers.Layer.TMS(
-#                          tmslayername, '%s',
-#                          {type: 'png',
-#                           getURL: cgmap.overlay_getTileURL,
-#                           alpha: true,
-#                           isBaseLayer: false,
-#                           visibility: false,
-#                           opacity: 0.7
-#                          })}]}, 'default-map');
-#                         """
-
     def addClass(self, klass):
         if not self.klass:
             self.klass = unicode(klass)
@@ -71,6 +75,14 @@ class MapWidget(object):
             self.klass = u' '.join(frozenset(parts))
 
 class MapLayers(dict):
+    '''
+    The default IMapLayers implementation.
+
+    Checks geo settings tool for enabled layers and adds them if enabled (widget.usedefault).
+
+    TODO: this impl is too tigly copled with the default MapWigdet implementation.
+          esp.: it should not look for widget._layers attribute.
+    '''
 
     implements(IMapLayers)
 
@@ -86,21 +98,16 @@ class MapLayers(dict):
         useDefaultLayers = getattr(self.widget, 'usedefault', True)
         if useDefaultLayers:
             geosettings = getUtility(IGeoSettings)
-            layers.append(geosettings.layers['osm'])
-            if geosettings.googlemaps:
-                for layername in ('gmap', 'gsat', 'ghyb', 'gter'):
-                    layers.append(geosettings.layers[layername])
-            if geosettings.yahoomaps:
-                for layername in ('ymap', 'ysat', 'yhyb'):
-                    layers.append(geosettings.layers[layername])
-            if geosettings.bingmaps:
-                for layername in ('bmap', 'brod', 'baer', 'bhyb'):
-                    layers.append(geosettings.layers[layername])
+            layers.extend(geosettings.layers)
         maplayers = getattr(self.widget, '_layers', None)
         if maplayers:
             for layerid in maplayers:
-                # TODO: if self[layerid] is already ILayer (not string) .. then do nothing
-                layers.append(getMultiAdapter((self.view, self.request, self.context, self.widget), IMapLayer, name=layerid))
+                if IMapLayer.providedBy(layerid):
+                    layers.append(layerid)
+                elif isinstance(layerid, basestring):
+                    layers.append(getMultiAdapter((self.view, self.request, self.context, self.widget), IMapLayer, name=layerid))
+                else:
+                    raise ValueError("Can't create IMapLayer for %s" % repr(layerid))
         return layers
 
     @property
@@ -108,9 +115,14 @@ class MapLayers(dict):
         layers = self.layers()
         return "cgmap.extendconfig({layers: [" +\
                ",\n".join([l.jsfactory for l in layers]) + \
-               "]}, '%s');" % (self.widget.mapid) 
+               "]}, '%s');" % (self.widget.mapid)
 
 class MapLayer(object):
+    '''
+    An empty IMapLayer implementation, useful as base class.
+
+    MapLayers are named components specific for (view, request, context, widget).
+    '''
 
     def __init__(self, view, request, context, widget):
         self.view = view

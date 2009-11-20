@@ -16,6 +16,10 @@ class GeoSettingsView(object):
         return  self.geosettings.zoom
 
     @property
+    def map_center(self):
+        return self.geosettings.longitude, self.geosettings.latitude
+
+    @property
     def googlemaps(self):
         return  self.geosettings.googlemaps
 
@@ -24,20 +28,37 @@ class GeoSettingsView(object):
         return  self.geosettings.googleapi
 
     @property
+    def google_maps_js(self):
+        if self.googlemaps:
+            return 'http://maps.google.com/maps?file=api&v=2&key=%s' % self.googleapi
+        else:
+            return None
+
+    @property
     def yahoomaps(self):
         return self.geosettings.yahoomaps
 
     @property
-    def yahoomapapi(self):
-        return  self.geosettings.yahoomapapi
+    def yahooapi(self):
+        return  self.geosettings.yahooapi
+
+    @property
+    def yahoo_maps_js(self):
+        if self.yahoomaps:
+            return 'http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=%s' % self.yahooapi
+        else:
+            return None
 
     @property
     def bingmaps(self):
         return self.geosettings.bingmaps
 
     @property
-    def map_center(self):
-        return self.geosettings.longitude, self.geosettings.latitude
+    def bing_maps_js(self):
+        if self.bingmaps:
+            return 'http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6'
+        else:
+            return None
 
     @property
     def geo_setting_js(self):
@@ -57,42 +78,6 @@ class GeoSettingsView(object):
                 state[param] = (val is not None) and ("'%s'" % val) or 'undefined'
             ret.append("cgmap.state['%(mapid)s'] = {lon: %(lon)s, lat: %(lat)s, zoom: %(zoom)s, activebaselayer: %(activebaselayer)s, activelayers: %(activelayers)s };" % state)
         return '\n'.join(ret)
-
-    @property
-    def google_maps_js(self):
-        if self.googlemaps:
-            return 'http://maps.google.com/maps?file=api&v=2&key=%s' % self.googleapi
-        else:
-            return None
-
-    @property
-    def yahoo_maps_js(self):
-        if self.yahoomaps:
-            return 'http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=%s' % self.yahoomapapi
-        else:
-            return None
-
-    @property
-    def bing_maps_js(self):
-        if self.bingmaps:
-            return 'http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6'
-        else:
-            return None
-
-    # def layers(self):
-    #     layers = ["cgmap.config['default'].layers = ["]
-    #     layers.append("function() { return %s; }," % self.geosettings.layers['osm'])
-    #     if self.googlemaps:
-    #         for layername in ('gmap', 'gsat', 'ghyb', 'gter'):
-    #             layers.append("function() { return %s; }," % self.geosettings.layers[layername])
-    #     if self.yahoomaps:
-    #         for layername in ('ymap', 'ysat', 'yhyb'):
-    #             layers.append("function() { return %s; }," % self.geosettings.layers[layername])
-    #     if self.bingmaps:
-    #         for layername in ('bmap', 'baer', 'bhyb'):
-    #             layers.append("function() { return %s; }," % self.geosettings.layers[layername])
-    #     layers.append("];")
-    #     return '\n'.join(layers)
 
 class GeoSettingsMacros(BrowserView):
     template = ViewPageTemplateFile('macros.pt')

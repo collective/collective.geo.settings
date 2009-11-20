@@ -1,4 +1,8 @@
-
+"""
+This module contains IMapLayer implementations for commonly available
+base maps. These layers can be configured in the geo-settings control panel
+or may be re-used in manually configured map-widgets.
+"""
 
 from collective.geo.settings.browser.widget import MapLayer
 
