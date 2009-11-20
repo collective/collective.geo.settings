@@ -14,7 +14,6 @@
                   tal:define="geosettings python:context.restrictedTraverse('@@geosettings-view');
                               google_maps_js python:geosettings.google_maps_js;
                               yahoo_maps_js python:geosettings.yahoo_maps_js">
-      <!-- <script type="text/javascript" src="http://www.openlayers.org/dev/OpenLayers.js"></script> -->
       <script type="text/javascript" src="./OpenLayers.js"></script>
       <script type="text/javascript" src="./proj4js-compressed.js"></script>
       <script type="text/javascript" src="++resource++geo-settings.js"></script>
