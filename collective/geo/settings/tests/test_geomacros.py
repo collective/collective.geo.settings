@@ -32,7 +32,7 @@ class TestSetup(base.GeoSettingsTestCase):
                           None)
 
     def test_property_yahoomaps(self):
-        self.assertEquals(self.settings.yahoomaps, True)
+        self.assertEquals(self.settings.yahoomaps, False)
 
     def test_property_yahooapi(self):
         self.assertEquals(self.settings.yahooapi,
@@ -40,6 +40,7 @@ class TestSetup(base.GeoSettingsTestCase):
 
     def test_property_jsyahoomaps(self):
         # IGeoSettings yahoomaps == True
+        IGeoSettings(self.portal).yahoomaps  = True
         self.assertEquals(self.settings.yahoo_maps_js,
                           'http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=YOUR_API_KEY')
 
@@ -49,10 +50,11 @@ class TestSetup(base.GeoSettingsTestCase):
                           None)
 
     def test_property_bingmaps(self):
-        self.assertEquals(self.settings.bingmaps, True)
+        self.assertEquals(self.settings.bingmaps, False)
 
     def test_property_jsbingmaps(self):
         # IGeoSettings bingmaps == True
+        IGeoSettings(self.portal).bingmaps  = True
         self.assertEquals(self.settings.bing_maps_js,
                           'http://dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=6')
 

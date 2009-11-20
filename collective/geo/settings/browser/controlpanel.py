@@ -38,7 +38,8 @@ class GeopointForm(subform.EditSubForm):
 class GeoControlpanelForm(form.EditForm):
     template = viewpagetemplatefile.ViewPageTemplateFile('form-with-subforms.pt')
 
-    fields = field.Fields(IGeoSettings).select('zoom', 'googlemaps', 'googleapi')
+    fields = field.Fields(IGeoSettings).select('zoom', 'googlemaps', 'googleapi',
+                                               'yahoomaps', 'yahooapi', 'bingmaps')
 
     heading = _(u'Configure Collective Geo Settings')
 

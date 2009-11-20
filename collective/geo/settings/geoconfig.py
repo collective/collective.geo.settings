@@ -35,22 +35,23 @@ class GeoSettings(Persistent):
         False
 
         check whether the tool returns only activated layers.
-        all layers are active by default and the first layer is osm
-        >>> len(config.layers)
-        12
-        >>> config.layers[0].name
-        'osm'
-
-        turn off yahoo and bing
-        >>> config.yahoomaps = False
-        >>> config.bingmaps = False
-        >>> len(config.layers)
-        5
-
         if all layers are turned off, there should be at least the osm layer there
         >>> config.googlemaps = False
         >>> len(config.layers)
         1
+        >>> config.layers[0].name
+        'osm'
+
+        turn on yahoo and bing
+        >>> config.yahoomaps = True
+        >>> config.bingmaps = True
+        >>> len(config.layers)
+        8
+
+        turn on all layers, the first layer is osm
+        >>> config.googlemaps = True
+        >>> len(config.layers)
+        12
         >>> config.layers[0].name
         'osm'
 
@@ -60,13 +61,13 @@ class GeoSettings(Persistent):
     latitude = 45.682143
     longitude = 7.68047
     zoom = 10.0
-    googlemaps = True
+    googlemaps = True # key works only for localhost?
     googleapi = 'ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw'
 
-    yahoomaps = True # turned off by default ... strange side effects
-    yahooapi = 'YOUR_API_KEY' #'qw4md4TV34EcJ2sffsBc8A7W0iNPA866PwmFB2PiYW8lw5W8DQJgFy1sTEw_9.LcJNSDrfxcqA--'
+    yahoomaps = False # turned off by default because it needs API key
+    yahooapi = 'YOUR_API_KEY'
 
-    bingmaps = True # turned off by default
+    bingmaps = False
 
     # TODO: turn this into a Folder (or some sort of btree/dict storage), and manage layers as content objects in this folder
     # TODO: basically this tool imlpements the IMapLayers interface....
