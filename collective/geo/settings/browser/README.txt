@@ -70,3 +70,130 @@ cgmap.state and cgmap.config to initialise OpenLayers on these elements.
             'http://tile.openstreetmap.org/',
     ...
 
+Another way to render a map is to define an attribute named 'mapfields' on the
+view. This field must be a list or tuple and should contain IMapWidget
+instances or just strings (or a mix), which are then used to look up an
+IMapWidget in the adapter registry.
+
+Let's add an attribute to the view. We also need to adapt the template
+slightly.
+    >>> from collective.geo.settings.browser.widget import MapWidget
+    >>> mw1 = MapWidget(view, request, self.portal)
+    >>> mw1.mapid = 'mymap1'
+    >>> mw1.addClass('mymapclass1')
+    >>> view.mapfields = [mw1]
+
+Let's examine the result:
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+
+If there is more than one entry in mapfields, then only the first one will be
+rendered unless we change the template slightly.
+
+    >>> mw2 = MapWidget(view, request, self.portal)
+    >>> mw2.mapid = 'mymap2'
+    >>> mw2.addClass('mymapclass2')
+    >>> view.mapfields.append(mw2)
+
+Let's examine the result with an unchanged template:
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+
+Adapt the template to get both maps. We can do this in various ways.
+To render each map individually we have to iterate the list manually. There is
+a small helper view which makes things easier later, so let's use it.
+
+    >>> open(template, 'w').write('''<html xmlns="http://www.w3.org/1999/xhtml"
+    ...       xmlns:metal="http://xml.zope.org/namespaces/metal">
+    ...     <head>
+    ...         <metal:use use-macro="context/@@geosettings-macros/openlayers" />
+    ...     </head>
+    ...     <body>
+    ...         <tal:omit tal:define="maps context/@@geosettings-maps/mapwidgets" tal:omit-tag="">
+    ...             <tal:omit tal:define="cgmap maps/mymap1" tal:omit-tag="">
+    ...                 <metal:use use-macro="context/@@geosettings-macros/map-widget" />
+    ...             </tal:omit>
+    ...             <tal:omit tal:define="cgmap maps/mymap2" tal:omit-tag="">
+    ...                 <metal:use use-macro="context/@@geosettings-macros/map-widget" />
+    ...             </tal:omit>
+    ...         </tal:omit>
+    ...     </body>
+    ... </html>
+    ... ''')
+    >>> setTemplate(view, template)
+
+Let's see what happens:
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+          <div id="mymap2" class="mymapclass2 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+
+We can also just iterate over the mapwidgets list:
+    >>> open(template, 'w').write('''<html xmlns="http://www.w3.org/1999/xhtml"
+    ...       xmlns:metal="http://xml.zope.org/namespaces/metal">
+    ...     <head>
+    ...         <metal:use use-macro="context/@@geosettings-macros/openlayers" />
+    ...     </head>
+    ...     <body>
+    ...         <tal:omit tal:repeat="cgmap context/@@geosettings-maps/mapwidgets" tal:omit-tag="">
+    ...             <metal:use use-macro="context/@@geosettings-macros/map-widget" />
+    ...         </tal:omit>
+    ...     </body>
+    ... </html>
+    ... ''')
+    >>> setTemplate(view, template)
+
+As our first template was not very sophisticated, we should get the same
+result:
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+          <div id="mymap2" class="mymapclass2 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...

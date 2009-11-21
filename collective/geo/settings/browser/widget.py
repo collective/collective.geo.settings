@@ -18,14 +18,52 @@ class GeoSettingsMapView(BrowserView):
     def mapwidgets(self):
         return getMultiAdapter((self.context, self.request, self.context.context), IMaps)
 
-class MapWidgets(dict):
+class MapWidgets(list):
     '''
     IMaps adapter which initialises IMapWidgets for current view ad context.
     '''
 
+# TODO: ensure all these methods are available
+#    def __getitem__(key):
+#         """Get a value for a key
+
+#         A KeyError is raised if there is no value for the key.
+#         """
+
+#     def get(key, default=None):
+#         """Get a value for a key
+
+#         The default is returned if there is no value for the key.
+#         """
+
+#     def __contains__(key):
+#         """Tell if a key exists in the mapping."""
+
+# def keys():
+#         """Return the keys of the mapping object.
+#         """
+
+
+#     def __iter__():
+#         """Return an iterator for the keys of the mapping object.
+#         """
+
+#     def values():
+#         """Return the values of the mapping object.
+#         """
+
+#     def items():
+#         """Return the items of the mapping object.
+#         """
+
+#     def __len__():
+#         """Return the number of items.
+#         """
+
     implements(IMaps)
 
     def __init__(self, view, request, context):
+        self.keys = {}
         self.view = view
         self.request = request
         self.context = context
@@ -34,15 +72,24 @@ class MapWidgets(dict):
             for mapid in mapfields:
                 if IMapWidget.providedBy(mapid):
                     # is already a MapWidget, just take it
-                    self[mapid.mapid] = mapid
+                    self.__append(mapid.mapid, mapid)
                 elif isinstance(mapid, basestring):
                     # is only a name... lookup the widget
-                    self[mapid] = getMultiAdapter((self.view, self.request, self.context), IMapWidget, name=mapid)
+                    self.__append(mapid, getMultiAdapter((self.view, self.request, self.context), IMapWidget, name=mapid))
                 else:
                     raise ValueError("Can't create IMapWidget for %s" % repr(mapid))
         else:
             # there are no mapfields let's look up the default widget
-            self['default-cgmap'] = getMultiAdapter((self.view, self.request, self.context), IMapWidget, name='default-cgmap')
+            self.__append('default-cgmap', getMultiAdapter((self.view, self.request, self.context), IMapWidget, name='default-cgmap'))
+
+    def __append(self, key, value):
+        self.keys[key] = value
+        self.append(value)
+
+    def __getitem__(self, key):
+        if isinstance(key, basestring):
+            return self.keys[key]
+        return super(MapWidgets, self).__getitem__(key)
 
 class MapWidget(object):
     '''
