@@ -8,7 +8,7 @@ from collective.geo.settings.browser.widget import MapLayer
 
 class OSMMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "osm"
@@ -23,7 +23,7 @@ class OSMMapLayer(MapLayer):
 
 class BingStreetMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "bmap"
@@ -35,7 +35,7 @@ class BingStreetMapLayer(MapLayer):
 
 class BingRoadsMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "brod"
@@ -47,7 +47,7 @@ class BingRoadsMapLayer(MapLayer):
 
 class BingAerialMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "baer"
@@ -59,7 +59,7 @@ class BingAerialMapLayer(MapLayer):
 
 class BingHybridMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "bhyb"
@@ -71,7 +71,7 @@ class BingHybridMapLayer(MapLayer):
 
 class GoogleStreetMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "gmap"
@@ -82,7 +82,7 @@ class GoogleStreetMapLayer(MapLayer):
 
 class GoogleSatelliteMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "gsat"
@@ -93,7 +93,7 @@ class GoogleSatelliteMapLayer(MapLayer):
 
 class GoogleHybridMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "ghyb"
@@ -104,7 +104,7 @@ class GoogleHybridMapLayer(MapLayer):
 
 class GoogleTerrainMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "gter"
@@ -115,7 +115,7 @@ class GoogleTerrainMapLayer(MapLayer):
 
 class YahooStreetMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "ymap"
@@ -126,7 +126,7 @@ class YahooStreetMapLayer(MapLayer):
 
 class YahooSatelliteMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "ysat"
@@ -137,7 +137,7 @@ class YahooSatelliteMapLayer(MapLayer):
 
 class YahooHybridMapLayer(MapLayer):
 
-    def __init__(self):
+    def __init__(self, view=None, request=None, context=None, widget=None):
         pass
 
     name = "yhyb"

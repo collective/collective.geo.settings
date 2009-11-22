@@ -197,3 +197,123 @@ result:
         function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
             'http://tile.openstreetmap.org/',
     ...
+
+It is also possible to register an IMapWidget as named adapter and just give
+it's name in mapfields. IMapMidgets are looked up by ((view, request, context),
+name). So let's update our configuraion and fields:
+
+    >>> def mw1factory(view, request, context):
+    ...     mw = MapWidget(view, request, context)
+    ...     mw.mapid = 'mymap1'
+    ...     mw.addClass('mymapclass1')
+    ...     return mw
+    >>> from zope.component import provideAdapter
+    >>> from zope.interface import Interface
+    >>> from collective.geo.settings.interfaces import IMapWidget
+    >>> provideAdapter(mw1factory,
+    ...                (Interface, Interface, Interface),
+    ...                IMapWidget, name='mw1')
+    >>> view.mapfields = ['mw1', mw2]
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+          <div id="mymap2" class="mymapclass2 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+
+The defaul IMaps implementation complains if an element in mapfields is nat a
+string or IMapWidget:
+
+    >>> view.mapfields = ['mw1', mw2, None]
+    >>> print view()
+    Traceback (most recent call last):
+    ...
+    ValueError: Can't create IMapWidget for None
+
+Now we have covered the most important things about map midgets. Set us try
+some things with map layers.
+
+Layers:
+-------
+
+Map widgets can have lyars associated with them. These association is handled
+similar to the IMapWidget - View associaton above. An IMapWidget instance has
+to provide an attribute 'layers', which is a mapping from layer-id to ILayer
+instances. The default IMapWidget implementation provides 'layers' as a
+computed attribute. On access it looks up an IMapLayers - manager implementation which
+handles the actual IMapLayer instantiation. If the widget has an attribute
+'usedefault' and it is set to False, the layer manager ignoles all default
+layers set in the controlpanel, else all the default layers are
+added. Additionally the map widget can provide an attribute '_layers', which is
+a list of names and/or ILayer instances to be added.
+
+As a quick example we can just set the '_layers' attribute for mw1 and we
+should get an additional layer.
+    >>> from collective.geo.settings.maplayers import BingStreetMapLayer
+    >>> mw1._layers = [BingStreetMapLayer()]
+    >>> view.mapfields = [mw1]
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+        function() { return new OpenLayers.Layer.VirtualEarth('Bing Streets',
+    ...
+
+Me can register the BingStreetMapLayer as an adapter which allows us to use
+just the name to get the same result. ILayers are looked up for ((view,
+request, context, widget), name):
+
+    >>> from collective.geo.settings.interfaces import IMapLayer
+    >>> provideAdapter(BingStreetMapLayer,
+    ...                (Interface, Interface, Interface, Interface),
+    ...                IMapLayer, name='bsm')
+    >>> mw1._layers = ['bsm']
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+        function() { return new OpenLayers.Layer.TMS( 'OpenStreetMap',
+            'http://tile.openstreetmap.org/',
+    ...
+        function() { return new OpenLayers.Layer.VirtualEarth('Bing Streets',
+    ...
+
+If _layers contains somethin which can't be converted into an IMapLayer
+instance, me get an exception:
+    >>> mw1._layers = ['bsm', None]
+    >>> print view()
+    Traceback (most recent call last):
+    ...
+    ValueError: Can't create IMapLayer for None
+
+
+TODO: da a custom IMapLayer class
+
+TODO: demonstrate cgmap.config + cgmap.state
+
+TODO: do some request turn around map_state tests (coverage in GeoSettingsView)
+
