@@ -310,10 +310,129 @@ instance, me get an exception:
     ...
     ValueError: Can't create IMapLayer for None
 
+Let's create a custom layer. A rather common use-case may be to display a
+static image on a map. Let's assume our context is an Image object in Plone
+(e.g. ATImage), and we want an Openlayers view with the Image as base-layer.
+(I did not test whether this layer really works with OL, it should rather
+demonstrate the concept). MapWidgets also support a 'js' attribute to render
+additional java-script if necessary.
 
-TODO: da a custom IMapLayer class
+    >>> from collective.geo.settings.browser.widget import MapLayer
+    >>> class ImageLayer(MapLayer):
+    ...     name = "imagelayer"
+    ...
+    ...     @property
+    ...     def jsfactory(self):
+    ...         return """
+    ...         function() { return new OpenLayers.Layer.Image('%s', {url: '%s'});}
+    ...         """ % (self.context.Title(), self.context.absolute_url())
 
-TODO: demonstrate cgmap.config + cgmap.state
+An 'Image Layer' is a rather generic component, so it might be useful to
+register it as an adapter. (Probably just for IATImage context objects?)
+    >>> provideAdapter(ImageLayer,
+    ...                (Interface, Interface, Interface, Interface),
+    ...                IMapLayer, name='image')
 
-TODO: do some request turn around map_state tests (coverage in GeoSettingsView)
+As this becomes an unprojected base layer we don't want the default base layers
+    >>> mw1.usedefault = False
+    >>> mw1._layers = ['image']
+    >>> mw1.js = "\n// a place to add additional js\n"
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <div id="mymap1" class="mymapclass1 widget-cgmap"
+               style="witdh:100%;height:450px;">
+            <!--   openlayers map     -->
+          </div>
+          <script type="text/javascript">cgmap.extendconfig({layers: [
+            function() { return new OpenLayers.Layer.Image('Plone site', {url: 'http://nohost/plone'});}
+            ]}, 'mymap1');</script>
+          <script type="text/javascript">
+    // a place to add additional js
+    </script>
+    ...
 
+More fancy things cam be done by turning _layers into a computed property. This
+way it is possible to return only those layers of current interest. It is also
+possible to register a different IMapLayers instance, which uses some other
+algorithm to find all default and custom layers.
+
+Javascript Notes:
+-----------------
+
+The Javascript in this package uses jquery to initialise all maps on the
+page. This means, that the actual map initalisation is deffered by
+jquery(decument).ready calls.
+
+The steps to initialise a map are the following:
+
+  1. find all elements with class widget-cgmap and get their id's
+  2. use these id's to find configuration in cgmap.config
+  3. use these id's to find state in cgmap.state
+  4. create the OpenLayers instance on these elements.
+
+JS Configuration:
+
+  cgmap.config is an object containing the following inormation:
+
+    - cgmap.config['default']: is an object which holds various default
+      configurations which are used as fallback if there are no specific
+      options for a map. Currently it has an attribute 'options' which is
+      directly passed into the OpneLayers constructor and halsd values for
+      projection, displayProjection, controls, etc... (see geo-settings.js for
+      details)
+
+    - cgmap.config[mapid]: It is possible to set map specic options for each
+      map with id mapid. The attribute 'options' is used as options parameter
+      and all missing values will be taken form the 'default' options object.
+      A good place to customise these values il probably the 'js' field in an
+      IMapWidget instance.
+
+  Map object access:
+
+    After the maps hve been initialised, the map-instance object is accessible
+    as: cgmap.config[mapid].map
+
+
+  There is also a helper method in the cgmap namespace which takes of
+  generating the cgmap.config object if it does not exist yet:
+
+    - cgmap.extendconfig( {<the actual config data}, 'mapid' )
+
+  cgmap.state is an object which holds state information about a map instance:
+
+    - cgmap.state['default']: is an object which holds zoom, and center lon/lat
+      set in the control panel.
+
+    - cgmap.state[mapid]: holds state information for map with id mapid.
+      current supported state values are: zoom, conter lon/lat,
+      activebaselayer, activelayers (overlays)
+
+  State information for maps is useful in forms, to recreate the same map state
+  after a form submit. Therefore the included java-script adds some hidden
+  fields to all forms on the page, and the GeosettingsView class extracts these
+  values from the request and returns some javascript code to generate the
+  necessary data structures
+
+Let's test state passing:
+
+For this we need to adjust the values int the request object. Here we change
+the default center lon/lat.
+
+    >>> request.form['cgmap_state_mapids'] = 'mymap1'
+    >>> request.form['cgmap_state.mymap1'] = {'lon': 33.33, 'lat': 66.66}
+    >>> request.method = 'POST'
+    >>> view.context.REQUEST = request
+    >>> print view()
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    ...
+          <script type="text/javascript">cgmap.state = {'default': {lon: 7.680470, lat: 45.682143, zoom: 10 }};
+    cgmap.state['mymap1'] = {lon: '33.33', lat: '66.66', zoom: undefined, activebaselayer: undefined, activelayers: undefined };</script>
+    ...
+
+And another small test to get a 100% test coverage report:
+
+    >>> mw1.klass = None
+    >>> mw1.addClass('myclass')
+    >>> mw1.klass
+    'myclass'
