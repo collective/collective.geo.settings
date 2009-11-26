@@ -375,10 +375,10 @@ JS Configuration:
 
   cgmap.config is an object containing the following inormation:
 
-    - cgmap.config['default']: is an object which holds various default
-      configurations which are used as fallback if there are no specific
-      options for a map. Currently it has an attribute 'options' which is
-      directly passed into the OpneLayers constructor and halsd values for
+    - cgmap.createDefaultOptions(): returns an object which holds various
+      default configurations which are used as fallback if there are no
+      specific options for a map. Currently it has an attribute 'options' which
+      is directly passed into the OpneLayers constructor and halsd values for
       projection, displayProjection, controls, etc... (see geo-settings.js for
       details)
 
