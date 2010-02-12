@@ -24,8 +24,8 @@ verifiy the registration of the configuration utility
     <collective.geo.settings.geoconfig.GeoSettings object ...>
 
 we get some properties in that utility
-    >>> config.zoom
-    10.0
+    >>> str(config.zoom)
+    '10.0'
     >>> config.googlemaps
     True
 
@@ -50,3 +50,25 @@ and check the modifications in the configuration utility
     >>> config.googlemaps
     False
 
+check error handling in main form:
+    >>> browser.getControl(name = 'form.widgets.zoom').value = 'aa'
+    >>> browser.getControl('Apply').click()
+    >>> '<div class="error">' in browser.contents
+    True
+
+zoom should be unchanged
+    >>> str(config.zoom)
+    '10.0'
+
+try it for subforms:
+    >>> browser.getControl(name = 'form.widgets.zoom').value = '5.0'
+    >>> browser.getControl(name = 'form.widgets.longitude').value = 'aa'
+    >>> browser.getControl('Apply').click()
+    >>> '<div class="error">' in browser.contents
+    True
+
+zoom and longitude should be unchanged
+    >>> str(config.zoom)
+    '10.0'
+    >>> str(config.longitude)
+    '7.68047'

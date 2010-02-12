@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2'
+version = '0.2dev'
 
 setup(name='collective.geo.settings',
       version=version,
@@ -27,7 +27,6 @@ setup(name='collective.geo.settings',
           'setuptools',
           # -*- Extra requirements: -*-
           'collective.geo.openlayers',
-          'collective.geo.geopoint',
           'plone.app.z3cform',
       ],
       entry_points="""
