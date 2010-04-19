@@ -6,26 +6,23 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <include package="plone.app.z3cform" />
-  <include package="collective.geo.openlayers" />
+  <include package="plone.app.registry" />
 
-  <include package=".browser" />
+  <!-- <include package=".browser" /> -->
+
   <include file="profiles.zcml" />
 
-  <utility
-      provides=".interfaces.IGeoConfig"
-      factory=".geoconfig.GeoConfig"
-      name="collective.geo.geoconfig"
-      />
-
   <adapter
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      provides=".interfaces.IGeoSettings"
-      factory=".browser.controlpanel.geo_settings"
-      />
+      factory=".schema.CoordinateDataConverter" />
 
-  <adapter
-      factory=".z3cform.DecimalDataConverter"
-      />
+   <adapter
+      for = "collective.geo.settings.schema.ICoordinate"
+      provides = "plone.registry.interfaces.IPersistentField"
+      factory = "collective.geo.settings.field.coordinateFactory" />
+
+<!--
+   <utility
+      component="collective.geo.settings.fields.DecimalHandler"
+      name="collective.geo.settings.fields.Decimal" /> -->
 
 </configure>

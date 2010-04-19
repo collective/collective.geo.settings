@@ -1,31 +1,30 @@
-
 import decimal
-
 from zope.interface import Interface
-from zope.interface.common.mapping import IEnumerableMapping
+
 from zope import schema
 
-from collective.geo.settings.z3cform import Decimal
+from collective.geo.settings.schema import Coordinate
 from collective.geo.settings import GeoSettingsMessageFactory as _
 
-class IGeoConfig(Interface):
-    """ marker interface """
-    pass
 
 class IGeoSettings(Interface):
-    longitude = Decimal(
+    """IGeoSettings base settings for collective.geo
+       describe some default properties used to display the map
+       widgets in Plone
+    """
+    longitude = Coordinate(
         title=_(u'Longitude'),
         description=_(u""),
-        default=None,
+        default=decimal.Decimal("0.0"),
         required=True)
 
-    latitude  = Decimal(
+    latitude = Coordinate(
         title=_(u'Latitude'),
         description=_(u""),
-        default=None,
+        default=decimal.Decimal("0.0"),
         required=True)
 
-    zoom = Decimal(
+    zoom = schema.Decimal(
         title=_(u"Zoom"),
         description=_(u"Default map's zoom level"),
         default=decimal.Decimal("10.0"),
@@ -34,14 +33,14 @@ class IGeoSettings(Interface):
     googlemaps = schema.Bool(
         title=_(u"Use Google maps layer?"),
         description=_(u"Check if you want to use Google maps layer"),
-        default=False,
+        default=True,
         required=False)
 
     googleapi = schema.TextLine(
-        title=_(u"Google API Code"),
-        description=_(u"Set Google api code if you want use Google maps layer"),
-        default=None,
-        required=False)
+       title=_(u"Google API Code"),
+       description=_(u"Set Google api code if you want use Google maps layer"),
+       default=None,
+       required=False)
 
     yahoomaps = schema.Bool(
         title=_(u"Use Yahoo maps layer?"),
@@ -61,87 +60,42 @@ class IGeoSettings(Interface):
         default=False,
         required=False)
 
-class IMaps(IEnumerableMapping):
-    """A mapping form mapids to IMapWidgets
 
-    looked up as ((view, request, context), IMaps)
+class IGeoFeatureStyle(Interface):
+    """IGeoFeatureStyle
+       describe some properties used to display different
+       features in the map widgets
     """
 
-class IMapLayers(IEnumerableMapping):
-    """
-    A mapping of IMapLayer instances
+    linecolor = schema.TextLine(title=_(u"Line color"),
+                          description=_(u"Default line color"),
+                          default=u'#ff0000',
+                          required=True)
 
-    specific for IMapWidget... looked up as ((view, request, context, mapwidget), name)
-    """
+    linewidth = schema.Float(title=_(u"Line width"),
+                          description=_(u"Default line width in pixels"),
+                          default=2.0,
+                          required=True)
 
-    js = schema.TextLine(
-        title=_(u"Javascript to configure layers."),
-        description=_("Returns some js-code to set up available layers."),
-        required=True)
+    polygoncolor = schema.TextLine(title=_(u"Polygon color"),
+                          description=_(u"Default polygon color"),
+                          default=u'#ff0000',
+                          required=False)
 
-class IMapWidget(Interface):
-    """
-    Provides configuration options for a specific map widget.
-    """
-    mapid = schema.TextLine(
-        title=_(u"Map id"),
-        description=_(u"Used to identify the map in the dom-tree and to lookup"\
-                      u" an IMapWidget component if necessary."),
-        default=u"default-cgmap",
-        required=True)
+    marker_image = schema.TextLine(title=_(u"Marker image"),
+                          description=_(u"Default point marker image"),
+                          default=u'img/marker.png',
+                          required=False)
 
-    klass = schema.TextLine(
-        title=_(u"Class attribute"),
-        description=_(u"The html element class attribute."),
-        default=u"widget-cgmap",
-        required=True)
+    marker_image_size = schema.Float(title=_(u"Marker image size"),
+                          description=_(u"Scaled size of the marker image"),
+                          default=0.7,
+                          required=True)
 
-    style = schema.TextLine(
-        title=_(u"Style attribute"),
-        description=_(u"The html element style attribute."),
-        required=False)
-
-    js = schema.Text(
-        title=_("Javascript extras"),
-        description=_(u"Additional Javascript code inserted after the map widget."),
-        required=False)
-
-    layers = schema.Object(
-        title=_('Layers'),
-        description=_('A mapping from layerids to ILayers'),
-        schema=IMapLayers)
-
-    usedefault = schema.Bool(
-        title=_(u"Enable default layers."),
-        description=_(u"If set to true, the default IMapLayers implementation"\
-                      u" adds all enabled default layers from the geo settings tool."),
-        default=True,
-        required=False)
-
-    def addClass(klass):
-        '''
-        add klass to self.klass
-        '''
-
-class IMapView(Interface):
-    """
-    A view implementing this interface provides configurable
-    map widgets.
-    """
-    # TODO: is this the right field for an IMapView or should it be mapfields here?
-    mapwidgets = schema.Object(
-        title=_('Map Widgets'),
-        description=_('A mapping from mapids to IMapWidgets'),
-        schema=IMaps)
-
-
-class IMapLayer(Interface):
-    """
-    A pluggable interface making it easier to configure layers.
-    """
-
-    jsfactory = schema.Text(
-        title=_(u"Javascrpit factory"),
-        description=_(u"Javascript code which returns a new instance of this layer"\
-                      u" and does not expect any parameters"),
-        required=True)
+    # display_properties = schema.List(title=_(u"Properties to display"),
+    #                       description=_(u"Select what aspects you would "
+    #                                       "like to display to the user."),
+    #                       required=False,
+    #                       value_type=schema.Choice(
+    #                                       vocabulary=DISPLAY_VOCABULARY)
+    #                       )
