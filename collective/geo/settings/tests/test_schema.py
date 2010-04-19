@@ -1,6 +1,5 @@
 import unittest
 from zope.testing import doctest
-# from collective.geo.settings.tests import base
 
 import collective.geo.settings.schema
 

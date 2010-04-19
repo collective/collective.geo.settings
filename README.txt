@@ -1,14 +1,12 @@
 Introduction
 ============
 
-collective.geo.settings provides a graphical user interface to store settings of collective.geo packages.
+collective.geo.settings provides some utility to store settings of collective.geo packages.
 
 Requirements
 ------------
 * plone >= 3.2.1
-* plone.app.z3cform
-* collective.geo.openlayers
-* collective.geo.geopoint
+* plone.app.registry
 
 Installation
 ============
@@ -19,7 +17,6 @@ Alternatively, buildout users can install collective.geo.settings as part of a s
         [buildout]
         ...
         eggs = 
-            zope.i18n>=3.4
             collective.geo.settings
         ...
         [instance]
@@ -36,3 +33,4 @@ Contributors
 * Giorgio Borelli - gborelli
 * Silvio Tomatis - silviot
 * David Breitkreutz - rockdj
+* Gerhard Weis - gweis

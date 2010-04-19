@@ -22,12 +22,12 @@ setup_product()
 ptc.setupPloneSite(products=['collective.geo.settings'])
 
 
-class GeoSettingsTestCase(ptc.PloneTestCase):
+class TestCase(ptc.PloneTestCase):
     pass
 
     # def afterSetUp(self):
     #     collective.geo.settings.fields.decimalPersistentFieldAdapter
     #     
 
-class GeoSettingsFunctionalTestCase(ptc.FunctionalTestCase):
+class FunctionalTestCase(ptc.FunctionalTestCase):
     pass
