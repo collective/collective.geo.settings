@@ -1,5 +1,5 @@
 # collective.geo.settings
-# Giorgio Borelli <giorgio@giorgioborelli.it>, YEAR.
+# Giorgio Borelli <giorgio@giorgioborelli.it>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
@@ -19,23 +19,23 @@ msgstr ""
 
 #: ./interfaces.py:59
 msgid "Check if you want to use Bing maps layer"
-msgstr ""
+msgstr "Seleziona la casella se vuoi utilizzare le mappe Bing"
 
 #: ./interfaces.py:35
 msgid "Check if you want to use Google maps layer"
-msgstr ""
+msgstr "Seleziona la casella se vuoi utilizzare Google Maps"
 
 #: ./interfaces.py:47
 msgid "Check if you want to use Yahoo maps layer"
-msgstr ""
+msgstr "Seleziona la casella se vuoi utilizzare le mappe di Yahoo"
 
 #: ./interfaces.py:71
 msgid "Default line color"
-msgstr ""
+msgstr "Colore di default delle linee"
 
 #: ./interfaces.py:76
 msgid "Default line width in pixels"
-msgstr ""
+msgstr "Dimensione di default delle linee in pixel"
 
 #: ./interfaces.py:29
 msgid "Default map's zoom level"
@@ -43,11 +43,11 @@ msgstr "Livello dello zoom di default"
 
 #: ./interfaces.py:86
 msgid "Default point marker image"
-msgstr ""
+msgstr "Immagine di default per i punti"
 
 #: ./interfaces.py:81
 msgid "Default polygon color"
-msgstr ""
+msgstr "Colore di default dei poligoni"
 
 #: ./interfaces.py:40
 msgid "Google API Code"
@@ -55,47 +55,47 @@ msgstr "Codice API di Google Maps"
 
 #: ./interfaces.py:22
 msgid "Latitude"
-msgstr ""
+msgstr "Latitudine"
 
 #: ./interfaces.py:70
 msgid "Line color"
-msgstr ""
+msgstr "Colore linea"
 
 #: ./interfaces.py:75
 msgid "Line width"
-msgstr ""
+msgstr "Dimensione linea"
 
 #: ./interfaces.py:16
 msgid "Longitude"
-msgstr ""
+msgstr "Lonitudine"
 
 #: ./interfaces.py:85
 msgid "Marker image"
-msgstr ""
+msgstr "Immagine marker"
 
 #: ./interfaces.py:90
 msgid "Marker image size"
-msgstr ""
+msgstr "Dimensione del marker"
 
 #: ./interfaces.py:80
 msgid "Polygon color"
-msgstr ""
+msgstr "Colore poligono"
 
 #: ./interfaces.py:91
 msgid "Scaled size of the marker image"
-msgstr ""
+msgstr "Scalatura/ridimensionamento dell'immagine marker"
 
 #: ./interfaces.py:41
 msgid "Set Google api code if you want use Google maps layer"
-msgstr ""
+msgstr "Imposta il codice API di Google maps se vuoi utilizzare le sue mappe"
 
 #: ./interfaces.py:53
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
-msgstr ""
+msgstr "Imposta il codice API di Yahoo se vuoi utilizzare le sue mappe."
 
 #: ./interfaces.py:58
 msgid "Use Bing maps layer?"
-msgstr ""
+msgstr "Vuoi usare le mappe Bing?"
 
 #: ./interfaces.py:34
 msgid "Use Google maps layer?"
@@ -103,11 +103,11 @@ msgstr "Vuoi utilizzare Google Maps?"
 
 #: ./interfaces.py:46
 msgid "Use Yahoo maps layer?"
-msgstr ""
+msgstr "Vuoi usare le mappe di Yahoo?"
 
 #: ./interfaces.py:52
 msgid "Yahoo API Code"
-msgstr ""
+msgstr "API di Yahoo"
 
 #: ./interfaces.py:28
 msgid "Zoom"

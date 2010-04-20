@@ -39,7 +39,7 @@ class IGeoSettings(Interface):
     googleapi = schema.TextLine(
        title=_(u"Google API Code"),
        description=_(u"Set Google api code if you want use Google maps layer"),
-       default=None,
+       default=u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
        required=False)
 
     yahoomaps = schema.Bool(
@@ -51,7 +51,7 @@ class IGeoSettings(Interface):
     yahooapi = schema.TextLine(
         title=_(u"Yahoo API Code"),
         description=_(u"Set Yahoo api code if you want use Yahoo maps layer"),
-        default=None,
+        default=u"YOUR_API_KEY",
         required=False)
 
     bingmaps = schema.Bool(
