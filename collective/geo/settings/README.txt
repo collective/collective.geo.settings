@@ -26,10 +26,12 @@ and some settings to provides a default style to geographycal features
     <RecordsProxy for collective.geo.settings.interfaces.IGeoFeatureStyle>
 
 we have registered a coordinate field in IGeoSettings, its store coordinate data as Decimal
-    >>> geo_settings.longitude = decimal.Decimal("12.0121210210210")
-    >>> geo_settings.longitude
-    Decimal('12.0121210210210')
+    >>> test_decimal = decimal.Decimal("12.0121210210210")
+    >>> geo_settings.longitude = test_decimal
+    >>> geo_settings.longitude == test_decimal
+    True
 
-    >>> geo_settings.latitude = decimal.Decimal("13.0999999")
-    >>> geo_settings.latitude
-    Decimal('13.0999999')
+    >>> test_decimal = decimal.Decimal("13.0999999")
+    >>> geo_settings.latitude = test_decimal
+    >>> geo_settings.latitude == test_decimal
+    True
