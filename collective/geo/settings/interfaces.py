@@ -92,10 +92,11 @@ class IGeoFeatureStyle(Interface):
                           default=0.7,
                           required=True)
 
-    # display_properties = schema.List(title=_(u"Properties to display"),
-    #                       description=_(u"Select what aspects you would "
-    #                                       "like to display to the user."),
-    #                       required=False,
-    #                       value_type=schema.Choice(
-    #                                       vocabulary=DISPLAY_VOCABULARY)
-    #                       )
+    display_properties = schema.List(title=_(u"Properties to display"),
+                          description=_(u"Select what aspects you would "
+                                          "like to display to the user."),
+                          required=False,
+                          value_type=schema.Choice(
+                                          vocabulary='displaypropertiesVocab'),
+                          default = ['Title', 'Description']
+                          )

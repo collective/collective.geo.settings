@@ -12,9 +12,14 @@
   <adapter
       factory=".schema.CoordinateDataConverter" />
 
-   <adapter
+  <adapter
       for = "collective.geo.settings.schema.ICoordinate"
       provides = "plone.registry.interfaces.IPersistentField"
       factory = "collective.geo.settings.field.coordinateFactory" />
+
+  <utility
+      factory=".vocabularies.displaypropertiesVocab"
+      name="displaypropertiesVocab"
+      provides="zope.app.schema.vocabulary.IVocabularyFactory" />
 
 </configure>
