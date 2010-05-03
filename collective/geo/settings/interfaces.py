@@ -69,7 +69,7 @@ class IGeoFeatureStyle(Interface):
 
     linecolor = schema.TextLine(title=_(u"Line color"),
                           description=_(u"Default line color"),
-                          default=u'#ff0000',
+                          default=u'ff00003c',
                           required=True)
 
     linewidth = schema.Float(title=_(u"Line width"),
@@ -79,7 +79,7 @@ class IGeoFeatureStyle(Interface):
 
     polygoncolor = schema.TextLine(title=_(u"Polygon color"),
                           description=_(u"Default polygon color"),
-                          default=u'#ff0000',
+                          default=u'ff00003c',
                           required=False)
 
     marker_image = schema.TextLine(title=_(u"Marker image"),
