@@ -99,4 +99,28 @@ class IGeoFeatureStyle(Interface):
                           value_type=schema.Choice(
                                           vocabulary='displaypropertiesVocab'),
                           default = ['Title', 'Description']
+                          # default = ['id','Title',
+                          #            'Description',
+                          #            'Type',
+                          #            'Subject',
+                          #            'getLocation',
+                          #            'ModificationDate',
+                          #            'CreationDate',
+                          #            'EffectiveDate',
+                          #            'ExpirationDate',
+                          #            'listCreators',
+                          #            'Contributors',
+                          #            'Rights']
                           )
+
+
+class IGeoCustomFeatureStyle(IGeoFeatureStyle):
+    """IGeoCustomFeatureStyle
+       describe some properties used to display different
+       features in the map widgets per content type
+    """
+
+    use_custom_styles = schema.Bool(
+        title = _(u'Use custom styles?'),
+        description = _(u'Check this option if you want to customize the style of the geo features for this content'),
+        default = False)
