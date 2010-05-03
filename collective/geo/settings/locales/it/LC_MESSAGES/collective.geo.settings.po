@@ -29,6 +29,26 @@ msgstr "Seleziona la casella se vuoi utilizzare Google Maps"
 msgid "Check if you want to use Yahoo maps layer"
 msgstr "Seleziona la casella se vuoi utilizzare le mappe di Yahoo"
 
+#: ./interfaces.py:125
+msgid "Check this option if you want to customize the style of the geo features for this content"
+msgstr "Seleziona questa opzione se vuoi personalizzare lo stile dell'annotazione geografica per questo contenuto."
+
+#: ./__init__.py:13
+msgid "Content Location"
+msgstr "Luogo"
+
+#: ./__init__.py:19
+msgid "Contributors"
+msgstr "Collaboratori"
+
+#: ./__init__.py:15
+msgid "Creation Date"
+msgstr "Data di Creazione"
+
+#: ./__init__.py:18
+msgid "Creators"
+msgstr "Autori"
+
 #: ./interfaces.py:71
 msgid "Default line color"
 msgstr "Colore di default delle linee"
@@ -49,9 +69,29 @@ msgstr "Immagine di default per i punti"
 msgid "Default polygon color"
 msgstr "Colore di default dei poligoni"
 
+#: ./__init__.py:10
+msgid "Description"
+msgstr "Descrizione"
+
+#: ./__init__.py:16
+msgid "Effective Date"
+msgstr "Data effettiva"
+
+#: ./__init__.py:17
+msgid "Expiration Date"
+msgstr "Data di scadenza"
+
 #: ./interfaces.py:40
 msgid "Google API Code"
 msgstr "Codice API di Google Maps"
+
+#: ./__init__.py:8
+msgid "ID"
+msgstr "Id"
+
+#: ./__init__.py:14
+msgid "Last Modified Date"
+msgstr "Data ultima modifica"
 
 #: ./interfaces.py:22
 msgid "Latitude"
@@ -81,9 +121,21 @@ msgstr "Dimensione del marker"
 msgid "Polygon color"
 msgstr "Colore poligono"
 
+#: ./interfaces.py:95
+msgid "Properties to display"
+msgstr "Proprietà da visualizzzare"
+
+#: ./__init__.py:20
+msgid "Rights Statement"
+msgstr "Copyright"
+
 #: ./interfaces.py:91
 msgid "Scaled size of the marker image"
 msgstr "Scalatura/ridimensionamento dell'immagine marker"
+
+#: ./interfaces.py:96
+msgid "Select what aspects you would like to display to the user."
+msgstr "Seleziona le varie proprietà da visualizzare agli utenti"
 
 #: ./interfaces.py:41
 msgid "Set Google api code if you want use Google maps layer"
@@ -92,6 +144,18 @@ msgstr "Imposta il codice API di Google maps se vuoi utilizzare le sue mappe"
 #: ./interfaces.py:53
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
 msgstr "Imposta il codice API di Yahoo se vuoi utilizzare le sue mappe."
+
+#: ./__init__.py:12
+msgid "Subject"
+msgstr "Categorie"
+
+#: ./__init__.py:9
+msgid "Title"
+msgstr "Titolo"
+
+#: ./__init__.py:11
+msgid "Type"
+msgstr "Tipo"
 
 #: ./interfaces.py:58
 msgid "Use Bing maps layer?"
@@ -104,6 +168,10 @@ msgstr "Vuoi utilizzare Google Maps?"
 #: ./interfaces.py:46
 msgid "Use Yahoo maps layer?"
 msgstr "Vuoi usare le mappe di Yahoo?"
+
+#: ./interfaces.py:124
+msgid "Use custom styles?"
+msgstr "Vuoi usare stili personalizzati?"
 
 #: ./interfaces.py:52
 msgid "Yahoo API Code"

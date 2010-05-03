@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-04-20 12:37+0000\n"
+"POT-Creation-Date: 2010-05-03 16:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,26 @@ msgstr ""
 msgid "Check if you want to use Yahoo maps layer"
 msgstr ""
 
+#: ./interfaces.py:125
+msgid "Check this option if you want to customize the style of the geo features for this content"
+msgstr ""
+
+#: ./__init__.py:13
+msgid "Content Location"
+msgstr ""
+
+#: ./__init__.py:19
+msgid "Contributors"
+msgstr ""
+
+#: ./__init__.py:15
+msgid "Creation Date"
+msgstr ""
+
+#: ./__init__.py:18
+msgid "Creators"
+msgstr ""
+
 #: ./interfaces.py:71
 msgid "Default line color"
 msgstr ""
@@ -53,8 +73,28 @@ msgstr ""
 msgid "Default polygon color"
 msgstr ""
 
+#: ./__init__.py:10
+msgid "Description"
+msgstr ""
+
+#: ./__init__.py:16
+msgid "Effective Date"
+msgstr ""
+
+#: ./__init__.py:17
+msgid "Expiration Date"
+msgstr ""
+
 #: ./interfaces.py:40
 msgid "Google API Code"
+msgstr ""
+
+#: ./__init__.py:8
+msgid "ID"
+msgstr ""
+
+#: ./__init__.py:14
+msgid "Last Modified Date"
 msgstr ""
 
 #: ./interfaces.py:22
@@ -85,8 +125,20 @@ msgstr ""
 msgid "Polygon color"
 msgstr ""
 
+#: ./interfaces.py:95
+msgid "Properties to display"
+msgstr ""
+
+#: ./__init__.py:20
+msgid "Rights Statement"
+msgstr ""
+
 #: ./interfaces.py:91
 msgid "Scaled size of the marker image"
+msgstr ""
+
+#: ./interfaces.py:96
+msgid "Select what aspects you would like to display to the user."
 msgstr ""
 
 #: ./interfaces.py:41
@@ -95,6 +147,18 @@ msgstr ""
 
 #: ./interfaces.py:53
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
+msgstr ""
+
+#: ./__init__.py:12
+msgid "Subject"
+msgstr ""
+
+#: ./__init__.py:9
+msgid "Title"
+msgstr ""
+
+#: ./__init__.py:11
+msgid "Type"
 msgstr ""
 
 #: ./interfaces.py:58
@@ -107,6 +171,10 @@ msgstr ""
 
 #: ./interfaces.py:46
 msgid "Use Yahoo maps layer?"
+msgstr ""
+
+#: ./interfaces.py:124
+msgid "Use custom styles?"
 msgstr ""
 
 #: ./interfaces.py:52
