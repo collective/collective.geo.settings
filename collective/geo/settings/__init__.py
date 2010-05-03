@@ -18,3 +18,8 @@ DISPLAY_PROPERTIES = [('id', _(u'ID')),
                       ('listCreators', _(u'Creators')),
                       ('Contributors', _(u'Contributors')),
                       ('Rights', _(u'Rights Statement'))]
+
+DISPLAY_PROPERTIES_DATES = ('ModificationDate',
+                         'CreationDate',
+                         'EffectiveDate',
+                         'ExpirationDate')
