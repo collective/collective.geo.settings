@@ -25,7 +25,7 @@ class CoordinateDataConverter(converter.DecimalDataConverter):
 
     we need a field and a widget to test.
     >>> dec = Coordinate(title=u'Test')
-    >>> from z3c.form.testing import TestRequest
+    >>> from collective.geo.settings.tests.base import TestRequest
     >>> from z3c.form import widget
     >>> text = widget.Widget(TestRequest())
 
@@ -70,5 +70,5 @@ class CoordinateDataConverter(converter.DecimalDataConverter):
             return self.field.missing_value
         try:
             return self.type(value)
-        except Exception, err:
+        except Exception:
             raise converter.FormatterValidationError(self.errorMessage, value)

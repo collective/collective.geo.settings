@@ -5,7 +5,7 @@ collective.geo.settings provides some utility to store settings of collective.ge
 
 Requirements
 ------------
-* plone >= 3.2.1
+* plone >= 4
 * plone.app.registry
 
 Installation
