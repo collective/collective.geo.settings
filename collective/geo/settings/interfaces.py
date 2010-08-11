@@ -80,12 +80,12 @@ class IGeoFeatureStyle(Interface):
     polygoncolor = schema.TextLine(title=_(u"Polygon color"),
                           description=_(u"Default polygon color"),
                           default=u'ff00003c',
-                          required=False)
+                          required=True)
 
     marker_image = schema.TextLine(title=_(u"Marker image"),
                           description=_(u"Default point marker image"),
                           default=u'img/marker.png',
-                          required=False)
+                          required=True)
 
     marker_image_size = schema.Float(title=_(u"Marker image size"),
                           description=_(u"Scaled size of the marker image"),
