@@ -30,6 +30,12 @@ class IGeoSettings(Interface):
         default=decimal.Decimal("10.0"),
         required=True)
 
+    imgpath = schema.TextLine(
+            title=_(u"OpenLayers images path (Expression)"),
+            description=_(u""),
+            default=u"string:${portal_url}/img/",
+            required=False)
+
     googlemaps = schema.Bool(
         title=_(u"Use Google maps layer?"),
         description=_(u"Check if you want to use Google maps layer"),
@@ -98,20 +104,7 @@ class IGeoFeatureStyle(Interface):
                           required=False,
                           value_type=schema.Choice(
                                           vocabulary='displaypropertiesVocab'),
-                          default = ['Title', 'Description']
-                          # default = ['id','Title',
-                          #            'Description',
-                          #            'Type',
-                          #            'Subject',
-                          #            'getLocation',
-                          #            'ModificationDate',
-                          #            'CreationDate',
-                          #            'EffectiveDate',
-                          #            'ExpirationDate',
-                          #            'listCreators',
-                          #            'Contributors',
-                          #            'Rights']
-                          )
+                          default = ['Title', 'Description'])
 
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
