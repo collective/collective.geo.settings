@@ -12,6 +12,14 @@ class IGeoSettings(Interface):
        describe some default properties used to display the map
        widgets in Plone
     """
+    geo_content_types = schema.List(
+        title = _(u'Georeferenceable content types'),
+        required = False,
+        default = [], #'Document', 'News', 'Event'],
+        description = _(u"A list of types can be geo referenced",),
+        value_type = schema.Choice(title=u"Content types",
+                    source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
+
     longitude = Coordinate(
         title=_(u'Longitude'),
         description=_(u""),
