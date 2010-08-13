@@ -17,8 +17,15 @@ class IGeoSettings(Interface):
         required = False,
         default = [], #'Document', 'News', 'Event'],
         description = _(u"A list of types can be geo referenced",),
-        value_type = schema.Choice(title=u"Content types",
+        value_type = schema.Choice(title=_(u"Content types"),
                     source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
+
+    default_layers = schema.List(
+        title = _(u'Default map layers'),
+        required = False,
+        default = [],
+        description = _(u"A list of layers used in the default map layout",),
+        value_type = schema.TextLine(title=u"Layers"))
 
     longitude = Coordinate(
         title=_(u'Longitude'),
@@ -44,34 +51,16 @@ class IGeoSettings(Interface):
             default=u"string:${portal_url}/img/",
             required=False)
 
-    googlemaps = schema.Bool(
-        title=_(u"Use Google maps layer?"),
-        description=_(u"Check if you want to use Google maps layer"),
-        default=True,
-        required=False)
-
     googleapi = schema.TextLine(
        title=_(u"Google API Code"),
        description=_(u"Set Google api code if you want use Google maps layer"),
        default=u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
        required=False)
 
-    yahoomaps = schema.Bool(
-        title=_(u"Use Yahoo maps layer?"),
-        description=_(u"Check if you want to use Yahoo maps layer"),
-        default=False,
-        required=False)
-
     yahooapi = schema.TextLine(
         title=_(u"Yahoo API Code"),
         description=_(u"Set Yahoo api code if you want use Yahoo maps layer"),
         default=u"YOUR_API_KEY",
-        required=False)
-
-    bingmaps = schema.Bool(
-        title=_(u"Use Bing maps layer?"),
-        description=_(u"Check if you want to use Bing maps layer"),
-        default=False,
         required=False)
 
 
