@@ -85,9 +85,9 @@ class IGeoFeatureStyle(Interface):
                           default=u'ff00003c',
                           required=True)
 
-    marker_image = schema.TextLine(title=_(u"Marker image"),
+    marker_image = schema.TextLine(title=_(u"Marker image (Expression)"),
                           description=_(u"Default point marker image"),
-                          default=u'img/marker.png',
+                          default=u'string:${portal_url}/img/marker.png',
                           required=True)
 
     marker_image_size = schema.Float(title=_(u"Marker image size"),
