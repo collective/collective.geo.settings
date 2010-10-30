@@ -1,9 +1,9 @@
 # collective.geo.settings
-# Giorgio Borelli <giorgio@giorgioborelli.it>, YEAR.
+# Giorgio Borelli <giorgio@giorgioborelli.it>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2009-06-12 21:36+0000\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "PO-Revision-Date: 2009-06-12  21:28+0000\n"
 "Last-Translator: Giorgio Borelli <giorgio@giorgioborelli.it>\n"
 "Language-Team: Giorgio Borelli <giorgio@giorgioborelli.it>\n"
@@ -17,39 +17,167 @@ msgstr ""
 "Domain: collective.geo.settings\n"
 "X-Is-Fallback-For: it-it it-ch it-sm it-hr it-si\n"
 
-#: ./interfaces.py:16
-msgid "Check if you want to use google maps layer"
-msgstr "Spunta 'Si' se vuoi utilizzare Google Maps"
+#: ./interfaces.py:27
+msgid "A list of layers used in the default map layout"
+msgstr "Lista di layer utilizzata per il layout della mappa di default"
 
-#: ./browser/controlpanel.py:79
-msgid "Collective Geo Default Settings"
-msgstr "Impostazioni di default di Collective Geo"
+#: ./interfaces.py:19
+msgid "A list of types can be geo referenced"
+msgstr "Lista di tipi di contenuto che potranno essere geo referenziati"
 
-#: ./browser/controlpanel.py:36
-msgid "Configure Collective Geo Settings"
-msgstr "Configura Collective Geo"
+#: ./interfaces.py:115
+msgid "Check this option if you want to customize the style of the geo features for this content"
+msgstr "Seleziona questa opzione se vuoi personalizzare lo stile dell'annotazione geografica per questo contenuto."
 
-#: ./interfaces.py:11
+#: ./__init__.py:13
+msgid "Content Location"
+msgstr "Luogo"
+
+#: ./interfaces.py:20
+msgid "Content types"
+msgstr "Tipi di contenuto"
+
+#: ./__init__.py:19
+msgid "Contributors"
+msgstr "Collaboratori"
+
+#: ./__init__.py:15
+msgid "Creation Date"
+msgstr "Data di Creazione"
+
+#: ./__init__.py:18
+msgid "Creators"
+msgstr "Autori"
+
+#: ./interfaces.py:74
+msgid "Default line color"
+msgstr "Colore di default delle linee"
+
+#: ./interfaces.py:79
+msgid "Default line width in pixels"
+msgstr "Dimensione di default delle linee in pixel"
+
+#: ./interfaces.py:24
+msgid "Default map layers"
+msgstr "Layer di default"
+
+#: ./interfaces.py:44
 msgid "Default map's zoom level"
 msgstr "Livello dello zoom di default"
 
-#: ./browser/controlpanel.py:78
-msgid "Geo Settings"
-msgstr "Impostazioni"
+#: ./interfaces.py:89
+msgid "Default point marker image"
+msgstr "Immagine di default per i punti"
 
-#: ./interfaces.py:20
+#: ./interfaces.py:84
+msgid "Default polygon color"
+msgstr "Colore di default dei poligoni"
+
+#: ./__init__.py:10
+msgid "Description"
+msgstr "Descrizione"
+
+#: ./__init__.py:16
+msgid "Effective Date"
+msgstr "Data effettiva"
+
+#: ./__init__.py:17
+msgid "Expiration Date"
+msgstr "Data di scadenza"
+
+#: ./interfaces.py:16
+msgid "Georeferenceable content types"
+msgstr "Contenuti geo referenziabili"
+
+#: ./interfaces.py:55
 msgid "Google API Code"
 msgstr "Codice API di Google Maps"
 
-#: ./interfaces.py:21
-msgid "Set google api code if you want use google maps layer"
-msgstr "Imposta il codice API di Google maps se vuoi usare Google Maps"
+#: ./__init__.py:8
+msgid "ID"
+msgstr "Id"
 
-#: ./interfaces.py:15
-msgid "Use Google maps layer?"
-msgstr "Vuoi utilizzare Google Maps?"
+#: ./__init__.py:14
+msgid "Last Modified Date"
+msgstr "Data ultima modifica"
 
-#: ./interfaces.py:10
+#: ./interfaces.py:37
+msgid "Latitude"
+msgstr "Latitudine"
+
+#: ./interfaces.py:73
+msgid "Line color"
+msgstr "Colore linea"
+
+#: ./interfaces.py:78
+msgid "Line width"
+msgstr "Dimensione linea"
+
+#: ./interfaces.py:31
+msgid "Longitude"
+msgstr "Lonitudine"
+
+#: ./interfaces.py:88
+msgid "Marker image"
+msgstr "Immagine marker"
+
+#: ./interfaces.py:93
+msgid "Marker image size"
+msgstr "Dimensione del marker"
+
+#: ./interfaces.py:49
+msgid "OpenLayers images path (Expression)"
+msgstr "Percorso delle immagini di Openlayers (Espressione)"
+
+#: ./interfaces.py:83
+msgid "Polygon color"
+msgstr "Colore poligono"
+
+#: ./interfaces.py:98
+msgid "Properties to display"
+msgstr "Proprietà da visualizzzare"
+
+#: ./__init__.py:20
+msgid "Rights Statement"
+msgstr "Copyright"
+
+#: ./interfaces.py:94
+msgid "Scaled size of the marker image"
+msgstr "Scalatura/ridimensionamento dell'immagine marker"
+
+#: ./interfaces.py:99
+msgid "Select what aspects you would like to display to the user."
+msgstr "Seleziona le varie proprietà da visualizzare agli utenti"
+
+#: ./interfaces.py:56
+msgid "Set Google api code if you want use Google maps layer"
+msgstr "Imposta il codice API di Google maps se vuoi utilizzare le sue mappe"
+
+#: ./interfaces.py:62
+msgid "Set Yahoo api code if you want use Yahoo maps layer"
+msgstr "Imposta il codice API di Yahoo se vuoi utilizzare le sue mappe."
+
+#: ./__init__.py:12
+msgid "Subject"
+msgstr "Categorie"
+
+#: ./__init__.py:9
+msgid "Title"
+msgstr "Titolo"
+
+#: ./__init__.py:11
+msgid "Type"
+msgstr "Tipo"
+
+#: ./interfaces.py:114
+msgid "Use custom styles?"
+msgstr "Vuoi usare stili personalizzati?"
+
+#: ./interfaces.py:61
+msgid "Yahoo API Code"
+msgstr "API di Yahoo"
+
+#: ./interfaces.py:43
 msgid "Zoom"
 msgstr "Zoom"
 

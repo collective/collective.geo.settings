@@ -26,9 +26,7 @@ setup(name='collective.geo.settings',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'collective.geo.openlayers',
-          'collective.geo.geopoint',
-          'plone.app.z3cform',
+          'plone.app.registry',
       ],
       entry_points="""
       # -*- Entry points: -*-

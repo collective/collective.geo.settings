@@ -1,5 +1,0 @@
-<?xml version="1.0" ?>
-<layers>
-    <layer name="collective.geo.settings"
-           interface="collective.geo.settings.browser.interfaces.IGeoSettingsLayer" />
-</layers>
