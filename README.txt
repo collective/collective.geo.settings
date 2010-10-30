@@ -5,14 +5,12 @@ collective.geo.settings provides some utility to store settings of collective.ge
 
 Requirements
 ------------
-* plone >= 4
+* Plone >= 4
 * plone.app.registry
 
 Installation
 ============
-Just a simple easy_install collective.geo.settings is enough.
-
-Alternatively, buildout users can install collective.geo.settings as part of a specific project's buildout, by having a buildout configuration such as: ::
+You can install collective.geo.settings as part of a specific project's buildout, by having a buildout configuration such as: ::
 
         [buildout]
         ...
