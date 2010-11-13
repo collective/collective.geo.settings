@@ -118,8 +118,8 @@ msgid "Longitude"
 msgstr "Lonitudine"
 
 #: ./interfaces.py:88
-msgid "Marker image"
-msgstr "Immagine marker"
+msgid "Marker image (Expression)"
+msgstr "Immagine (Expression)"
 
 #: ./interfaces.py:93
 msgid "Marker image size"

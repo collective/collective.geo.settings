@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-11 22:18+0000\n"
+"POT-Creation-Date: 2010-11-13 11:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgid "Longitude"
 msgstr ""
 
 #: ./interfaces.py:88
-msgid "Marker image"
+msgid "Marker image (Expression)"
 msgstr ""
 
 #: ./interfaces.py:93
