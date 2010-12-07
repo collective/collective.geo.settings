@@ -22,4 +22,9 @@
       name="displaypropertiesVocab"
       provides="zope.app.schema.vocabulary.IVocabularyFactory" />
 
+  <utility
+      factory=".vocabularies.managerpropertiesVocab"
+      name="managerpropertiesVocab"
+      provides="zope.app.schema.vocabulary.IVocabularyFactory" />
+
 </configure>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="collective_geo_settings_properties" meta_type="Plone Property Sheet">
+  <property name="title">collective.geo.settings Properties</property>
+  <property name="map_managers" type="lines" purge="False">
+   <element value="plone.abovecontentbody"/>
+   <element value="plone.belowcontentbody"/>
+  </property>
+ </object>
+</object>

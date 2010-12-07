@@ -63,6 +63,13 @@ class IGeoSettings(Interface):
         default=u"YOUR_API_KEY",
         required=False)
 
+    default_manager = schema.TextLine(
+        title=_(u"Default Viewlet Manager"),
+        description=_(u"Select where you want your map to be displayed"),
+        default=u"plone.abovecontentbody",
+        required=False)
+
+
 
 class IGeoFeatureStyle(Interface):
     """IGeoFeatureStyle
@@ -102,6 +109,14 @@ class IGeoFeatureStyle(Interface):
                           value_type=schema.Choice(
                                           vocabulary='displaypropertiesVocab'),
                           default = ['Title', 'Description'])
+
+    map_display_manager = schema.TextLine(
+                            title=_(u"Viewlet Manager"),
+                            description=_(u"Select where you want your map to be displayed"),
+                            #value_type=schema.Choice(
+                            #              vocabulary='managerpropertiesVocab'),
+                            default=u"plone.abovecontentbody",
+                            required=False)
 
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
