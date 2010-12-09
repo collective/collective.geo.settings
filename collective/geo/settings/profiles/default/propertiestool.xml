@@ -5,6 +5,7 @@
   <property name="map_managers" type="lines" purge="False">
    <element value="plone.abovecontentbody"/>
    <element value="plone.belowcontentbody"/>
+   <element value="Do not display map"/>
   </property>
  </object>
 </object>
