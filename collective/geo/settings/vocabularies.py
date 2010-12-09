@@ -38,8 +38,8 @@ class managerpropertiesVocab(baseVocabulary):
         if properties:
             self.terms = getattr(properties, PROPERTY_MAP_MANAGERS, [])
             for term in self.terms:
-                terms.append(vocabulary.SimpleVocabulary.createTerm(term[0],
-                                                                    term[0],
-                                                                    term[0]))
+                terms.append(vocabulary.SimpleVocabulary.createTerm(term,
+                                                                    term,
+                                                                    term))
         return vocabulary.SimpleVocabulary(terms)
 
