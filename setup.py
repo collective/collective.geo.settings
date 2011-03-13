@@ -31,5 +31,7 @@ setup(name='collective.geo.settings',
       ],
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
