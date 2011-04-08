@@ -1,7 +1,11 @@
 from zope.interface import implements
 from zope.schema import vocabulary
 
-from zope.app.schema.vocabulary import IVocabularyFactory
+try:
+    from zope.app.schema.vocabulary import IVocabularyFactory
+except ImportError:
+    # robert@redcor.ch Plone 4.1
+    from zope.schema.interfaces import IVocabularyFactory
 
 from collective.geo.settings import DISPLAY_PROPERTIES
 
