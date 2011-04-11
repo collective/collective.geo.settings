@@ -19,7 +19,8 @@
 
   <utility
       factory=".vocabularies.displaypropertiesVocab"
-      name="displaypropertiesVocab"
-      provides="zope.app.schema.vocabulary.IVocabularyFactory" />
+      name="displaypropertiesVocab" />
+      <!-- plone 4.1 robert@redcor.ch 
+      provides="zope.app.schema.vocabulary.IVocabularyFactory" /-->
 
 </configure>

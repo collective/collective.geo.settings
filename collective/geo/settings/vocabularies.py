@@ -1,4 +1,4 @@
-from zope.interface import implements
+from zope.interface import implements, directlyProvides
 from zope.schema import vocabulary
 
 try:
@@ -25,3 +25,6 @@ class baseVocabulary(object):
 
 class displaypropertiesVocab(baseVocabulary):
     terms = DISPLAY_PROPERTIES
+
+#robert@redcor.ch for
+directlyProvides(displaypropertiesVocab, IVocabularyFactory)
