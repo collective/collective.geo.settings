@@ -1,11 +1,6 @@
-from zope.interface import implements, directlyProvides
+from zope.interface import implements
 from zope.schema import vocabulary
-
-try:
-    from zope.app.schema.vocabulary import IVocabularyFactory
-except ImportError:
-    # robert@redcor.ch Plone 4.1
-    from zope.schema.interfaces import IVocabularyFactory
+from zope.schema.interfaces import IVocabularyFactory
 
 from collective.geo.settings import DISPLAY_PROPERTIES
 
@@ -25,6 +20,3 @@ class baseVocabulary(object):
 
 class displaypropertiesVocab(baseVocabulary):
     terms = DISPLAY_PROPERTIES
-
-#robert@redcor.ch for
-directlyProvides(displaypropertiesVocab, IVocabularyFactory)
