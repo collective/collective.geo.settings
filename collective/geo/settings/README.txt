@@ -15,14 +15,12 @@ in plone registry we have registered some records
 
 some settings to provides default values to map widget
     >>> from collective.geo.settings.interfaces import IGeoSettings
-    >>> registry.registerInterface(IGeoSettings)
     >>> geo_settings = registry.forInterface(IGeoSettings)
     >>> geo_settings
     <RecordsProxy for collective.geo.settings.interfaces.IGeoSettings>
 
 and some settings to provides a default style to geographycal features
     >>> from collective.geo.settings.interfaces import IGeoFeatureStyle
-    >>> registry.registerInterface(IGeoFeatureStyle)
     >>> geo_styles = registry.forInterface(IGeoFeatureStyle)
     >>> geo_styles
     <RecordsProxy for collective.geo.settings.interfaces.IGeoFeatureStyle>
