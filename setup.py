@@ -26,13 +26,10 @@ setup(name='collective.geo.settings',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Plone',
           # -*- Extra requirements: -*-
           'plone.app.registry',
       ],
-      extras_require = {
-        'test': [
-            'Products.PloneTestCase']
-      },
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
