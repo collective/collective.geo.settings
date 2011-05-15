@@ -110,6 +110,13 @@ class IGeoFeatureStyle(Interface):
                                           vocabulary='displaypropertiesVocab'),
                           default = ['Title', 'Description'])
 
+    map_viewlet_position = schema.Choice(
+                      title=_(u"Map display position"),
+                      description=_(u"Choose the position of the map in the page."),
+                      vocabulary = 'mapviewletmanagersVocab',
+                      default = 'plone.abovecontentbody',
+                      required=True)
+
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
     """IGeoCustomFeatureStyle

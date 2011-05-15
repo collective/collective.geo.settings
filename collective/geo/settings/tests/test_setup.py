@@ -7,6 +7,7 @@ from plone.registry.interfaces import IPersistentField
 from plone.registry.interfaces import IRegistry
 
 from collective.geo.settings.interfaces import IGeoSettings
+from collective.geo.settings.interfaces import IGeoFeatureStyle
 
 from collective.geo.settings.tests.base import TestCase
 from collective.geo.settings import schema
@@ -20,11 +21,11 @@ class TestSetup(TestCase):
 
     def test_viewlet_managers_props(self):
         registry = getUtility(IRegistry)
-        geo_settings = registry.forInterface(IGeoSettings)
-        self.assertTrue(hasattr(geo_settings, 'map_viewlet_managers'))
+        settings = registry.forInterface(IGeoSettings)
+        self.assertTrue(hasattr(settings, 'map_viewlet_managers'))
 
         default_managers = ["plone.abovecontentbody", "plone.belowcontentbody"]
-        cgeo_vman = geo_settings.map_viewlet_managers
+        cgeo_vman = settings.map_viewlet_managers
         for vman in default_managers:
             self.assertTrue(vman in cgeo_vman)
 
@@ -34,6 +35,11 @@ class TestSetup(TestCase):
         self.failUnless(vocabulary)
         
         self.assertEquals(len(vocabulary._terms), 3)
+
+    def test_map_viewlet_position(self):
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IGeoFeatureStyle)
+        self.assertTrue(hasattr(settings, 'map_viewlet_position'))
 
 
 def test_suite():
