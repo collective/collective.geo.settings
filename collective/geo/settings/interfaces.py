@@ -16,7 +16,7 @@ class IGeoSettings(Interface):
         title = _(u'Georeferenceable content types'),
         required = False,
         default = [], #'Document', 'News', 'Event'],
-        description = _(u"A list of types can be geo referenced",),
+        description = _(u"A list of types can be geo referenced"),
         value_type = schema.Choice(title=_(u"Content types"),
                     source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
 
@@ -24,7 +24,7 @@ class IGeoSettings(Interface):
         title = _(u'Default map layers'),
         required = False,
         default = [],
-        description = _(u"A list of layers used in the default map layout",),
+        description = _(u"A list of layers used in the default map layout"),
         value_type = schema.TextLine(title=u"Layers"))
 
     longitude = Coordinate(
@@ -67,7 +67,7 @@ class IGeoSettings(Interface):
         title = _(u'Viewlet managers'),
         required = False,
         default = [],
-        description = _(u"A list of viewlet manager used to display map on content type",),
+        description = _(u"A list of viewlet manager used to display map on content type"),
         value_type = schema.TextLine(title=u"Vievlet manager"))
 
 
@@ -76,6 +76,13 @@ class IGeoFeatureStyle(Interface):
        describe some properties used to display different
        features in the map widgets
     """
+
+    map_viewlet_position = schema.Choice(
+              title=_(u"Map display position"),
+              description=_(u"Choose the position of the map in the page."),
+              vocabulary = 'mapviewletmanagersVocab',
+              default = 'plone.abovecontentbody',
+              required=True)
 
     linecolor = schema.TextLine(title=_(u"Line color"),
                           description=_(u"Default line color"),
@@ -109,13 +116,6 @@ class IGeoFeatureStyle(Interface):
                           value_type=schema.Choice(
                                           vocabulary='displaypropertiesVocab'),
                           default = ['Title', 'Description'])
-
-    map_viewlet_position = schema.Choice(
-                      title=_(u"Map display position"),
-                      description=_(u"Choose the position of the map in the page."),
-                      vocabulary = 'mapviewletmanagersVocab',
-                      default = 'plone.abovecontentbody',
-                      required=True)
 
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
