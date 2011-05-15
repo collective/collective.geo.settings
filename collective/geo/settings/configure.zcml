@@ -22,4 +22,9 @@
       name="displaypropertiesVocab"
       provides="zope.schema.interfaces.IVocabularyFactory" />
 
+    <utility
+        factory=".vocabularies.mapviewletmanagersVocab"
+        name="mapviewletmanagersVocab"
+        provides="zope.schema.interfaces.IVocabularyFactory" />
+
 </configure>
