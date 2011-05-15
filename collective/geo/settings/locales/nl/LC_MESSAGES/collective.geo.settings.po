@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.1\n"
-"POT-Creation-Date: 2010-06-22 07:44+0000\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "PO-Revision-Date: 2009-09-20 13:24+0100\n"
 "Last-Translator: Rob Gietema <rob@fourdigits.nl>\n"
 "Language-Team: Rob Gietema <rob@fourdigits.nl>\n"
@@ -22,9 +22,13 @@ msgstr "Een lijst van lagen welke gebruikt worden in de standaard map layout"
 msgid "A list of types can be geo referenced"
 msgstr "Een lijst van typen welke gegeoreferenced kunnen worden"
 
-#: ./interfaces.py:115
+#: ./interfaces.py:131
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Schakel deze optie in als je de stijl van de geo instellingen van deze content wilt aanpassen"
+
+#: ./interfaces.py:84
+msgid "Choose the position of the map in the page."
+msgstr ""
 
 #: ./__init__.py:13
 msgid "Content Location"
@@ -46,11 +50,11 @@ msgstr "Aanmaak Datum"
 msgid "Creators"
 msgstr "Auteur"
 
-#: ./interfaces.py:74
+#: ./interfaces.py:90
 msgid "Default line color"
 msgstr "Standaard lijn kleur"
 
-#: ./interfaces.py:79
+#: ./interfaces.py:95
 msgid "Default line width in pixels"
 msgstr "Standaard lijn dikte in pixels"
 
@@ -62,17 +66,21 @@ msgstr "Standaard kaart lagen"
 msgid "Default map's zoom level"
 msgstr "Standaard zoom level van de kaart"
 
-#: ./interfaces.py:89
+#: ./interfaces.py:105
 msgid "Default point marker image"
 msgstr "Standaard punt marker afbeedling"
 
-#: ./interfaces.py:84
+#: ./interfaces.py:100
 msgid "Default polygon color"
 msgstr "Standaard polygon kleur"
 
 #: ./__init__.py:10
 msgid "Description"
 msgstr "Omschrijving"
+
+#: ./vocabularies.py:38
+msgid "Do not display map"
+msgstr ""
 
 #: ./__init__.py:16
 msgid "Effective Date"
@@ -102,11 +110,11 @@ msgstr "Laatste Wijzigings Datum"
 msgid "Latitude"
 msgstr "Lengtegraad"
 
-#: ./interfaces.py:73
+#: ./interfaces.py:89
 msgid "Line color"
 msgstr "Lijn kleur"
 
-#: ./interfaces.py:78
+#: ./interfaces.py:94
 msgid "Line width"
 msgstr "Lijn dikte"
 
@@ -114,11 +122,15 @@ msgstr "Lijn dikte"
 msgid "Longitude"
 msgstr "Breedtegraad"
 
-#: ./interfaces.py:88
+#: ./interfaces.py:83
+msgid "Map display position"
+msgstr ""
+
+#: ./interfaces.py:104
 msgid "Marker image (Expression)"
 msgstr "Marker afbeelding (Expressie)"
 
-#: ./interfaces.py:93
+#: ./interfaces.py:109
 msgid "Marker image size"
 msgstr "Marker afbeelding grootte"
 
@@ -126,11 +138,11 @@ msgstr "Marker afbeelding grootte"
 msgid "OpenLayers images path (Expression)"
 msgstr "OpenLayers afbeeldingen pad (Expressie)"
 
-#: ./interfaces.py:83
+#: ./interfaces.py:99
 msgid "Polygon color"
 msgstr "Polygon kleur"
 
-#: ./interfaces.py:98
+#: ./interfaces.py:114
 msgid "Properties to display"
 msgstr "Weer te geven eigenschappen"
 
@@ -138,11 +150,11 @@ msgstr "Weer te geven eigenschappen"
 msgid "Rights Statement"
 msgstr "Rechten"
 
-#: ./interfaces.py:94
+#: ./interfaces.py:110
 msgid "Scaled size of the marker image"
 msgstr "Geschaalde afmetingen van de marker afbeelding"
 
-#: ./interfaces.py:99
+#: ./interfaces.py:115
 msgid "Select what aspects you would like to display to the user."
 msgstr "Selecteer welke aspecten je wilt weergeven aan de gebruiker"
 
@@ -153,6 +165,10 @@ msgstr "Zet de Google api code wanneer je Google maps wilt gebruiken"
 #: ./interfaces.py:62
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
 msgstr "Zet de Yahoo api code wanneer je Yahoo maps wilt gebruiken"
+
+#: ./interfaces.py:70
+msgid "Specify all viewlet manager allowed to display the map on the page, one per line. The required format is name|title"
+msgstr ""
 
 #: ./__init__.py:12
 msgid "Subject"
@@ -166,9 +182,13 @@ msgstr "Titel"
 msgid "Type"
 msgstr "Type"
 
-#: ./interfaces.py:114
+#: ./interfaces.py:130
 msgid "Use custom styles?"
 msgstr "Gebruik aangepaste stijlen?"
+
+#: ./interfaces.py:67
+msgid "Viewlet managers"
+msgstr ""
 
 #: ./interfaces.py:61
 msgid "Yahoo API Code"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2009-06-12  21:28+0000\n"
+"PO-Revision-Date: 2011-05-15  21:28+0000\n"
 "Last-Translator: Giorgio Borelli <giorgio@giorgioborelli.it>\n"
 "Language-Team: Giorgio Borelli <giorgio@giorgioborelli.it>\n"
 "MIME-Version: 1.0\n"
@@ -25,9 +25,13 @@ msgstr "Lista di layer utilizzata per il layout della mappa di default"
 msgid "A list of types can be geo referenced"
 msgstr "Lista di tipi di contenuto che potranno essere geo referenziati"
 
-#: ./interfaces.py:115
+#: ./interfaces.py:131
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Seleziona questa opzione se vuoi personalizzare lo stile dell'annotazione geografica per questo contenuto."
+
+#: ./interfaces.py:84
+msgid "Choose the position of the map in the page."
+msgstr "Seleziona la posizione della mappa nella pagina"
 
 #: ./__init__.py:13
 msgid "Content Location"
@@ -49,11 +53,11 @@ msgstr "Data di Creazione"
 msgid "Creators"
 msgstr "Autori"
 
-#: ./interfaces.py:74
+#: ./interfaces.py:90
 msgid "Default line color"
 msgstr "Colore di default delle linee"
 
-#: ./interfaces.py:79
+#: ./interfaces.py:95
 msgid "Default line width in pixels"
 msgstr "Dimensione di default delle linee in pixel"
 
@@ -65,17 +69,21 @@ msgstr "Layer di default"
 msgid "Default map's zoom level"
 msgstr "Livello dello zoom di default"
 
-#: ./interfaces.py:89
+#: ./interfaces.py:105
 msgid "Default point marker image"
 msgstr "Immagine di default per i punti"
 
-#: ./interfaces.py:84
+#: ./interfaces.py:100
 msgid "Default polygon color"
 msgstr "Colore di default dei poligoni"
 
 #: ./__init__.py:10
 msgid "Description"
 msgstr "Descrizione"
+
+#: ./vocabularies.py:38
+msgid "Do not display map"
+msgstr "Non visualizzare la mappa"
 
 #: ./__init__.py:16
 msgid "Effective Date"
@@ -105,11 +113,11 @@ msgstr "Data ultima modifica"
 msgid "Latitude"
 msgstr "Latitudine"
 
-#: ./interfaces.py:73
+#: ./interfaces.py:89
 msgid "Line color"
 msgstr "Colore linea"
 
-#: ./interfaces.py:78
+#: ./interfaces.py:94
 msgid "Line width"
 msgstr "Dimensione linea"
 
@@ -117,11 +125,15 @@ msgstr "Dimensione linea"
 msgid "Longitude"
 msgstr "Lonitudine"
 
-#: ./interfaces.py:88
+#: ./interfaces.py:83
+msgid "Map display position"
+msgstr "Posizione della mappa"
+
+#: ./interfaces.py:104
 msgid "Marker image (Expression)"
 msgstr "Immagine (Expression)"
 
-#: ./interfaces.py:93
+#: ./interfaces.py:109
 msgid "Marker image size"
 msgstr "Dimensione del marker"
 
@@ -129,11 +141,11 @@ msgstr "Dimensione del marker"
 msgid "OpenLayers images path (Expression)"
 msgstr "Percorso delle immagini di Openlayers (Espressione)"
 
-#: ./interfaces.py:83
+#: ./interfaces.py:99
 msgid "Polygon color"
 msgstr "Colore poligono"
 
-#: ./interfaces.py:98
+#: ./interfaces.py:114
 msgid "Properties to display"
 msgstr "Proprietà da visualizzzare"
 
@@ -141,11 +153,11 @@ msgstr "Proprietà da visualizzzare"
 msgid "Rights Statement"
 msgstr "Copyright"
 
-#: ./interfaces.py:94
+#: ./interfaces.py:110
 msgid "Scaled size of the marker image"
 msgstr "Scalatura/ridimensionamento dell'immagine marker"
 
-#: ./interfaces.py:99
+#: ./interfaces.py:115
 msgid "Select what aspects you would like to display to the user."
 msgstr "Seleziona le varie proprietà da visualizzare agli utenti"
 
@@ -156,6 +168,10 @@ msgstr "Imposta il codice API di Google maps se vuoi utilizzare le sue mappe"
 #: ./interfaces.py:62
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
 msgstr "Imposta il codice API di Yahoo se vuoi utilizzare le sue mappe."
+
+#: ./interfaces.py:70
+msgid "Specify all viewlet manager allowed to display the map on the page, one per line. The required format is name|title"
+msgstr "Specifica i viewlet manager dove potrà essere visualizza la mappa sulla pagina, uno per riga. Usa il seguente formato nome|titolo"
 
 #: ./__init__.py:12
 msgid "Subject"
@@ -169,9 +185,13 @@ msgstr "Titolo"
 msgid "Type"
 msgstr "Tipo"
 
-#: ./interfaces.py:114
+#: ./interfaces.py:130
 msgid "Use custom styles?"
 msgstr "Vuoi usare stili personalizzati?"
+
+#: ./interfaces.py:67
+msgid "Viewlet managers"
+msgstr "Viewlet manager"
 
 #: ./interfaces.py:61
 msgid "Yahoo API Code"
