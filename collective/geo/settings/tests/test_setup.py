@@ -24,7 +24,9 @@ class TestSetup(TestCase):
         settings = registry.forInterface(IGeoSettings)
         self.assertTrue(hasattr(settings, 'map_viewlet_managers'))
 
-        default_managers = ["plone.abovecontentbody", "plone.belowcontentbody"]
+        default_managers = [u'plone.abovecontentbody|Above Content',
+                            u'plone.belowcontentbody|Below Content']
+
         cgeo_vman = settings.map_viewlet_managers
         for vman in default_managers:
             self.assertTrue(vman in cgeo_vman)

@@ -8,6 +8,7 @@ from plone.registry.interfaces import IRegistry
 
 from collective.geo.settings import DISPLAY_PROPERTIES
 from collective.geo.settings.interfaces import IGeoSettings
+from collective.geo.settings import GeoSettingsMessageFactory as _
 
 
 class baseVocabulary(object):
@@ -34,7 +35,9 @@ class mapviewletmanagersVocab(baseVocabulary):
     def terms(self):
         registry = getUtility(IRegistry)
         geo_settings = registry.forInterface(IGeoSettings)
-        terms = [(None, 'Do not display map')]
+        terms = [('fake-manager', _(u'Do not display map'))]
         for i in geo_settings.map_viewlet_managers:
-            terms.append((i, i))
+            elem = i.split('|')
+            terms.append((elem[0], 
+                    len(elem) > 1 and elem[1] or elem[0]))
         return terms

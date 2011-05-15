@@ -67,7 +67,9 @@ class IGeoSettings(Interface):
         title = _(u'Viewlet managers'),
         required = False,
         default = [],
-        description = _(u"A list of viewlet manager used to display map on content type"),
+        description = _(u"Specify all viewlet manager allowed to display the map"\
+                " on the page, one per line."\
+                " The required format is name|title"),
         value_type = schema.TextLine(title=u"Vievlet manager"))
 
 

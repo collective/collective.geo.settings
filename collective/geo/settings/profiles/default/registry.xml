@@ -2,8 +2,8 @@
 <registry>
     <records interface="collective.geo.settings.interfaces.IGeoSettings">
       <value key="map_viewlet_managers" purge="false">
-        <element>plone.abovecontentbody</element>
-        <element>plone.belowcontentbody</element>
+        <element>plone.abovecontentbody|Above Content</element>
+        <element>plone.belowcontentbody|Below Content</element>
       </value>
     </records>
     <records interface="collective.geo.settings.interfaces.IGeoFeatureStyle" />
