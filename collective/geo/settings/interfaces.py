@@ -63,6 +63,13 @@ class IGeoSettings(Interface):
         default=u"YOUR_API_KEY",
         required=False)
 
+    map_viewlet_managers = schema.List(
+        title = _(u'Viewlet managers'),
+        required = False,
+        default = [],
+        description = _(u"A list of viewlet manager used to display map on content type",),
+        value_type = schema.TextLine(title=u"Vievlet manager"))
+
 
 class IGeoFeatureStyle(Interface):
     """IGeoFeatureStyle

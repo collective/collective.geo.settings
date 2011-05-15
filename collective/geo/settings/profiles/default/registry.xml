@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <registry>
-    <records interface="collective.geo.settings.interfaces.IGeoSettings" />
+    <records interface="collective.geo.settings.interfaces.IGeoSettings">
+      <value key="map_viewlet_managers" purge="false">
+        <element>plone.abovecontentbody</element>
+        <element>plone.belowcontentbody</element>
+      </value>
+    </records>
     <records interface="collective.geo.settings.interfaces.IGeoFeatureStyle" />
 </registry>
