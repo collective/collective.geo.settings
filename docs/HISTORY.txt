@@ -4,8 +4,11 @@ Changelog
 0.2.3 (unreleased)
 ------------------
 
+- added map_viewlet_position property in IGeoFeatureStyle [gborelli]
+- added mapviewletmanagers vocabulary [gborelli]
+- added map_viewlet_managers property [gborelli]
+- plone 4.1 fixes [gborelli]
 - changed Browser import from Testing.testbrowser [gborelli]
-- added extra_requires in setup.py for test [gborelli]
 - added z3c.autoinclude entry point [gborelli]
 
 0.2.2 (2010-12-28)
