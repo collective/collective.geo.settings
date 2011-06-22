@@ -46,7 +46,14 @@ Version 0.2.2 and below
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 New configuration to be added to the portal configuration registry
-(``plone.app.registry``) requires an upgrade step to be run. 
+(``plone.app.registry``) requires an upgrade step to be run.  If you encounter
+errors like this::
+
+    Module collective.geo.settings.utils, line 8, in geo_settings
+    Module plone.registry.registry, line 74, in forInterface
+    KeyError: 'Interface `collective.geo.settings.interfaces.IGeoSettings` defines a field `map_viewlet_managers`, for which there is no record.'
+
+you need to run the relevant upgrade step.
 
 Contributors
 ------------
