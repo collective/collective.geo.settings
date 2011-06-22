@@ -26,11 +26,32 @@ You can install collective.geo.settings as part of a specific project's buildout
 
 Install this product from the Plone control panel.
 
+Upgrading
+---------
+
+General steps
+^^^^^^^^^^^^^
+
+If you are upgrading from an older version (see below), you may need to run 
+upgrade steps. To do this, follow these steps:
+
+#. Browse to ``portal_setup`` in the ZMI of your site
+#. Click onto the ``Upgrades`` tab
+#. Select ``collective.geo.settings:default`` from the drop-down list and 
+   click ``Choose Profile``
+#. Observe any available upgrades and click the ``Upgrade`` button if any
+   are present.
+
+Version 0.2.2 and below
+^^^^^^^^^^^^^^^^^^^^^^^
+
+New configuration to be added to the portal configuration registry
+(``plone.app.registry``) requires an upgrade step to be run. 
 
 Contributors
 ------------
 
 * Giorgio Borelli - gborelli
 * Silvio Tomatis - silviot
-* David Breitkreutz - rockdj
+* David Beitey (Breitkreutz) - davidjb/rockdj
 * Gerhard Weis - gweis

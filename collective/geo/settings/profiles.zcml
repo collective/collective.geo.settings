@@ -11,4 +11,12 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for map viewlet manager configuration"
+      source="*"
+      destination="2"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
 </configure>
