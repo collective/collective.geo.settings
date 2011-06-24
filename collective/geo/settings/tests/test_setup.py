@@ -35,13 +35,25 @@ class TestSetup(TestCase):
         vocabulary = queryUtility(IVocabularyFactory,
                         name="mapviewletmanagersVocab")(self.portal)
         self.failUnless(vocabulary)
-        
+
         self.assertEquals(len(vocabulary._terms), 3)
 
-    def test_map_viewlet_position(self):
+    def test_geo_feature_style_fields(self):
+        fields_to_test = [
+            'map_viewlet_position',
+            'map_width',
+            'map_height',
+            'linecolor',
+            'linewidth',
+            'polygoncolor',
+            'marker_image',
+            'marker_image_size',
+            'display_properties',
+        ]
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IGeoFeatureStyle)
-        self.assertTrue(hasattr(settings, 'map_viewlet_position'))
+        for field in fields_to_test:
+            self.assertTrue(hasattr(settings, field))
 
 
 def test_suite():

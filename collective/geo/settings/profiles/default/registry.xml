@@ -6,5 +6,8 @@
         <element>plone.belowcontentbody|Below Content</element>
       </value>
     </records>
-    <records interface="collective.geo.settings.interfaces.IGeoFeatureStyle" />
+    <records interface="collective.geo.settings.interfaces.IGeoFeatureStyle">
+      <value key="map_width" purge="false" />
+      <value key="map_height" purge="false" />
+    </records>
 </registry>

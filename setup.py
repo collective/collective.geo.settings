@@ -30,6 +30,11 @@ setup(name='collective.geo.settings',
           # -*- Extra requirements: -*-
           'plone.app.registry',
       ],
+      extras_require = {
+          'test': [
+              'plone.testing',
+          ]
+      },
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]

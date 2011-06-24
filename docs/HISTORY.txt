@@ -4,6 +4,12 @@ Changelog
 0.2.3 (unreleased)
 ------------------
 
+- Updated testing to check for the presence of all style fields.
+  [davidjb]
+- Add map_width and map_height fields to styles interface for setting
+  the height and width of collective.geo maps. Included upgrade step for
+  GenericSetup profile.
+  [davidjb]
 - Add GenericSetup upgrade profile to handle upgrading plone.app.registry
   configuration with new property. Users with any previous versions
   of collective.geo.settings need to run the upgrade setup under

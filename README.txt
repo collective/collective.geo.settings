@@ -53,7 +53,7 @@ errors like this::
     Module plone.registry.registry, line 74, in forInterface
     KeyError: 'Interface `collective.geo.settings.interfaces.IGeoSettings` defines a field `map_viewlet_managers`, for which there is no record.'
 
-you need to run the relevant upgrade step.
+you need to run the relevant upgrade step(s).
 
 Contributors
 ------------

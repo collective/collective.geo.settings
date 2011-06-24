@@ -86,6 +86,20 @@ class IGeoFeatureStyle(Interface):
               default = 'plone.abovecontentbody',
               required=True)
 
+    map_width = schema.TextLine(
+              title=_(u"Map width"),
+              description=_(u"Width for maps, specified as an absolute \
+                            (like '450px' or '15em'), or relative (like \
+                            '100%') size."),
+              required=False)
+
+    map_height = schema.TextLine(
+              title=_(u"Map height"),
+              description=_(u"Height for maps, specified as an absolute \
+                            (like '450px' or '15em'), or relative (like \
+                            '100%') size."),
+              required=False)
+
     linecolor = schema.TextLine(title=_(u"Line color"),
                           description=_(u"Default line color"),
                           default=u'ff00003c',

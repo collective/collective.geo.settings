@@ -19,4 +19,12 @@
       profile="collective.geo.settings:default"
     />
 
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for map height/width style configuration"
+      source="*"
+      destination="3"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
 </configure>
