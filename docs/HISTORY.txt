@@ -4,6 +4,7 @@ Changelog
 0.2.3 (unreleased)
 ------------------
 
+- added support for Spanish translations [macagua]
 - Updated testing to check for the presence of all style fields.
   [davidjb]
 - Add map_width and map_height fields to styles interface for setting
