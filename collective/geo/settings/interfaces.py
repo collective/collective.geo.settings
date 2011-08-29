@@ -70,7 +70,7 @@ class IGeoSettings(Interface):
         description = _(u"Specify all viewlet manager allowed to display the map"\
                 " on the page, one per line."\
                 " The required format is name|title"),
-        value_type = schema.TextLine(title=u"Vievlet manager"))
+        value_type = schema.TextLine(title=u"Viewlet manager"))
 
 
 class IGeoFeatureStyle(Interface):
