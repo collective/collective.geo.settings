@@ -62,3 +62,6 @@ Contributors
 * Silvio Tomatis - silviot
 * David Beitey (Breitkreutz) - davidjb/rockdj
 * Gerhard Weis - gweis
+* Rob Gietema, robgietema
+* Leonardo J. Caballero G, macagua
+
