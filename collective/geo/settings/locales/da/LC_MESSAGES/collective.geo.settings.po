@@ -24,7 +24,7 @@ msgstr "En liste over indholdstyper, som kan placeres på et kort"
 
 #: ./interfaces.py:145
 msgid "Check this option if you want to customize the style of the geo features for this content"
-msgstr ""
+msgstr "Afkryds, hvis du ønsker at tilpasse kort-layoutet for netop dette indhold med indstillingerne nedenfor"
 
 #: ./interfaces.py:84
 msgid "Choose the position of the map in the page."
@@ -196,7 +196,7 @@ msgstr "Type"
 
 #: ./interfaces.py:144
 msgid "Use custom styles?"
-msgstr "Brug custom layout?"
+msgstr "Tilpas layout?"
 
 #: ./interfaces.py:67
 msgid "Viewlet managers"
