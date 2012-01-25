@@ -4,7 +4,8 @@ Changelog
 0.2.4 (unreleased)
 ------------------
 
-- - added Danish translation [stonor]
+- Added French translation [Fabien Moret]
+- added Danish translation [stonor]
 
 
 0.2.3 (2011-09-05)
@@ -45,8 +46,8 @@ Changelog
 0.2 (2010-10-31)
 ----------------
 
-* Updated coordinate references to be consistent with WGS 1984 
-  reference system.  This involves standardising the coordinate order 
+* Updated coordinate references to be consistent with WGS 1984
+  reference system.  This involves standardising the coordinate order
   to be [longitude, latitude] rather than [latitude, longitude].
   [rockdj]
 * Fixed the Google Maps url that is being returned and rendered, producing

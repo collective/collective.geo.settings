@@ -1,102 +1,105 @@
+# collective.geo.settings
+# Giorgio Borelli <giorgio@giorgioborelli.it>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.1\n"
+"Project-Id-Version: 0.1\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2009-09-20 13:24+0100\n"
-"Last-Translator: Rob Gietema <rob@fourdigits.nl>\n"
-"Language-Team: Rob Gietema <rob@fourdigits.nl>\n"
+"PO-Revision-Date: 2011-05-15  21:28+0000\n"
+"Last-Translator: Fabien Moret <martronic@martronic.ch>\n"
+"Language-Team: Giorgio Borelli <giorgio@giorgioborelli.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: nl\n"
-"Language-Name: Dutch\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.geo.settings\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
 #: ../interfaces.py:27
 msgid "A list of layers used in the default map layout"
-msgstr "Een lijst van lagen welke gebruikt worden in de standaard map layout"
+msgstr "Une série de calques utilisés dans l'affichage de la carte par défaut"
 
 #: ../interfaces.py:19
 msgid "A list of types can be geo referenced"
-msgstr "Een lijst van typen welke gegeoreferenced kunnen worden"
+msgstr "Une liste de types pouvant être géo-référencés"
 
 #: ../interfaces.py:145
 msgid "Check this option if you want to customize the style of the geo features for this content"
-msgstr "Schakel deze optie in als je de stijl van de geo instellingen van deze content wilt aanpassen"
+msgstr "Sélectionnez cette option si vous désirez personnaliser le style des annotations géographiques pour ce contenu."
 
 #: ../interfaces.py:84
 msgid "Choose the position of the map in the page."
-msgstr ""
+msgstr "Sélectionnez la position de la carte dans la page."
 
 #: ../__init__.py:13
 msgid "Content Location"
-msgstr "Content Locatie"
+msgstr "Lieux"
 
 #: ../interfaces.py:20
 msgid "Content types"
-msgstr "Content typen"
+msgstr "Types de contenu"
 
 #: ../__init__.py:19
 msgid "Contributors"
-msgstr "Medewerker"
+msgstr "Contributeurs"
 
 #: ../__init__.py:15
 msgid "Creation Date"
-msgstr "Aanmaak Datum"
+msgstr "Date de création"
 
 #: ../__init__.py:18
 msgid "Creators"
-msgstr "Auteur"
+msgstr "Auteurs"
 
 #: ../interfaces.py:104
 msgid "Default line color"
-msgstr "Standaard lijn kleur"
+msgstr "Couleur par défaut pour la ligne"
 
 #: ../interfaces.py:109
 msgid "Default line width in pixels"
-msgstr "Standaard lijn dikte in pixels"
+msgstr "Largeur en pixel par défaut pour la ligne"
 
 #: ../interfaces.py:24
 msgid "Default map layers"
-msgstr "Standaard kaart lagen"
+msgstr "Calques par défaut"
 
 #: ../interfaces.py:44
 msgid "Default map's zoom level"
-msgstr "Standaard zoom level van de kaart"
+msgstr "Niveau de zoom par défaut"
 
 #: ../interfaces.py:119
 msgid "Default point marker image"
-msgstr "Standaard punt marker afbeedling"
+msgstr "Image par défaut des marqueurs"
 
 #: ../interfaces.py:114
 msgid "Default polygon color"
-msgstr "Standaard polygon kleur"
+msgstr "Couleur par défaut pour les polygônes"
 
 #: ../__init__.py:10
 msgid "Description"
-msgstr "Omschrijving"
+msgstr "Description"
 
 #: ../vocabularies.py:38
 msgid "Do not display map"
-msgstr ""
+msgstr "Ne pas afficher la carte"
 
 #: ../__init__.py:16
 msgid "Effective Date"
-msgstr "Ingangsdatum"
+msgstr "Date effective"
 
 #: ../__init__.py:17
 msgid "Expiration Date"
-msgstr "Vervaldatum"
+msgstr ""
 
 #: ../interfaces.py:16
 msgid "Georeferenceable content types"
-msgstr "Georeferencebare content typen"
+msgstr "Contenu géo-référençable"
 
 #: ../interfaces.py:55
 msgid "Google API Code"
-msgstr "Google API Code"
+msgstr "Code API de Google Maps"
 
 #: ../interfaces.py:98
 msgid "Height for maps, specified as an absolute                             (like '450px' or '15em'), or relative (like                             '100%') size."
@@ -104,31 +107,31 @@ msgstr ""
 
 #: ../__init__.py:8
 msgid "ID"
-msgstr "ID"
+msgstr "Id"
 
 #: ../__init__.py:14
 msgid "Last Modified Date"
-msgstr "Laatste Wijzigings Datum"
+msgstr "Date de la dernière modification"
 
 #: ../interfaces.py:37
 msgid "Latitude"
-msgstr "Lengtegraad"
+msgstr "Latitude"
 
 #: ../interfaces.py:103
 msgid "Line color"
-msgstr "Lijn kleur"
+msgstr "Couleur de la ligne"
 
 #: ../interfaces.py:108
 msgid "Line width"
-msgstr "Lijn dikte"
+msgstr "Largeur de la ligne"
 
 #: ../interfaces.py:31
 msgid "Longitude"
-msgstr "Breedtegraad"
+msgstr "Longitude"
 
 #: ../interfaces.py:83
 msgid "Map display position"
-msgstr ""
+msgstr "Position de la carte"
 
 #: ../interfaces.py:97
 msgid "Map height"
@@ -140,55 +143,55 @@ msgstr ""
 
 #: ../interfaces.py:118
 msgid "Marker image (Expression)"
-msgstr "Marker afbeelding (Expressie)"
+msgstr "Image du marqueur (Expression)"
 
 #: ../interfaces.py:123
 msgid "Marker image size"
-msgstr "Marker afbeelding grootte"
+msgstr "Dimensions du marqueur"
 
 #: ../interfaces.py:49
 msgid "OpenLayers images path (Expression)"
-msgstr "OpenLayers afbeeldingen pad (Expressie)"
+msgstr "Chemin pour les images Openlayers (Expression)"
 
 #: ../interfaces.py:113
 msgid "Polygon color"
-msgstr "Polygon kleur"
+msgstr "Couleur du polygône"
 
 #: ../interfaces.py:128
 msgid "Properties to display"
-msgstr "Weer te geven eigenschappen"
+msgstr "Propriétés d'affichage"
 
 #: ../__init__.py:20
 msgid "Rights Statement"
-msgstr "Rechten"
+msgstr "Copyright"
 
 #: ../interfaces.py:124
 msgid "Scaled size of the marker image"
-msgstr "Geschaalde afmetingen van de marker afbeelding"
+msgstr "Redimensionnement de l'image du marqueur"
 
 #: ../interfaces.py:129
 msgid "Select what aspects you would like to display to the user."
-msgstr "Selecteer welke aspecten je wilt weergeven aan de gebruiker"
+msgstr "Sélectionnez les propriétés d'affichage pour les utilisateurs."
 
 #: ../interfaces.py:56
 msgid "Set Google api code if you want use Google maps layer"
-msgstr "Zet de Google api code wanneer je Google maps wilt gebruiken"
+msgstr "Entrez le code API API de Google maps si vous voulez utiliser les cartes Google"
 
 #: ../interfaces.py:62
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
-msgstr "Zet de Yahoo api code wanneer je Yahoo maps wilt gebruiken"
+msgstr "Entrez le code API de Yahoo si vous voulez utiliser les cartes Yahoo."
 
 #: ../interfaces.py:70
 msgid "Specify all viewlet manager allowed to display the map on the page, one per line. The required format is name|title"
-msgstr ""
+msgstr "Spécifiez tous les viewlets managers qui afficheront la carte sur la page, un par ligne. Le format requis est nom|titre"
 
 #: ../__init__.py:12
 msgid "Subject"
-msgstr "Onderwerp"
+msgstr "Catégorie"
 
 #: ../__init__.py:9
 msgid "Title"
-msgstr "Titel"
+msgstr "Titre"
 
 #: ../__init__.py:11
 msgid "Type"
@@ -196,11 +199,11 @@ msgstr "Type"
 
 #: ../interfaces.py:144
 msgid "Use custom styles?"
-msgstr "Gebruik aangepaste stijlen?"
+msgstr "Utiliser les styles personnalisés?"
 
 #: ../interfaces.py:67
 msgid "Viewlet managers"
-msgstr ""
+msgstr "Viewlet manager"
 
 #: ../interfaces.py:91
 msgid "Width for maps, specified as an absolute                             (like '450px' or '15em'), or relative (like                             '100%') size."
@@ -208,9 +211,9 @@ msgstr ""
 
 #: ../interfaces.py:61
 msgid "Yahoo API Code"
-msgstr "Yahoo API Code"
+msgstr "API de Yahoo"
 
 #: ../interfaces.py:43
 msgid "Zoom"
-msgstr "Zoomen"
+msgstr "Zoom"
 

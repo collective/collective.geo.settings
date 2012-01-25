@@ -17,203 +17,203 @@ msgstr ""
 "Domain: collective.geo.settings\n"
 "X-Is-Fallback-For: it-it it-ch it-sm it-hr it-si\n"
 
-#: ./interfaces.py:27
+#: ../interfaces.py:27
 msgid "A list of layers used in the default map layout"
 msgstr "Lista di layer utilizzata per il layout della mappa di default"
 
-#: ./interfaces.py:19
+#: ../interfaces.py:19
 msgid "A list of types can be geo referenced"
 msgstr "Lista di tipi di contenuto che potranno essere geo referenziati"
 
-#: ./interfaces.py:145
+#: ../interfaces.py:145
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Seleziona questa opzione se vuoi personalizzare lo stile dell'annotazione geografica per questo contenuto."
 
-#: ./interfaces.py:84
+#: ../interfaces.py:84
 msgid "Choose the position of the map in the page."
 msgstr "Seleziona la posizione della mappa nella pagina"
 
-#: ./__init__.py:13
+#: ../__init__.py:13
 msgid "Content Location"
 msgstr "Luogo"
 
-#: ./interfaces.py:20
+#: ../interfaces.py:20
 msgid "Content types"
 msgstr "Tipi di contenuto"
 
-#: ./__init__.py:19
+#: ../__init__.py:19
 msgid "Contributors"
 msgstr "Collaboratori"
 
-#: ./__init__.py:15
+#: ../__init__.py:15
 msgid "Creation Date"
 msgstr "Data di Creazione"
 
-#: ./__init__.py:18
+#: ../__init__.py:18
 msgid "Creators"
 msgstr "Autori"
 
-#: ./interfaces.py:104
+#: ../interfaces.py:104
 msgid "Default line color"
 msgstr "Colore di default delle linee"
 
-#: ./interfaces.py:109
+#: ../interfaces.py:109
 msgid "Default line width in pixels"
 msgstr "Dimensione di default delle linee in pixel"
 
-#: ./interfaces.py:24
+#: ../interfaces.py:24
 msgid "Default map layers"
 msgstr "Layer di default"
 
-#: ./interfaces.py:44
+#: ../interfaces.py:44
 msgid "Default map's zoom level"
 msgstr "Livello dello zoom di default"
 
-#: ./interfaces.py:119
+#: ../interfaces.py:119
 msgid "Default point marker image"
 msgstr "Immagine di default per i punti"
 
-#: ./interfaces.py:114
+#: ../interfaces.py:114
 msgid "Default polygon color"
 msgstr "Colore di default dei poligoni"
 
-#: ./__init__.py:10
+#: ../__init__.py:10
 msgid "Description"
 msgstr "Descrizione"
 
-#: ./vocabularies.py:38
+#: ../vocabularies.py:38
 msgid "Do not display map"
 msgstr "Non visualizzare la mappa"
 
-#: ./__init__.py:16
+#: ../__init__.py:16
 msgid "Effective Date"
 msgstr "Data effettiva"
 
-#: ./__init__.py:17
+#: ../__init__.py:17
 msgid "Expiration Date"
 msgstr "Data di scadenza"
 
-#: ./interfaces.py:16
+#: ../interfaces.py:16
 msgid "Georeferenceable content types"
 msgstr "Contenuti geo referenziabili"
 
-#: ./interfaces.py:55
+#: ../interfaces.py:55
 msgid "Google API Code"
 msgstr "Codice API di Google Maps"
 
-#: ./interfaces.py:98
+#: ../interfaces.py:98
 msgid "Height for maps, specified as an absolute                             (like '450px' or '15em'), or relative (like                             '100%') size."
 msgstr ""
 
-#: ./__init__.py:8
+#: ../__init__.py:8
 msgid "ID"
 msgstr "Id"
 
-#: ./__init__.py:14
+#: ../__init__.py:14
 msgid "Last Modified Date"
 msgstr "Data ultima modifica"
 
-#: ./interfaces.py:37
+#: ../interfaces.py:37
 msgid "Latitude"
 msgstr "Latitudine"
 
-#: ./interfaces.py:103
+#: ../interfaces.py:103
 msgid "Line color"
 msgstr "Colore linea"
 
-#: ./interfaces.py:108
+#: ../interfaces.py:108
 msgid "Line width"
 msgstr "Dimensione linea"
 
-#: ./interfaces.py:31
+#: ../interfaces.py:31
 msgid "Longitude"
 msgstr "Lonitudine"
 
-#: ./interfaces.py:83
+#: ../interfaces.py:83
 msgid "Map display position"
 msgstr "Posizione della mappa"
 
-#: ./interfaces.py:97
+#: ../interfaces.py:97
 msgid "Map height"
 msgstr ""
 
-#: ./interfaces.py:90
+#: ../interfaces.py:90
 msgid "Map width"
 msgstr ""
 
-#: ./interfaces.py:118
+#: ../interfaces.py:118
 msgid "Marker image (Expression)"
 msgstr "Immagine (Expression)"
 
-#: ./interfaces.py:123
+#: ../interfaces.py:123
 msgid "Marker image size"
 msgstr "Dimensione del marker"
 
-#: ./interfaces.py:49
+#: ../interfaces.py:49
 msgid "OpenLayers images path (Expression)"
 msgstr "Percorso delle immagini di Openlayers (Espressione)"
 
-#: ./interfaces.py:113
+#: ../interfaces.py:113
 msgid "Polygon color"
 msgstr "Colore poligono"
 
-#: ./interfaces.py:128
+#: ../interfaces.py:128
 msgid "Properties to display"
 msgstr "Proprietà da visualizzzare"
 
-#: ./__init__.py:20
+#: ../__init__.py:20
 msgid "Rights Statement"
 msgstr "Copyright"
 
-#: ./interfaces.py:124
+#: ../interfaces.py:124
 msgid "Scaled size of the marker image"
 msgstr "Scalatura/ridimensionamento dell'immagine marker"
 
-#: ./interfaces.py:129
+#: ../interfaces.py:129
 msgid "Select what aspects you would like to display to the user."
 msgstr "Seleziona le varie proprietà da visualizzare agli utenti"
 
-#: ./interfaces.py:56
+#: ../interfaces.py:56
 msgid "Set Google api code if you want use Google maps layer"
 msgstr "Imposta il codice API di Google maps se vuoi utilizzare le sue mappe"
 
-#: ./interfaces.py:62
+#: ../interfaces.py:62
 msgid "Set Yahoo api code if you want use Yahoo maps layer"
 msgstr "Imposta il codice API di Yahoo se vuoi utilizzare le sue mappe."
 
-#: ./interfaces.py:70
+#: ../interfaces.py:70
 msgid "Specify all viewlet manager allowed to display the map on the page, one per line. The required format is name|title"
 msgstr "Specifica i viewlet manager dove potrà essere visualizza la mappa sulla pagina, uno per riga. Usa il seguente formato nome|titolo"
 
-#: ./__init__.py:12
+#: ../__init__.py:12
 msgid "Subject"
 msgstr "Categorie"
 
-#: ./__init__.py:9
+#: ../__init__.py:9
 msgid "Title"
 msgstr "Titolo"
 
-#: ./__init__.py:11
+#: ../__init__.py:11
 msgid "Type"
 msgstr "Tipo"
 
-#: ./interfaces.py:144
+#: ../interfaces.py:144
 msgid "Use custom styles?"
 msgstr "Vuoi usare stili personalizzati?"
 
-#: ./interfaces.py:67
+#: ../interfaces.py:67
 msgid "Viewlet managers"
 msgstr "Viewlet manager"
 
-#: ./interfaces.py:91
+#: ../interfaces.py:91
 msgid "Width for maps, specified as an absolute                             (like '450px' or '15em'), or relative (like                             '100%') size."
 msgstr ""
 
-#: ./interfaces.py:61
+#: ../interfaces.py:61
 msgid "Yahoo API Code"
 msgstr "API di Yahoo"
 
-#: ./interfaces.py:43
+#: ../interfaces.py:43
 msgid "Zoom"
 msgstr "Zoom"
 
