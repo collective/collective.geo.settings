@@ -1,5 +1,5 @@
 from zope.interface import implements
-from zope.publisher.browser import TestRequest
+from zope.publisher.browser import TestRequest as baseRequest
 
 # from Products.Five import zcml
 from Zope2.App import zcml
@@ -9,6 +9,7 @@ from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
 from z3c.form.interfaces import IFormLayer
+
 
 @onsetup
 def setup_product():
@@ -24,19 +25,16 @@ def setup_product():
 
 
 setup_product()
-ptc.setupPloneSite(products=['collective.geo.settings'])
+ptc.setupPloneSite(extension_profiles=['collective.geo.settings:default'])
 
 
-class TestRequest(TestRequest):
+class TestRequest(baseRequest):
     implements(IFormLayer)
 
 
 class TestCase(ptc.PloneTestCase):
     pass
 
-    # def afterSetUp(self):
-    #     collective.geo.settings.fields.decimalPersistentFieldAdapter
-    #     
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
     pass
