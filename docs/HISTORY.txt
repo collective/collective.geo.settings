@@ -1,9 +1,10 @@
 Changelog
 =========
 
-0.2.4 (unreleased)
-------------------
+2.4 (unreleased)
+----------------
 
+- fixed tests [gborelli]
 - Added French translation [Fabien Moret]
 - added Danish translation [stonor]
 

@@ -7,4 +7,5 @@ def test_suite():
     return unittest.TestSuite((
 
         doctest.DocTestSuite(collective.geo.settings.schema,
-                     optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS)))
+                     optionflags=doctest.NORMALIZE_WHITESPACE |\
+                                                doctest.ELLIPSIS)))

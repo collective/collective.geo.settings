@@ -13,19 +13,19 @@ class IGeoSettings(Interface):
        widgets in Plone
     """
     geo_content_types = schema.List(
-        title = _(u'Georeferenceable content types'),
-        required = False,
-        default = [], #'Document', 'News', 'Event'],
-        description = _(u"A list of types can be geo referenced"),
-        value_type = schema.Choice(title=_(u"Content types"),
-                    source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
+        title=_(u'Georeferenceable content types'),
+        required=False,
+        default=[],  # 'Document', 'News', 'Event'],
+        description=_(u"A list of types can be geo referenced"),
+        value_type=schema.Choice(title=_(u"Content types"),
+                source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
 
     default_layers = schema.List(
-        title = _(u'Default map layers'),
-        required = False,
-        default = [],
-        description = _(u"A list of layers used in the default map layout"),
-        value_type = schema.TextLine(title=u"Layers"))
+        title=_(u'Default map layers'),
+        required=False,
+        default=[],
+        description=_(u"A list of layers used in the default map layout"),
+        value_type=schema.TextLine(title=u"Layers"))
 
     longitude = Coordinate(
         title=_(u'Longitude'),
@@ -54,7 +54,8 @@ class IGeoSettings(Interface):
     googleapi = schema.TextLine(
        title=_(u"Google API Code"),
        description=_(u"Set Google api code if you want use Google maps layer"),
-       default=u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
+       default=u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-"\
+                  "All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
        required=False)
 
     yahooapi = schema.TextLine(
@@ -64,13 +65,13 @@ class IGeoSettings(Interface):
         required=False)
 
     map_viewlet_managers = schema.List(
-        title = _(u'Viewlet managers'),
-        required = False,
-        default = [],
-        description = _(u"Specify all viewlet manager allowed to display the map"\
-                " on the page, one per line."\
+        title=_(u'Viewlet managers'),
+        required=False,
+        default=[],
+        description=_(u"Specify all viewlet manager allowed "\
+                "to display the map on the page, one per line."\
                 " The required format is name|title"),
-        value_type = schema.TextLine(title=u"Viewlet manager"))
+        value_type=schema.TextLine(title=u"Viewlet manager"))
 
 
 class IGeoFeatureStyle(Interface):
@@ -82,8 +83,8 @@ class IGeoFeatureStyle(Interface):
     map_viewlet_position = schema.Choice(
               title=_(u"Map display position"),
               description=_(u"Choose the position of the map in the page."),
-              vocabulary = 'mapviewletmanagersVocab',
-              default = 'plone.abovecontentbody',
+              vocabulary='mapviewletmanagersVocab',
+              default='plone.abovecontentbody',
               required=True)
 
     map_width = schema.TextLine(
@@ -131,7 +132,7 @@ class IGeoFeatureStyle(Interface):
                           required=False,
                           value_type=schema.Choice(
                                           vocabulary='displaypropertiesVocab'),
-                          default = ['Title', 'Description'])
+                          default=['Title', 'Description'])
 
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
@@ -141,6 +142,7 @@ class IGeoCustomFeatureStyle(IGeoFeatureStyle):
     """
 
     use_custom_styles = schema.Bool(
-        title = _(u'Use custom styles?'),
-        description = _(u'Check this option if you want to customize the style of the geo features for this content'),
-        default = False)
+        title=_(u'Use custom styles?'),
+        description=_(u'Check this option if you want to "\
+              "customize the style of the geo features for this content'),
+        default=False)

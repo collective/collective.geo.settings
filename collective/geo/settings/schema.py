@@ -6,14 +6,12 @@ from z3c.form import converter
 
 
 class ICoordinate(schema.interfaces.IDecimal):
-    '''
-    helper to register custom data converter for coordinate.
+    '''helper to register custom data converter for coordinate.
     '''
 
 
 class Coordinate(schema.Decimal):
-    '''
-    a coordinate field with predefined precision.
+    '''a coordinate field with predefined precision.
     '''
     implements(ICoordinate)
 
@@ -31,15 +29,15 @@ class CoordinateDataConverter(converter.DecimalDataConverter):
 
     now we can create our converter instance
     >>> conv = CoordinateDataConverter(dec, text)
-    >>> import decimal
-    >>> conv.toWidgetValue(decimal.Decimal('7.43445'))
+    >>> from decimal import Decimal
+    >>> conv.toWidgetValue(Decimal('7.43445'))
     u'7.43445'
-    >>> conv.toWidgetValue(decimal.Decimal('10239.43559933'))
+    >>> conv.toWidgetValue(Decimal('10239.43559933'))
     u'10239.43559933'
-    >>> conv.toFieldValue(u'7.434445') == decimal.Decimal("7.434445")
+    >>> conv.toFieldValue(u'7.434445') == Decimal("7.434445")
     True
 
-    >>> conv.toFieldValue(u'10239.43559933') == decimal.Decimal('10239.43559933')
+    >>> conv.toFieldValue(u'10239.43559933') == Decimal('10239.43559933')
     True
 
     Test field.missing_value

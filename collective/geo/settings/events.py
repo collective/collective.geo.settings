@@ -7,5 +7,6 @@ class IGeoSettingsEvent(IConfigurationChangedEvent):
     """An event signaling that geo settings are saved
     """
 
+
 class GeoSettingsEvent(ConfigurationChangedEvent):
     implements(IGeoSettingsEvent)

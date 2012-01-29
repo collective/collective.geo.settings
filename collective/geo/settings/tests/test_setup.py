@@ -35,8 +35,7 @@ class TestSetup(TestCase):
         vocabulary = queryUtility(IVocabularyFactory,
                         name="mapviewletmanagersVocab")(self.portal)
         self.failUnless(vocabulary)
-
-        self.assertEquals(len(vocabulary._terms), 3)
+        self.assertEquals(len(vocabulary.by_value), 3)
 
     def test_geo_feature_style_fields(self):
         fields_to_test = [

@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2.4dev'
+version = '2.4dev'
 
 setup(name='collective.geo.settings',
       version=version,
       description="collective.geo settings",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      long_description=open(
+              "README.txt").read() + "\n" +
+              open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Framework :: Plone",
         "Topic :: Internet",
@@ -30,7 +30,7 @@ setup(name='collective.geo.settings',
           # -*- Extra requirements: -*-
           'plone.app.registry',
       ],
-      extras_require = {
+      extras_require={
           'test': [
               'plone.testing',
           ]
