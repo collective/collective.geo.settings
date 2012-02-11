@@ -89,16 +89,16 @@ class IGeoFeatureStyle(Interface):
 
     map_width = schema.TextLine(
               title=_(u"Map width"),
-              description=_(u"Width for maps, specified as an absolute \
-                            (like '450px' or '15em'), or relative (like \
-                            '100%') size."),
+              description=_(u"Width for maps, specified as an absolute "
+                            "(like '450px' or '15em'), or relative (like "
+                            "'100%') size."),
               required=False)
 
     map_height = schema.TextLine(
               title=_(u"Map height"),
-              description=_(u"Height for maps, specified as an absolute \
-                            (like '450px' or '15em'), or relative (like \
-                            '100%') size."),
+              description=_(u"Height for maps, specified as an absolute "
+                            "(like '450px' or '15em'), or relative (like "
+                            "'100%') size."),
               required=False)
 
     linecolor = schema.TextLine(title=_(u"Line color"),
@@ -143,6 +143,6 @@ class IGeoCustomFeatureStyle(IGeoFeatureStyle):
 
     use_custom_styles = schema.Bool(
         title=_(u'Use custom styles?'),
-        description=_(u'Check this option if you want to "\
-              "customize the style of the geo features for this content'),
+        description=_(u'Check this option if you want to '
+              'customize the style of the geo features for this content'),
         default=False)
