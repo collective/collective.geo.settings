@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2012-05-04 13:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,27 +14,59 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.geo.settings\n"
 
-#: ../interfaces.py:27
-msgid "A list of layers used in the default map layout"
-msgstr "Uma lista das camadas usadas no leiaute padrão do mapa"
+#: ../interfaces.py:173
+msgid "Balloon details"
+msgstr ""
 
-#: ../interfaces.py:19
-msgid "A list of types can be geo referenced"
-msgstr "Uma lista dos tipos que podem ser georreferenciados"
-
-#: ../interfaces.py:146
+#: ../interfaces.py:195
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Marque esta opção se você quer personalizar o estilo das características geográficas para este conteúdo"
 
-#: ../interfaces.py:85
-msgid "Choose the position of the map in the page."
-msgstr "Escolha a posição do mapa na página"
+#: ../interfaces.py:109
+msgid "Choose if and where the map will be displayed within the georeferenced content view."
+msgstr ""
+
+#: ../interfaces.py:136
+msgid "Choose the color for the line feature"
+msgstr ""
+
+#: ../interfaces.py:150
+msgid "Choose the color for the polygon feature"
+msgstr ""
+
+#: ../interfaces.py:128
+msgid "Choose the height of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
+msgstr ""
+
+#: ../interfaces.py:166
+msgid "Choose the scaling factor of the marker shown on maps."
+msgstr ""
+
+#: ../interfaces.py:119
+msgid "Choose the width of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
+msgstr ""
+
+#: ../interfaces.py:143
+msgid "Choose the width of the line feature"
+msgstr ""
+
+#: ../interfaces.py:19
+msgid "Choose which content types (e.g. Page, News Item, etc) can be georeferenced. Be aware that, when you change this setting, the system might take quite some time to apply it to the whole site, especially if you have many objects within it."
+msgstr ""
+
+#: ../interfaces.py:36
+msgid "Choose which layers will be activated on the map layout."
+msgstr ""
+
+#: ../interfaces.py:174
+msgid "Choose which properties of the georeferenced content will be displayed in the additional informations section of the balloon."
+msgstr ""
 
 #: ../__init__.py:13
 msgid "Content Location"
 msgstr "Localização de Conteúdo"
 
-#: ../interfaces.py:20
+#: ../interfaces.py:29
 msgid "Content types"
 msgstr "Tipos de conteúdo"
 
@@ -50,29 +82,9 @@ msgstr "Data de Criação"
 msgid "Creators"
 msgstr "Criadores"
 
-#: ../interfaces.py:105
-msgid "Default line color"
-msgstr "Cor padrão da linha"
-
-#: ../interfaces.py:110
-msgid "Default line width in pixels"
-msgstr "Largura padrão da linha em pixels"
-
-#: ../interfaces.py:24
+#: ../interfaces.py:33
 msgid "Default map layers"
 msgstr "Camadas padrão do mapa"
-
-#: ../interfaces.py:44
-msgid "Default map's zoom level"
-msgstr "Nível de zoom padrão do mapa"
-
-#: ../interfaces.py:120
-msgid "Default point marker image"
-msgstr "Imagem padrão do marcador de ponto"
-
-#: ../interfaces.py:115
-msgid "Default polygon color"
-msgstr "Cor padrão de polígono"
 
 #: ../__init__.py:10
 msgid "Description"
@@ -94,13 +106,9 @@ msgstr "Data de Expiração"
 msgid "Georeferenceable content types"
 msgstr "Tipos de conteúdo georreferenciáveis"
 
-#: ../interfaces.py:55
+#: ../interfaces.py:66
 msgid "Google API Code"
 msgstr "Código da Google API"
-
-#: ../interfaces.py:99
-msgid "Height for maps, specified as an absolute (like '450px' or '15em'), or relative (like '100%') size."
-msgstr "Altura para os mapas, especificada como um tamanho absoluto (como '450px' ou '15em') ou relativo (como '100%')."
 
 #: ../__init__.py:8
 msgid "ID"
@@ -110,81 +118,77 @@ msgstr "ID"
 msgid "Last Modified Date"
 msgstr "Data da Última Modificação"
 
-#: ../interfaces.py:37
+#: ../interfaces.py:47
 msgid "Latitude"
 msgstr "Latitude"
 
-#: ../interfaces.py:104
+#: ../interfaces.py:135
 msgid "Line color"
 msgstr "Cor da linha"
 
-#: ../interfaces.py:109
+#: ../interfaces.py:142
 msgid "Line width"
 msgstr "Largura da linha"
 
-#: ../interfaces.py:31
+#: ../interfaces.py:42
 msgid "Longitude"
 msgstr "Longitude"
 
-#: ../interfaces.py:84
-msgid "Map display position"
-msgstr "Posição de exibição do mapa"
-
-#: ../interfaces.py:98
+#: ../interfaces.py:127
 msgid "Map height"
 msgstr "Altura do mapa"
 
-#: ../interfaces.py:91
+#: ../interfaces.py:108
+msgid "Map position"
+msgstr ""
+
+#: ../interfaces.py:118
 msgid "Map width"
 msgstr "Largura do mapa"
 
-#: ../interfaces.py:119
-msgid "Marker image (Expression)"
-msgstr "Imagem do marcador (Expressão)"
+#: ../interfaces.py:156
+msgid "Marker image"
+msgstr ""
 
-#: ../interfaces.py:124
+#: ../interfaces.py:165
 msgid "Marker image size"
 msgstr "Tamanho da imagem do marcador"
 
-#: ../interfaces.py:49
-msgid "OpenLayers images path (Expression)"
-msgstr "Caminho das imagens OpenLayers (Expressão)"
+#: ../interfaces.py:57
+msgid "OpenLayers theme"
+msgstr ""
 
-#: ../interfaces.py:114
+#: ../interfaces.py:149
 msgid "Polygon color"
 msgstr "Cor do polígono"
 
-#: ../interfaces.py:129
-msgid "Properties to display"
-msgstr "Propriedades a exibir"
+#: ../interfaces.py:67
+msgid "Provide the Google API code if you want to use the Google Maps layer."
+msgstr ""
+
+#: ../interfaces.py:77
+msgid "Provide the Yahoo API code if you want to use the Yahoo Maps layer."
+msgstr ""
+
+#: ../interfaces.py:58
+msgid "Provide the base path of the OpenLayers theme. You can use an absolute URL or a TAL expression."
+msgstr ""
 
 #: ../__init__.py:20
 msgid "Rights Statement"
 msgstr "Declaração de Direitos"
 
-#: ../interfaces.py:125
-msgid "Scaled size of the marker image"
-msgstr "Tamanho dimensionado da imagem do marcador"
-
-#: ../interfaces.py:130
-msgid "Select what aspects you would like to display to the user."
-msgstr "Selecione quais aspectos você gostaria de mostrar ao usuário"
-
-#: ../interfaces.py:56
-msgid "Set Google api code if you want use Google maps layer"
-msgstr "Defina o código da Google API se você quer usar a camada do Google Maps"
-
-#: ../interfaces.py:63
-msgid "Set Yahoo api code if you want use Yahoo maps layer"
-msgstr "Defina o código da Yahoo API se você quer usar a camada do Yahoo Maps"
-
-#: ../interfaces.py:71
-msgid "Specify all viewlet manager allowed to display the map on the page, one per line. The required format is name|title"
-msgstr "Especifique todos os gerenciadores de viewlets permitidos a mostrar o mapa na página, um por linha. O formato requerido é nome|título"
+#: ../interfaces.py:88
+msgid "Specify which viewlet manager can contain the map displayed on the georeferenced content view. Insert them one per line, where each line has the '<dotted name>|<title>' format.If you want to insert a new viewlet manager, you first have to make sure that the map viewlet ('collective.geo.kml.browser.viewlets.ContentViewlet') is registered for that manager (via ZCML)."
+msgstr ""
 
 #: ../__init__.py:12
 msgid "Subject"
 msgstr "Assunto"
+
+#: ../interfaces.py:157
+msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
+msgstr ""
 
 #: ../__init__.py:9
 msgid "Title"
@@ -194,23 +198,19 @@ msgstr "Título"
 msgid "Type"
 msgstr "Tipo"
 
-#: ../interfaces.py:145
+#: ../interfaces.py:194
 msgid "Use custom styles?"
 msgstr "Usar tipos personalizados?"
 
-#: ../interfaces.py:68
+#: ../interfaces.py:85
 msgid "Viewlet managers"
 msgstr "Gerenciadores de viewlet"
 
-#: ../interfaces.py:92
-msgid "Width for maps, specified as an absolute (like '450px' or '15em'), or relative (like '100%') size."
-msgstr "Largura para os mapas, especificada como um tamanho absoluto (como '450px' ou '15em') ou relativo (como '100%')."
-
-#: ../interfaces.py:62
+#: ../interfaces.py:76
 msgid "Yahoo API Code"
 msgstr "Código da Yahoo API"
 
-#: ../interfaces.py:43
+#: ../interfaces.py:52
 msgid "Zoom"
 msgstr "Zoom"
 
