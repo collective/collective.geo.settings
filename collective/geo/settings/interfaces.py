@@ -89,7 +89,7 @@ class IGeoSettings(Interface):
             u"Specify which viewlet manager can contain "
             u"the map displayed on the georeferenced content view. "
             u"Insert them one per line, "
-            u"where each line has the '<dotted name>|<title>' format."
+            u"where each line has the 'dotted name|title' format."
             u"If you want to insert a new viewlet manager, "
             u"you first have to make sure that the map viewlet "
             u"('collective.geo.kml.browser.viewlets.ContentViewlet') "
