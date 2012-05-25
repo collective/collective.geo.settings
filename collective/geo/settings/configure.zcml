@@ -14,18 +14,18 @@
       factory=".schema.CoordinateDataConverter" />
 
   <adapter
-      for = "collective.geo.settings.schema.ICoordinate"
-      provides = "plone.registry.interfaces.IPersistentField"
-      factory = "collective.geo.settings.field.coordinateFactory" />
+      for="collective.geo.settings.schema.ICoordinate"
+      provides="plone.registry.interfaces.IPersistentField"
+      factory="collective.geo.settings.field.coordinateFactory" />
 
   <utility
       factory=".vocabularies.displaypropertiesVocab"
       name="displaypropertiesVocab"
       provides="zope.schema.interfaces.IVocabularyFactory" />
 
-    <utility
-        factory=".vocabularies.mapviewletmanagersVocab"
-        name="mapviewletmanagersVocab"
-        provides="zope.schema.interfaces.IVocabularyFactory" />
+  <utility
+      factory=".vocabularies.mapviewletmanagersVocab"
+      name="mapviewletmanagersVocab"
+      provides="zope.schema.interfaces.IVocabularyFactory" />
 
 </configure>
