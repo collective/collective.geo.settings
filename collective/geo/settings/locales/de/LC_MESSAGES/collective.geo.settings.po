@@ -117,7 +117,7 @@ msgstr ""
 
 #: ./__init__.py:14
 msgid "Last Modified Date"
-msgstr "DAtum der letzten Änderung"
+msgstr "Datum der letzten Änderung"
 
 #: ./interfaces.py:47
 msgid "Latitude"
