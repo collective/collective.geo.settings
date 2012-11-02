@@ -7,7 +7,7 @@ setup(name='collective.geo.settings',
       version=version,
       description="collective.geo settings",
       long_description=open(
-              "README.txt").read() + "\n" +
+              "README.rst").read() + "\n" +
               open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Framework :: Plone",
