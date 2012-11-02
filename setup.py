@@ -7,7 +7,7 @@ setup(name='collective.geo.settings',
       version=version,
       description="collective.geo settings",
       long_description=open(
-              "README.rst").read() + "\n" +
+              "README.txt").read() + "\n" +
               open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
         "Framework :: Plone",
@@ -27,12 +27,12 @@ setup(name='collective.geo.settings',
       install_requires=[
           'setuptools',
           'Plone',
-          # -*- Extra requirements: -*-
           'plone.app.registry',
+          'plone.app.z3cform',
       ],
       extras_require={
           'test': [
-              'plone.testing',
+              'plone.app.testing',
           ]
       },
       entry_points="""

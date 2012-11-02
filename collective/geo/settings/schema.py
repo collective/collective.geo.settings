@@ -23,7 +23,7 @@ class CoordinateDataConverter(converter.DecimalDataConverter):
 
     we need a field and a widget to test.
     >>> dec = Coordinate(title=u'Test')
-    >>> from collective.geo.settings.tests.base import TestRequest
+    >>> from collective.geo.settings.testing import TestRequest
     >>> from z3c.form import widget
     >>> text = widget.Widget(TestRequest())
 

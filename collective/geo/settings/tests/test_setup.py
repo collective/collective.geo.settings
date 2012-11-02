@@ -1,4 +1,6 @@
-import unittest
+# -*- coding: utf-8 -*-
+import unittest2 as unittest
+
 from zope.component import getUtility, queryUtility
 from zope.component import queryAdapter
 from zope.schema.interfaces import IVocabularyFactory
@@ -6,14 +8,18 @@ from zope.schema.interfaces import IVocabularyFactory
 from plone.registry.interfaces import IPersistentField
 from plone.registry.interfaces import IRegistry
 
-from collective.geo.settings.interfaces import IGeoSettings
-from collective.geo.settings.interfaces import IGeoFeatureStyle
+from ..interfaces import IGeoSettings
+from ..interfaces import IGeoFeatureStyle
+from .. import schema
 
-from collective.geo.settings.tests.base import TestCase
-from collective.geo.settings import schema
+from ..testing import CGEO_SETTINGS_INTEGRATION
 
 
-class TestSetup(TestCase):
+class TestSetup(unittest.TestCase):
+    layer = CGEO_SETTINGS_INTEGRATION
+
+    def setUp(self):
+        self.portal = self.layer['portal']
 
     def test_decimal_persistentfield(self):
         field = schema.Coordinate(title=u"Test")
