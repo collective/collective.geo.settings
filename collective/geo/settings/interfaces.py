@@ -27,7 +27,7 @@ class IGeoSettings(Interface):
             u"especially if you have many objects within it."
         ),
         value_type=schema.Choice(title=_(u"Content types"),
-                source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
+        source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
 
     default_layers = schema.List(
         title=_(u'Default map layers'),

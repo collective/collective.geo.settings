@@ -2,7 +2,6 @@ import unittest2 as unittest
 import doctest
 
 from plone.testing import layered
-from ..testing import CGEO_SETTINGS_FUNCTIONAL
 from ..testing import CGEO_SETTINGS_INTEGRATION
 
 import collective.geo.settings.schema
@@ -17,7 +16,7 @@ def test_suite():
             optionflags=doctest.REPORT_ONLY_FIRST_FAILURE | \
                 doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
             ),
-            layer=CGEO_SETTINGS_FUNCTIONAL
+            layer=CGEO_SETTINGS_INTEGRATION
         ),
 
         layered(
