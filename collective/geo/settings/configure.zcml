@@ -1,13 +1,12 @@
-<?xml version="1.0"?>
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="collective.geo.settings">
 
+  <includeDependencies package="." />
   <i18n:registerTranslations directory="locales" />
 
-  <include package="plone.app.registry" />
   <include file="profiles.zcml" />
 
   <adapter

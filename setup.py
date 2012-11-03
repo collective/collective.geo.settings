@@ -26,7 +26,7 @@ setup(name='collective.geo.settings',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'Plone',
+          'Products.CMFCore',
           'plone.app.registry',
           'plone.app.z3cform',
       ],
