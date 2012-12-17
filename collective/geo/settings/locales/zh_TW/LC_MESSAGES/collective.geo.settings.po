@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collective.geo.settings\n"
 "POT-Creation-Date: 2012-05-04 16:34+0000\n"
-"PO-Revision-Date: 2012-09-13 22:20+0800\n"
+"PO-Revision-Date: 2012-12-17 15:13+0800\n"
 "Last-Translator: TsungWei Hu <marr.tw@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -52,7 +52,7 @@ msgstr "選擇線的寬度"
 
 #: ../interfaces.py:19
 msgid "Choose which content types (e.g. Page, News Item, etc) can be georeferenced. Be aware that, when you change this setting, the system might take quite some time to apply it to the whole site, especially if you have many objects within it."
-msgstr "選擇要被啟用的內容型別，如果網站已有許多內容，可能要花費許多時間完成更新。"
+msgstr "選擇要被啟用的內容型別，如果網站已存在許多型別項目，可能要花費許多時間完成更新。"
 
 #: ../interfaces.py:36
 msgid "Choose which layers will be activated on the map layout."
@@ -200,7 +200,7 @@ msgstr "型別"
 
 #: ../interfaces.py:194
 msgid "Use custom styles?"
-msgstr "使用客製樣式檔案?"
+msgstr "使用客製 CSS 檔案?"
 
 #: ../interfaces.py:85
 msgid "Viewlet managers"
