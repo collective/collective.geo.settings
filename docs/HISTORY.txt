@@ -4,6 +4,7 @@ Changelog
 2.5 (unreleased)
 ----------------
 
+* added travis-ci configurations [gborelli]
 * integrated test_schema in test_doctests [gborelli]
 * moved TestRequest to testing module [gborelli]
 * refactored tests in order to use plone.app.testing [gborelli]

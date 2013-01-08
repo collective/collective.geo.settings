@@ -20,7 +20,7 @@ You can install collective.geo.settings as part of a specific project's buildout
 
         [buildout]
         ...
-        eggs = 
+        eggs =
             collective.geo.settings
         ...
 
@@ -32,12 +32,12 @@ Upgrading
 General steps
 ^^^^^^^^^^^^^
 
-If you are upgrading from an older version (see below), you may need to run 
+If you are upgrading from an older version (see below), you may need to run
 upgrade steps. To do this, follow these steps:
 
 #. Browse to ``portal_setup`` in the ZMI of your site
 #. Click onto the ``Upgrades`` tab
-#. Select ``collective.geo.settings:default`` from the drop-down list and 
+#. Select ``collective.geo.settings:default`` from the drop-down list and
    click ``Choose Profile``
 #. Observe any available upgrades and click the ``Upgrade`` button if any
    are present.
@@ -54,6 +54,13 @@ errors like this::
     KeyError: 'Interface `collective.geo.settings.interfaces.IGeoSettings` defines a field `map_viewlet_managers`, for which there is no record.'
 
 you need to run the relevant upgrade step(s).
+
+Mostly Harmless
+---------------
+
+.. image:: https://secure.travis-ci.org/collective/collective.geo.settings.png
+    :target: http://travis-ci.org/collective/collective.geo.settings
+
 
 Contributors
 ------------
