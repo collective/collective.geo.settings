@@ -1,18 +1,16 @@
-collective.geo.settings
-=======================
-
-.. contents:: Summary
-   :local:
-
 Introduction
-------------
+============
 
-collective.geo.settings provides some utility to store settings of collective.geo packages.
+collective.geo.settings provides some utility to store settings of `collective.geo`_ packages.
+
+.. contents:: Table of contents
+
 
 Requirements
-------------
-* Plone >= 4
-* plone.app.registry
+============
+
+* `Plone`_ >= 4
+* `plone.app.registry`_
 
 Installation
 ------------
@@ -27,10 +25,11 @@ You can install collective.geo.settings as part of a specific project's buildout
 Install this product from the Plone control panel.
 
 Upgrading
----------
+=========
+
 
 General steps
-^^^^^^^^^^^^^
+-------------
 
 If you are upgrading from an older version (see below), you may need to run
 upgrade steps. To do this, follow these steps:
@@ -42,8 +41,9 @@ upgrade steps. To do this, follow these steps:
 #. Observe any available upgrades and click the ``Upgrade`` button if any
    are present.
 
+
 Version 0.2.2 and below
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 New configuration to be added to the portal configuration registry
 (``plone.app.registry``) requires an upgrade step to be run.  If you encounter
@@ -55,20 +55,28 @@ errors like this::
 
 you need to run the relevant upgrade step(s).
 
+
 Mostly Harmless
----------------
+===============
+
 
 .. image:: https://secure.travis-ci.org/collective/collective.geo.settings.png
     :target: http://travis-ci.org/collective/collective.geo.settings
 
 
 Contributors
-------------
+============
 
 * Giorgio Borelli - gborelli
 * Silvio Tomatis - silviot
 * David Beitey - davidjb
 * Gerhard Weis - gweis
 * Rob Gietema - robgietema
+* TsungWei Hu - l34marr
 * Leonardo J. Caballero G - macagua
+* Denis Krienbühl - href
 
+
+.. _collective.geo: http://plone.org/products/collective.geo
+.. _Plone: http://plone.org
+.. _plone.app.registry: http://pypi.python.org/pypi/plone.app.registry
