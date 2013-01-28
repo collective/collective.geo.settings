@@ -3,6 +3,11 @@ Introduction
 
 collective.geo.settings provides some utility to store settings of `collective.geo`_ packages.
 
+.. image:: https://secure.travis-ci.org/collective/collective.geo.settings.png
+    :target: http://travis-ci.org/collective/collective.geo.settings
+
+Found a bug? Please, use the `issue tracker`_.
+
 .. contents:: Table of contents
 
 
@@ -56,14 +61,6 @@ errors like this::
 you need to run the relevant upgrade step(s).
 
 
-Mostly Harmless
-===============
-
-
-.. image:: https://secure.travis-ci.org/collective/collective.geo.settings.png
-    :target: http://travis-ci.org/collective/collective.geo.settings
-
-
 Contributors
 ============
 
@@ -80,3 +77,4 @@ Contributors
 .. _collective.geo: http://plone.org/products/collective.geo
 .. _Plone: http://plone.org
 .. _plone.app.registry: http://pypi.python.org/pypi/plone.app.registry
+.. _issue tracker: https://github.com/collective/collective.geo.bundle/issues
