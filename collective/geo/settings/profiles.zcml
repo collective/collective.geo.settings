@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
@@ -26,5 +27,15 @@
       handler="collective.geo.settings.setuphandlers.upgrade_registry"
       profile="collective.geo.settings:default"
     />
+
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for bing api key configuration"
+      source="*"
+      destination="2.5.1"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
+
 
 </configure>

@@ -81,6 +81,17 @@ class IGeoSettings(Interface):
         default=u"YOUR_API_KEY",
         required=False)
 
+
+    bingapi = schema.TextLine(
+        title=_(u"Bing API Code"),
+        description=_(
+            u"Provide the Bing API code "
+            u"if you want to use the Bing Maps layer."
+        ),
+        default=u"YOUR_API_KEY",
+        required=False)
+
+
     map_viewlet_managers = schema.List(
         title=_(u'Viewlet managers'),
         required=False,
