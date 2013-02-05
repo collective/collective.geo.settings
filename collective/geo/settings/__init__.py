@@ -15,6 +15,8 @@ DISPLAY_PROPERTIES = [('id', _(u'ID')),
                       ('CreationDate', _(u'Creation Date')),
                       ('EffectiveDate', _(u'Effective Date')),
                       ('ExpirationDate', _(u'Expiration Date')),
+                      ('start', _('Start Date')),
+                      ('end', _('End Date')),
                       ('listCreators', _(u'Creators')),
                       ('Contributors', _(u'Contributors')),
                       ('Rights', _(u'Rights Statement'))]
@@ -22,4 +24,5 @@ DISPLAY_PROPERTIES = [('id', _(u'ID')),
 DISPLAY_PROPERTIES_DATES = ('ModificationDate',
                          'CreationDate',
                          'EffectiveDate',
-                         'ExpirationDate')
+                         'ExpirationDate',
+                         'start', 'end')
