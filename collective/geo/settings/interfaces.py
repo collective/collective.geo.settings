@@ -26,8 +26,10 @@ class IGeoSettings(Interface):
             u"to the whole site, "
             u"especially if you have many objects within it."
         ),
-        value_type=schema.Choice(title=_(u"Content types"),
-        source="plone.app.vocabularies.ReallyUserFriendlyTypes"))
+        value_type=schema.Choice(
+            title=_(u"Content types"),
+            vocabulary="collective.geo.attypesvocabulary")
+        )
 
     default_layers = schema.List(
         title=_(u'Default map layers'),

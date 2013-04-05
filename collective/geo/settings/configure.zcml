@@ -27,4 +27,9 @@
       name="mapviewletmanagersVocab"
       provides="zope.schema.interfaces.IVocabularyFactory" />
 
+  <utility
+      factory=".vocabularies.ATTypesVocabulary"
+      name="collective.geo.attypesvocabulary"
+      provides="zope.schema.interfaces.IVocabularyFactory" />
+
 </configure>
