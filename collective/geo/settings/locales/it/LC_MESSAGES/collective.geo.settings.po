@@ -135,7 +135,7 @@ msgstr "Dimensione linea"
 
 #: ../interfaces.py:42
 msgid "Longitude"
-msgstr "Lonitudine"
+msgstr "Longitudine"
 
 #: ../interfaces.py:127
 msgid "Map height"
