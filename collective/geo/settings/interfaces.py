@@ -28,8 +28,9 @@ class IGeoSettings(Interface):
         ),
         value_type=schema.Choice(
             title=_(u"Content types"),
-            vocabulary="collective.geo.attypesvocabulary")
+            vocabulary="collective.geo.attypesvocabulary"
         )
+    )
 
     default_layers = schema.List(
         title=_(u'Default map layers'),
@@ -56,23 +57,24 @@ class IGeoSettings(Interface):
         required=True)
 
     imgpath = schema.TextLine(
-            title=_(u"OpenLayers theme"),
-            description=_(
-                u"Provide the base path of the OpenLayers theme. "
-                u"You can use an absolute URL or a TAL expression."
-            ),
-            default=u"string:${portal_url}/img/",
-            required=False)
+        title=_(u"OpenLayers theme"),
+        description=_(
+            u"Provide the base path of the OpenLayers theme. "
+            u"You can use an absolute URL or a TAL expression."
+        ),
+        default=u"string:${portal_url}/img/",
+        required=False
+    )
 
     googleapi = schema.TextLine(
-       title=_(u"Google API Code"),
-       description=_(
+        title=_(u"Google API Code"),
+        description=_(
             u"Provide the Google API code "
             u"if you want to use the Google Maps layer."
-       ),
-       default=u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-"\
-                  "All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
-       required=False)
+        ),
+        default=u"ABQIAAAAaKes6QWqobpCx2AOamo-shTwM0brOpm-"
+                u"All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
+        required=False)
 
     yahooapi = schema.TextLine(
         title=_(u"Yahoo API Code"),
@@ -83,7 +85,6 @@ class IGeoSettings(Interface):
         default=u"YOUR_API_KEY",
         required=False)
 
-
     bingapi = schema.TextLine(
         title=_(u"Bing API Code"),
         description=_(
@@ -92,7 +93,6 @@ class IGeoSettings(Interface):
         ),
         default=u"YOUR_API_KEY",
         required=False)
-
 
     map_viewlet_managers = schema.List(
         title=_(u'Viewlet managers'),
@@ -118,83 +118,86 @@ class IGeoFeatureStyle(Interface):
     """
 
     map_viewlet_position = schema.Choice(
-              title=_(u"Map position"),
-              description=_(
-                  u"Choose if and where the map will be displayed "
-                  u"within the georeferenced content view."
-              ),
-              vocabulary='mapviewletmanagersVocab',
-              default='plone.abovecontentbody',
-              required=True)
+        title=_(u"Map position"),
+        description=_(
+            u"Choose if and where the map will be displayed "
+            u"within the georeferenced content view."
+        ),
+        vocabulary='mapviewletmanagersVocab',
+        default='plone.abovecontentbody',
+        required=True)
 
     map_width = schema.TextLine(
-              title=_(u"Map width"),
-              description=_(
-                  u"Choose the width of the displayed map, "
-                  u"specified as an absolute value (e.g. '450px' or '15em'), "
-                  u"or relative (e.g. '100%') size."
-              ),
-              required=False)
+        title=_(u"Map width"),
+        description=_(
+            u"Choose the width of the displayed map, "
+            u"specified as an absolute value (e.g. '450px' or '15em'), "
+            u"or relative (e.g. '100%') size."
+        ),
+        required=False)
 
     map_height = schema.TextLine(
-              title=_(u"Map height"),
-              description=_(
-                  u"Choose the height of the displayed map, "
-                  u"specified as an absolute value (e.g. '450px' or '15em'), "
-                  u"or relative (e.g. '100%') size."
-              ),
-              required=False)
+        title=_(u"Map height"),
+        description=_(
+            u"Choose the height of the displayed map, "
+            u"specified as an absolute value (e.g. '450px' or '15em'), "
+            u"or relative (e.g. '100%') size."
+        ),
+        required=False)
 
-    linecolor = schema.TextLine(title=_(u"Line color"),
-                          description=_(
-                              u"Choose the color for the line feature"
-                          ),
-                          default=u'ff00003c',
-                          required=True)
+    linecolor = schema.TextLine(
+        title=_(u"Line color"),
+        description=_(
+            u"Choose the color for the line feature"
+        ),
+        default=u'ff00003c',
+        required=True)
 
-    linewidth = schema.Float(title=_(u"Line width"),
-                          description=_(
-                              u"Choose the width of the line feature"
-                          ),
-                          default=2.0,
-                          required=True)
+    linewidth = schema.Float(
+        title=_(u"Line width"),
+        description=_(u"Choose the width of the line feature"),
+        default=2.0,
+        required=True)
 
-    polygoncolor = schema.TextLine(title=_(u"Polygon color"),
-                          description=_(
-                              u"Choose the color for the polygon feature"
-                          ),
-                          default=u'ff00003c',
-                          required=True)
+    polygoncolor = schema.TextLine(
+        title=_(u"Polygon color"),
+        description=_(u"Choose the color for the polygon feature"),
+        default=u'ff00003c',
+        required=True)
 
-    marker_image = schema.TextLine(title=_(u"Marker image"),
-                          description=_(
-                              u"The path to the image used as marker in maps. "
-                              u"You can use either an absolute URL "
-                              u"or a TAL expression."
-                          ),
-                          default=u'string:${portal_url}/img/marker.png',
-                          required=True)
+    marker_image = schema.TextLine(
+        title=_(u"Marker image"),
+        description=_(
+            u"The path to the image used as marker in maps. "
+            u"You can use either an absolute URL "
+            u"or a TAL expression."
+        ),
+        default=u'string:${portal_url}/img/marker.png',
+        required=True)
 
-    marker_image_size = schema.Float(title=_(u"Marker image size"),
-                          description=_(
-                              u"Choose the scaling factor "
-                              u"of the marker shown on maps."
-                          ),
-                          default=0.7,
-                          required=True)
+    marker_image_size = schema.Float(
+        title=_(u"Marker image size"),
+        description=_(
+            u"Choose the scaling factor "
+            u"of the marker shown on maps."
+        ),
+        default=0.7,
+        required=True)
 
-    display_properties = schema.List(title=_(u"Balloon details"),
-                          description=_(
-                              u"Choose which properties "
-                              u"of the georeferenced content "
-                              u"will be displayed "
-                              u"in the additional informations section "
-                              u"of the balloon."
-                          ),
-                          required=False,
-                          value_type=schema.Choice(
-                                          vocabulary='displaypropertiesVocab'),
-                          default=['Title', 'Description'])
+    display_properties = schema.List(
+        title=_(u"Balloon details"),
+        description=_(
+            u"Choose which properties "
+            u"of the georeferenced content "
+            u"will be displayed "
+            u"in the additional informations section "
+            u"of the balloon."
+        ),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary='displaypropertiesVocab'),
+        default=['Title', 'Description']
+    )
 
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
