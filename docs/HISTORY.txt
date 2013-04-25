@@ -4,8 +4,12 @@ Changelog
 2.6 (unreleased)
 ----------------
 
+- Removed yahooapi from IGeoSettings in Plone registry
+  [gborelli]
+
 - Changed content types vocabulary in order
-  to list only archetypes content types [valentinaB]
+  to list only archetypes content types
+  [valentinaB]
 
 
 2.5 (2013-01-28)

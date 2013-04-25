@@ -76,15 +76,6 @@ class IGeoSettings(Interface):
                 u"All5BF6PoaKBxRWWERSUWbHs4SIAMkeC1KV98E2EdJKuJw",
         required=False)
 
-    yahooapi = schema.TextLine(
-        title=_(u"Yahoo API Code"),
-        description=_(
-            u"Provide the Yahoo API code "
-            u"if you want to use the Yahoo Maps layer."
-        ),
-        default=u"YOUR_API_KEY",
-        required=False)
-
     bingapi = schema.TextLine(
         title=_(u"Bing API Code"),
         description=_(
