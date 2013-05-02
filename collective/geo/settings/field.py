@@ -1,7 +1,7 @@
-from plone.registry.field import PersistentField, \
-                                 DisallowedProperty, \
-                                 StubbornProperty, \
-                                 InterfaceConstrainedProperty
+from plone.registry.field import PersistentField
+from plone.registry.field import DisallowedProperty
+from plone.registry.field import StubbornProperty
+from plone.registry.field import InterfaceConstrainedProperty
 
 import collective.geo.settings.schema
 
@@ -18,8 +18,10 @@ def coordinateFactory(context):
 
     instance = persistent_class.__new__(persistent_class)
 
-    context_dict = dict([(k, v) for k, v in context.__dict__.items()
-                            if k not in ignored])
+    context_dict = dict([
+        (k, v) for k, v in context.__dict__.items()
+        if k not in ignored]
+    )
 
     for k, iface in constrained:
         v = context_dict.get(k, None)
@@ -27,8 +29,8 @@ def coordinateFactory(context):
             v = iface(v, None)
             if v is None:
                 __traceback_info__ = "The property `%s` "\
-                                        "cannot be adapted to `%s`." \
-                                                % (k, iface.__identifier__)
+                    "cannot be adapted to `%s`." \
+                    % (k, iface.__identifier__)
                 return None
             context_dict[k] = v
 
