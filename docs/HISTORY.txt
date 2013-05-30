@@ -4,6 +4,9 @@ Changelog
 2.6 (unreleased)
 ----------------
 
+- moved GEO_STYLE_FIELDS from c.geo.contentlocations
+  [gborelli]
+
 - Removed yahooapi from IGeoSettings in Plone registry
   [gborelli]
 
