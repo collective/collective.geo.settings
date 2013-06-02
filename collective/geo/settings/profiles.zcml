@@ -31,7 +31,7 @@
   <genericsetup:upgradeStep
       title="Upgrade plone.app.registry for bing api key configuration"
       source="*"
-      destination="2.5.1"
+      destination="30"
       handler="collective.geo.settings.setuphandlers.upgrade_registry"
       profile="collective.geo.settings:default"
     />

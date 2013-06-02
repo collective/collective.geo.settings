@@ -18,16 +18,11 @@ Requirements
 * `plone.app.registry`_
 
 Installation
-------------
-You can install collective.geo.settings as part of a specific project's buildout, by having a buildout configuration such as: ::
+============
 
-        [buildout]
-        ...
-        eggs =
-            collective.geo.settings
-        ...
+This addon can be installed has any other addons, please follow official
+documentation_.
 
-Install this product from the Plone control panel.
 
 Upgrading
 =========
@@ -78,3 +73,4 @@ Contributors
 .. _Plone: http://plone.org
 .. _plone.app.registry: http://pypi.python.org/pypi/plone.app.registry
 .. _issue tracker: https://github.com/collective/collective.geo.bundle/issues
+.. _documentation: http://plone.org/documentation/kb/installing-add-ons-quick-how-to
