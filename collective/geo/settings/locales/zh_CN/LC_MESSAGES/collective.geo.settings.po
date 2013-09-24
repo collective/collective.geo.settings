@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.geo.settings\n"
+"POT-Creation-Date: 2013-04-25 14:50+0000\n"
+"PO-Revision-Date: 2013-09-11 15:30+0800\n"
+"Last-Translator: Jian Aijun <jianaijun@gmail.com>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sf.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: zh_CN\n"
+"Language-Name: Chinese Simplified\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: collective.geo.settings\n"
+
+#: ../interfaces.py:179
+msgid "Balloon details"
+msgstr "气泡框信息"
+
+#: ../interfaces.py:80
+msgid "Bing API Code"
+msgstr "Bing API 密钥"
+
+#: ../interfaces.py:202
+msgid "Check this option if you want to customize the style of the geo features for this content"
+msgstr "如果您想要自定义此内容地理功能的样式，请选中此选项。"
+
+#: ../interfaces.py:113
+msgid "Choose if and where the map will be displayed within the georeferenced content view."
+msgstr "选择地图在地理参考内容视图中显示的位置。"
+
+#: ../interfaces.py:141
+msgid "Choose the color for the line feature"
+msgstr "选择线条的颜色"
+
+#: ../interfaces.py:155
+msgid "Choose the color for the polygon feature"
+msgstr "选择多边形的颜色"
+
+#: ../interfaces.py:132
+msgid "Choose the height of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
+msgstr "选择地图显示的高度，指定绝对值（如'450px'或'15em'），或相对（如'100％'）大小。"
+
+#: ../interfaces.py:171
+msgid "Choose the scaling factor of the marker shown on maps."
+msgstr "选择在地图上标记显示的缩放比例。"
+
+#: ../interfaces.py:123
+msgid "Choose the width of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
+msgstr "选择地图显示的宽度，指定绝对值（如'450px'或'15em'），或相对（如'100％'）大小。"
+
+#: ../interfaces.py:149
+msgid "Choose the width of the line feature"
+msgstr "选择线的宽度"
+
+#: ../interfaces.py:19
+msgid "Choose which content types (e.g. Page, News Item, etc) can be georeferenced. Be aware that, when you change this setting, the system might take quite some time to apply it to the whole site, especially if you have many objects within it."
+msgstr "选择可以使用地理参考的内容类型 （例如页面、 新闻项目等）。请注意当您更改此设置，系统可能会花很长一段时间，将它应用于整个网站，尤其是如果网站有很多对象。"
+
+#: ../interfaces.py:39
+msgid "Choose which layers will be activated on the map layout."
+msgstr "选择将在地图布局上启用的图层。"
+
+#: ../interfaces.py:180
+msgid "Choose which properties of the georeferenced content will be displayed in the additional informations section of the balloon."
+msgstr "选择地理参考内容的哪些属性将会显示在气泡框信息窗口。"
+
+#: ../__init__.py:13
+msgid "Content Location"
+msgstr "内容的位置"
+
+#: ../interfaces.py:30
+msgid "Content types"
+msgstr "内容类型"
+
+#: ../__init__.py:21
+msgid "Contributors"
+msgstr "贡献者"
+
+#: ../__init__.py:15
+msgid "Creation Date"
+msgstr "创建日期"
+
+#: ../__init__.py:20
+msgid "Creators"
+msgstr "创建者"
+
+#: ../interfaces.py:36
+msgid "Default map layers"
+msgstr "默认地图图层"
+
+#: ../__init__.py:10
+msgid "Description"
+msgstr "描述"
+
+#: ../vocabularies.py:53
+msgid "Do not display map"
+msgstr "不显示地图"
+
+#: ../__init__.py:16
+msgid "Effective Date"
+msgstr "生效日期"
+
+#: ../__init__.py:19
+msgid "End Date"
+msgstr "结束日期"
+
+#: ../__init__.py:17
+msgid "Expiration Date"
+msgstr "失效日期"
+
+#: ../interfaces.py:16
+msgid "Georeferenceable content types"
+msgstr "可使用地理参考的内容类型"
+
+#: ../interfaces.py:70
+msgid "Google API Code"
+msgstr "Google API 密钥"
+
+#: ../__init__.py:8
+msgid "ID"
+msgstr "ID"
+
+#: ../__init__.py:14
+msgid "Last Modified Date"
+msgstr "最后修改日期"
+
+#: ../interfaces.py:50
+msgid "Latitude"
+msgstr "纬度"
+
+#: ../interfaces.py:140
+msgid "Line color"
+msgstr "线条颜色"
+
+#: ../interfaces.py:148
+msgid "Line width"
+msgstr "线宽"
+
+#: ../interfaces.py:45
+msgid "Longitude"
+msgstr "经度"
+
+#: ../interfaces.py:131
+msgid "Map height"
+msgstr "地图高度"
+
+#: ../interfaces.py:112
+msgid "Map position"
+msgstr "地图位置"
+
+#: ../interfaces.py:122
+msgid "Map width"
+msgstr "地图宽度"
+
+#: ../interfaces.py:160
+msgid "Marker image"
+msgstr "标记图片"
+
+#: ../interfaces.py:170
+msgid "Marker image size"
+msgstr "标记图片大小"
+
+#: ../interfaces.py:60
+msgid "OpenLayers theme"
+msgstr "OpenLayers 主题"
+
+#: ../interfaces.py:154
+msgid "Polygon color"
+msgstr "多边形颜色"
+
+#: ../interfaces.py:81
+msgid "Provide the Bing API code if you want to use the Bing Maps layer."
+msgstr "提供 Bing API code 代码如果您想要使用的 Bing 地图图层。"
+
+#: ../interfaces.py:71
+msgid "Provide the Google API code if you want to use the Google Maps layer."
+msgstr "提供 Google API code 如果您想要使用的 Google 地图图层。"
+
+#: ../interfaces.py:61
+msgid "Provide the base path of the OpenLayers theme. You can use an absolute URL or a TAL expression."
+msgstr "设定 OpenLayers 主题基路径。您可以使用绝对 URL 或 TAL 表达式。"
+
+#: ../__init__.py:22
+msgid "Rights Statement"
+msgstr "版权"
+
+#: ../interfaces.py:92
+msgid "Specify which viewlet manager can contain the map displayed on the georeferenced content view. Insert them one per line, where each line has the 'dotted name|title' format.If you want to insert a new viewlet manager, you first have to make sure that the map viewlet ('collective.geo.kml.browser.viewlets.ContentViewlet') is registered for that manager (via ZCML)."
+msgstr "指定可显示地图的 viewlet 管理器。在这里列出他们，格式是‘dotted name|title’，每行一个。如果想要插入一个新的 viewlet 管理器，首先必须确保 map viewlet ('collective.geo.kml.browser.viewlets.ContentViewlet') 已经在此管理器 (通过 ZCML) 注册。"
+
+#: ../__init__.py:18
+msgid "Start Date"
+msgstr "开始日期"
+
+#: ../__init__.py:12
+msgid "Subject"
+msgstr "标签"
+
+#: ../interfaces.py:161
+msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
+msgstr "地图上标记图片的路径。您可以使用绝对 URL 或 TAL 表达式。"
+
+#: ../__init__.py:9
+msgid "Title"
+msgstr "标题"
+
+#: ../__init__.py:11
+msgid "Type"
+msgstr "类型"
+
+#: ../interfaces.py:201
+msgid "Use custom styles?"
+msgstr "使用自定义样式？"
+
+#: ../interfaces.py:89
+msgid "Viewlet managers"
+msgstr "Viewlet 管理器"
+
+#: ../interfaces.py:55
+msgid "Zoom"
+msgstr "缩放级别"
+
