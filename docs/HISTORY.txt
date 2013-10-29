@@ -5,7 +5,7 @@ Changelog
 3.0 (unreleased)
 ----------------
 
-- Changed package layout
+- Change package layout
   [gborelli]
 
 - moved GEO_STYLE_FIELDS from c.geo.contentlocations
