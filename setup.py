@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '3.0b2.dev0'
+version = '3.0.dev0'
 
 setup(name='collective.geo.settings',
       version=version,
@@ -20,7 +20,8 @@ setup(name='collective.geo.settings',
       author_email='giorgio@giorgioborelli.it',
       url='https://svn.plone.org/svn/collective/collective.geo.settings',
       license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
+      packages=find_packages('src'),
+      package_dir={'': 'src'},
       namespace_packages=['collective', 'collective.geo'],
       include_package_data=True,
       zip_safe=False,
