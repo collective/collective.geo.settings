@@ -190,6 +190,13 @@ class IGeoFeatureStyle(Interface):
         default=['Title', 'Description']
     )
 
+    balloonstyle = schema.TextLine(
+        title=_(u"Balloon style"),
+        description=_(u"Text displayed in the balloon."),
+        default=u'<h2>$[name]</h2>$[description]',
+        required=True)
+
+
 
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
     """IGeoCustomFeatureStyle

@@ -11,4 +11,5 @@ GEO_STYLE_FIELDS = [
     'polygoncolor',
     'display_properties',
     'linewidth',
+    'balloonstyle',
 ]
