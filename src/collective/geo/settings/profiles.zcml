@@ -36,6 +36,12 @@
       profile="collective.geo.settings:default"
     />
 
-
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for balloon style configuration"
+      source="*"
+      destination="31"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
 
 </configure>
