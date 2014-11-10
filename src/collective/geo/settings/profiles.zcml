@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.geo.settings">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Collective Geo settings"
+      directory="profiles/default"
+      description='Extension profile for collective.geo.settings.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for map viewlet manager configuration"
+      source="*"
+      destination="2"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for map height/width style configuration"
+      source="*"
+      destination="3"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for bing api key configuration"
+      source="*"
+      destination="30"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
+  <genericsetup:upgradeStep
+      title="Upgrade plone.app.registry for balloon style configuration"
+      source="*"
+      destination="31"
+      handler="collective.geo.settings.setuphandlers.upgrade_registry"
+      profile="collective.geo.settings:default"
+    />
+
+</configure>

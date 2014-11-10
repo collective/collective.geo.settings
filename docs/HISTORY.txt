@@ -1,9 +1,39 @@
 Changelog
 =========
 
-2.5 (unreleased)
+
+3.1 (unreleased)
 ----------------
 
+- Added BalloonStyle.
+  [kroman0]
+
+
+3.0 (2013-10-29)
+----------------
+
+- Change package layout
+  [gborelli]
+
+- moved GEO_STYLE_FIELDS from c.geo.contentlocations
+  [gborelli]
+
+- Removed yahooapi from IGeoSettings in Plone registry
+  [gborelli]
+
+- Changed content types vocabulary in order
+  to list only archetypes content types
+  [valentinaB]
+
+
+2.5 (2013-01-28)
+----------------
+
+* added travis-ci configurations [gborelli]
+* integrated test_schema in test_doctests [gborelli]
+* moved TestRequest to testing module [gborelli]
+* refactored tests in order to use plone.app.testing [gborelli]
+* Added standard .gitignore [lgraf]
 * Updated Italian translation [gborelli]
 * Fixed titles and descriptions of various settings fields. Note: this will
   probably break translations [gborelli]
