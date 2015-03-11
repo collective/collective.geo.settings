@@ -7,7 +7,9 @@ Changelog
 
 - Added BalloonStyle.
   [kroman0]
-
+  
+- Added more french translations
+  [tiazma]
 
 3.0 (2013-10-29)
 ----------------
