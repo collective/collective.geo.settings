@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2013-04-25 14:50+0000\n"
+"POT-Creation-Date: 2015-05-02 13:43+0000\n"
 "PO-Revision-Date: 2012-07-02 14:00+0000\n"
 "Last-Translator: Marc Sommerhalder <marc.sommerhalder@seantis.ch>\n"
 "Language-Team: <denis.krienbuehl@gmail.com>\n"
@@ -19,11 +19,15 @@ msgstr ""
 msgid "Balloon details"
 msgstr "Ballon Details"
 
+#: ../interfaces.py:194
+msgid "Balloon style"
+msgstr ""
+
 #: ../interfaces.py:80
 msgid "Bing API Code"
 msgstr ""
 
-#: ../interfaces.py:202
+#: ../interfaces.py:209
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Wählen Sie diese Option wenn Sie den Style der Markierungen für diesen Inhalt ändern möchten"
 
@@ -95,7 +99,7 @@ msgstr "Standart Karten Ebenen"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: ../vocabularies.py:53
+#: ../vocabularies.py:55
 msgid "Do not display map"
 msgstr "Karte nicht anzeigen"
 
@@ -199,6 +203,10 @@ msgstr "Startdatum"
 msgid "Subject"
 msgstr "Betreff"
 
+#: ../interfaces.py:195
+msgid "Text displayed in the balloon."
+msgstr ""
+
 #: ../interfaces.py:161
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
 msgstr "Der Pfad zum verwendeten Marker Bild. Sie können entweder eine absolute URL oder einen TAL Ausdruck verwenden."
@@ -211,7 +219,7 @@ msgstr "Titel"
 msgid "Type"
 msgstr "Typ"
 
-#: ../interfaces.py:201
+#: ../interfaces.py:208
 msgid "Use custom styles?"
 msgstr "Individuelle Styles verwenden?"
 
@@ -222,3 +230,4 @@ msgstr "Viewlet Managers"
 #: ../interfaces.py:55
 msgid "Zoom"
 msgstr ""
+

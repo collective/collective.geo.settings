@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.geo.settings\n"
-"POT-Creation-Date: 2013-04-25 14:50+0000\n"
+"POT-Creation-Date: 2015-05-02 13:43+0000\n"
 "PO-Revision-Date: 2013-09-11 15:30+0800\n"
 "Last-Translator: Jian Aijun <jianaijun@gmail.com>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sf.net>\n"
@@ -18,11 +18,15 @@ msgstr ""
 msgid "Balloon details"
 msgstr "气泡框信息"
 
+#: ../interfaces.py:194
+msgid "Balloon style"
+msgstr ""
+
 #: ../interfaces.py:80
 msgid "Bing API Code"
 msgstr "Bing API 密钥"
 
-#: ../interfaces.py:202
+#: ../interfaces.py:209
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "如果您想要自定义此内容地理功能的样式，请选中此选项。"
 
@@ -94,7 +98,7 @@ msgstr "默认地图图层"
 msgid "Description"
 msgstr "描述"
 
-#: ../vocabularies.py:53
+#: ../vocabularies.py:55
 msgid "Do not display map"
 msgstr "不显示地图"
 
@@ -198,6 +202,10 @@ msgstr "开始日期"
 msgid "Subject"
 msgstr "标签"
 
+#: ../interfaces.py:195
+msgid "Text displayed in the balloon."
+msgstr ""
+
 #: ../interfaces.py:161
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
 msgstr "地图上标记图片的路径。您可以使用绝对 URL 或 TAL 表达式。"
@@ -210,7 +218,7 @@ msgstr "标题"
 msgid "Type"
 msgstr "类型"
 
-#: ../interfaces.py:201
+#: ../interfaces.py:208
 msgid "Use custom styles?"
 msgstr "使用自定义样式？"
 

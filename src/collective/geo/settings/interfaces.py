@@ -197,7 +197,6 @@ class IGeoFeatureStyle(Interface):
         required=True)
 
 
-
 class IGeoCustomFeatureStyle(IGeoFeatureStyle):
     """IGeoCustomFeatureStyle
        describe some properties used to display different

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2013-04-25 14:50+0000\n"
+"POT-Creation-Date: 2015-05-02 13:43+0000\n"
 "PO-Revision-Date: 2011-05-15  21:28+0000\n"
 "Last-Translator: Matthias Broquet [tiazma] <mbroquet@atreal.fr>\n"
 "Language-Team: Fabien Moret <martronic@martronic.ch>\n"
@@ -21,11 +21,15 @@ msgstr ""
 msgid "Balloon details"
 msgstr "Contenu des info-bulles"
 
+#: ../interfaces.py:194
+msgid "Balloon style"
+msgstr ""
+
 #: ../interfaces.py:80
 msgid "Bing API Code"
 msgstr "Code pour l'API Bing"
 
-#: ../interfaces.py:202
+#: ../interfaces.py:209
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Sélectionnez cette option si vous désirez personnaliser le style des annotations géographiques pour ce contenu."
 
@@ -97,7 +101,7 @@ msgstr "Calques disponibles"
 msgid "Description"
 msgstr "Description"
 
-#: ../vocabularies.py:53
+#: ../vocabularies.py:55
 msgid "Do not display map"
 msgstr "Ne pas afficher la carte"
 
@@ -201,6 +205,10 @@ msgstr ""
 msgid "Subject"
 msgstr "Catégorie"
 
+#: ../interfaces.py:195
+msgid "Text displayed in the balloon."
+msgstr ""
+
 #: ../interfaces.py:161
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
 msgstr "Indiquez ici le chemin de l'image utilisée pour le marquer. Le format peut-être une URL absolue ou une expression TAL."
@@ -213,7 +221,7 @@ msgstr "Titre"
 msgid "Type"
 msgstr "Type"
 
-#: ../interfaces.py:201
+#: ../interfaces.py:208
 msgid "Use custom styles?"
 msgstr "Utiliser les styles personnalisés ?"
 

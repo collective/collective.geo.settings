@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.geo.settings\n"
-"POT-Creation-Date: 2013-04-25 14:50+0000\n"
+"POT-Creation-Date: 2015-05-02 13:43+0000\n"
 "PO-Revision-Date: 2011-06-24 21:33-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Spanish <plone-conosur@lists.plone.org>\n"
@@ -21,11 +21,15 @@ msgstr ""
 msgid "Balloon details"
 msgstr ""
 
+#: ../interfaces.py:194
+msgid "Balloon style"
+msgstr ""
+
 #: ../interfaces.py:80
 msgid "Bing API Code"
 msgstr ""
 
-#: ../interfaces.py:202
+#: ../interfaces.py:209
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Marque esta opción si usted quiere personalizar el estilo de las características de geográficas para este contenido"
 
@@ -97,7 +101,7 @@ msgstr "Capas de mapa por defecto"
 msgid "Description"
 msgstr "Descripción"
 
-#: ../vocabularies.py:53
+#: ../vocabularies.py:55
 msgid "Do not display map"
 msgstr "No mostrar mapa"
 
@@ -203,6 +207,10 @@ msgstr ""
 msgid "Subject"
 msgstr "Asunto"
 
+#: ../interfaces.py:195
+msgid "Text displayed in the balloon."
+msgstr ""
+
 #: ../interfaces.py:161
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
 msgstr ""
@@ -215,7 +223,7 @@ msgstr "Título"
 msgid "Type"
 msgstr "Tipo"
 
-#: ../interfaces.py:201
+#: ../interfaces.py:208
 msgid "Use custom styles?"
 msgstr "¿Usar estilos personalizados?"
 
