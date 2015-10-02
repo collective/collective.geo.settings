@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collective.geo.settings\n"
 "POT-Creation-Date: 2015-05-02 13:43+0000\n"
-"PO-Revision-Date: 2013-10-03 22:03+0800\n"
+"PO-Revision-Date: 2015-10-02 14:57+0800\n"
 "Last-Translator: TsungWei Hu <marr.tw@gmail.com>\n"
 "Language-Team: Plone I18N <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "資訊框的內容"
 
 #: ../interfaces.py:194
 msgid "Balloon style"
-msgstr ""
+msgstr "說明文字樣式"
 
 #: ../interfaces.py:80
 msgid "Bing API Code"
@@ -108,7 +108,7 @@ msgstr "生效日期"
 
 #: ../__init__.py:19
 msgid "End Date"
-msgstr ""
+msgstr "結束日期"
 
 #: ../__init__.py:17
 msgid "Expiration Date"
@@ -204,7 +204,7 @@ msgstr "關鍵字"
 
 #: ../interfaces.py:195
 msgid "Text displayed in the balloon."
-msgstr ""
+msgstr "文字視窗的排版方式。"
 
 #: ../interfaces.py:161
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
