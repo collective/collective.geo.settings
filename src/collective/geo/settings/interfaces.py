@@ -13,18 +13,19 @@ class IGeoSettings(Interface):
        widgets in Plone
     """
     geo_content_types = schema.List(
-        title=_(u'Georeferenceable content types'),
+        title=_(u'Georeferenceable Archetypes content types'),
         required=False,
         default=[],  # 'Document', 'News', 'Event'],
         description=_(
-            u"Choose which content types "
+            u"Please note that Dexterity content is managed via behaviors! "
+            u"Choose which Archetypes content types "
             u"(e.g. Page, News Item, etc) "
             u"can be georeferenced. "
             u"Be aware that, "
             u"when you change this setting, "
             u"the system might take quite some time to apply it "
             u"to the whole site, "
-            u"especially if you have many objects within it."
+            u"especially if you have many objects within it. "
         ),
         value_type=schema.Choice(
             title=_(u"Content types"),
