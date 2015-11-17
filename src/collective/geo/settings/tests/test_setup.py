@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import unittest2 as unittest
+import unittest
 
 from zope.component import getUtility, queryUtility
 from zope.component import queryAdapter
@@ -38,8 +38,9 @@ class TestSetup(unittest.TestCase):
             self.assertTrue(vman in cgeo_vman)
 
     def test_viewlet_managers_vocabulary(self):
-        vocabulary = queryUtility(IVocabularyFactory,
-                        name="mapviewletmanagersVocab")(self.portal)
+        vocabulary = queryUtility(
+            IVocabularyFactory,
+            name="mapviewletmanagersVocab")(self.portal)
         self.failUnless(vocabulary)
         self.assertEquals(len(vocabulary.by_value), 3)
 
