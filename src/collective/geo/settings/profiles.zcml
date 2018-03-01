@@ -11,6 +11,13 @@
       description='Extension profile for collective.geo.settings.'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Collective Geo settings (uninstall)"
+      directory="profiles/uninstall"
+      description='Uninstall extension profile for collective.geo.settings.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
   <genericsetup:upgradeStep
       title="Upgrade plone.app.registry for map viewlet manager configuration"

@@ -5,11 +5,15 @@ Changelog
 3.2 (unreleased)
 ----------------
 
+- Add uninstall profile.
+  [thet]
+
 - Changed fields title and description to enforce behavior usage in plone5
   [pbauer]
 
 - Updated Traditional Chinese translation.
   [l34marr]
+
 
 3.1 (2015-05-02)
 ----------------
