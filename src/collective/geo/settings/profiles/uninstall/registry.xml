@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<registry>
+  <records remove="True" interface="collective.geo.settings.interfaces.IGeoSettings"/>
+  <records remove="True" interface="collective.geo.settings.interfaces.IGeoFeatureStyle"/>
+</registry>
