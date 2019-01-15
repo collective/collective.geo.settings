@@ -5,6 +5,12 @@ Changelog
 3.2 (unreleased)
 ----------------
 
+- Change/Upgrade default values for image related paths [mathias.leimgruber]
+
+  - Change location of marker.png according collective.geo.openlayers 4.0
+  - Change location of theme resources according collective.geo.openlayers 4.0
+
+
 - Add uninstall profile.
   [thet]
 

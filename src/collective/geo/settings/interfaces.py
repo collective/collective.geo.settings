@@ -3,8 +3,17 @@ from zope.interface import Interface
 
 from zope import schema
 
-from collective.geo.settings.schema import Coordinate
 from collective.geo.settings import GeoSettingsMessageFactory as _
+from collective.geo.settings.schema import Coordinate
+from collective.geo.settings import IS_PLONE_5
+
+
+if IS_PLONE_5:
+    DEFAULT_IMAGE_LOCATION = u'string:${portal_url}/++plone++openlayers.static/openlayers/img/'
+    DEFAULT_MARKER_LOCATION = u'string:${portal_url}/++plone++openlayers.static/openlayers/img/marker.png'
+else:
+    DEFAULT_IMAGE_LOCATION = u'string: ${portal_url}/img/'
+    DEFAULT_MARKER_LOCATION = u'string: ${portal_url}/img/marker.png'
 
 
 class IGeoSettings(Interface):
@@ -63,7 +72,7 @@ class IGeoSettings(Interface):
             u"Provide the base path of the OpenLayers theme. "
             u"You can use an absolute URL or a TAL expression."
         ),
-        default=u"string:${portal_url}/img/",
+        default=DEFAULT_IMAGE_LOCATION,
         required=False
     )
 
@@ -164,7 +173,7 @@ class IGeoFeatureStyle(Interface):
             u"You can use either an absolute URL "
             u"or a TAL expression."
         ),
-        default=u'string:${portal_url}/img/marker.png',
+        default=DEFAULT_MARKER_LOCATION,
         required=True)
 
     marker_image_size = schema.Float(
