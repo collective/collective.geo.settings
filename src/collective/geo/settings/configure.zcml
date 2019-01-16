@@ -8,6 +8,7 @@
   <i18n:registerTranslations directory="locales" />
 
   <include file="profiles.zcml" />
+  <include package=".upgrades" />
 
   <adapter
       factory=".schema.CoordinateDataConverter" />

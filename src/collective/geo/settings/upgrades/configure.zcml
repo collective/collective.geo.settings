@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.geo.settings">
+
+  <genericsetup:upgradeStep
+      title="Set new default value for plone 5"
+      source="31"
+      destination="32"
+      handler="collective.geo.settings.upgrades.v32_migrate_default_marker_image.run"
+      sortkey="1"
+      profile="collective.geo.settings:default"
+      />
+
+</configure>

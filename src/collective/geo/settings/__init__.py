@@ -1,5 +1,7 @@
+from pkg_resources import get_distribution
 from zope.i18nmessageid import MessageFactory
 import config
+
 
 GeoSettingsMessageFactory = MessageFactory(config.PROJECTNAME)
 
@@ -26,3 +28,6 @@ DISPLAY_PROPERTIES_DATES = ('ModificationDate',
                          'EffectiveDate',
                          'ExpirationDate',
                          'start', 'end')
+
+
+IS_PLONE_5 = get_distribution('Plone').version >= '5'
