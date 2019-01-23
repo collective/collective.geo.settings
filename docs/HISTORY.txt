@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-3.2 (unreleased)
+4.0 (2019-01-23)
 ----------------
 
 - Change/Upgrade default values for image related paths [mathias.leimgruber]
