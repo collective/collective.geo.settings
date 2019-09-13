@@ -1,6 +1,13 @@
-from pkg_resources import get_distribution
 from zope.i18nmessageid import MessageFactory
 import config
+
+
+try:
+    from Products.CMFPlone.factory import _IMREALLYPLONE5  # noqa
+except ImportError:
+    IS_PLONE_5 = False
+else:
+    IS_PLONE_5 = True
 
 
 GeoSettingsMessageFactory = MessageFactory(config.PROJECTNAME)
@@ -28,6 +35,3 @@ DISPLAY_PROPERTIES_DATES = ('ModificationDate',
                          'EffectiveDate',
                          'ExpirationDate',
                          'start', 'end')
-
-
-IS_PLONE_5 = get_distribution('Plone').version >= '5'
