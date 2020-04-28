@@ -17,6 +17,31 @@ Requirements
 * `Plone`_ >= 4
 * `plone.app.registry`_
 
+
+Translations
+============
+
+This product has been translated into
+
+- Danish.
+
+- German.
+
+- Spanish.
+
+- French.
+
+- Italian.
+
+- Dutch.
+
+- Brazil Portuguese.
+
+- Chinese Simplified.
+
+- Traditional Chinese.
+
+
 Installation
 ============
 

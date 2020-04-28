@@ -1,16 +1,17 @@
 # collective.geo.settings
-# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2011.
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2011 - 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.geo.settings\n"
 "POT-Creation-Date: 2015-05-02 13:43+0000\n"
-"PO-Revision-Date: 2011-06-24 21:33-0400\n"
+"PO-Revision-Date: 2020-04-28 16:45-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Spanish <plone-conosur@lists.plone.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "Language-Code: es\n"
 "Language-Name: Spanish\n"
 "Preferred-Encodings: utf-8 latin1\n"
@@ -19,15 +20,15 @@ msgstr ""
 
 #: ../interfaces.py:179
 msgid "Balloon details"
-msgstr ""
+msgstr "Detalles del globo"
 
 #: ../interfaces.py:194
 msgid "Balloon style"
-msgstr ""
+msgstr "Estilo de globo"
 
 #: ../interfaces.py:80
 msgid "Bing API Code"
-msgstr ""
+msgstr "Código API de Bing"
 
 #: ../interfaces.py:209
 msgid "Check this option if you want to customize the style of the geo features for this content"
@@ -35,43 +36,43 @@ msgstr "Marque esta opción si usted quiere personalizar el estilo de las caract
 
 #: ../interfaces.py:113
 msgid "Choose if and where the map will be displayed within the georeferenced content view."
-msgstr ""
+msgstr "Elija si y dónde se mostrará el mapa dentro de la vista de contenido georreferenciado."
 
 #: ../interfaces.py:141
 msgid "Choose the color for the line feature"
-msgstr ""
+msgstr "Elija el color para la entidad de línea"
 
 #: ../interfaces.py:155
 msgid "Choose the color for the polygon feature"
-msgstr ""
+msgstr "Elija el color para la función de polígono"
 
 #: ../interfaces.py:132
 msgid "Choose the height of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
-msgstr ""
+msgstr "Elija la altura del mapa que se muestra, especificada como un valor absoluto (por ejemplo, '450px' o '15em'), o tamaño relativo (por ejemplo, '100%')."
 
 #: ../interfaces.py:171
 msgid "Choose the scaling factor of the marker shown on maps."
-msgstr ""
+msgstr "Elija el factor de escala del marcador que se muestra en los mapas."
 
 #: ../interfaces.py:123
 msgid "Choose the width of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
-msgstr ""
+msgstr "Elija la anchura del mapa que se muestra, especificada como un valor absoluto (por ejemplo, '450px' o '15em'), o tamaño relativo (por ejemplo, '100%')."
 
 #: ../interfaces.py:149
 msgid "Choose the width of the line feature"
-msgstr ""
+msgstr "Elija el ancho para la característica de línea"
 
 #: ../interfaces.py:19
 msgid "Choose which content types (e.g. Page, News Item, etc) can be georeferenced. Be aware that, when you change this setting, the system might take quite some time to apply it to the whole site, especially if you have many objects within it."
-msgstr ""
+msgstr "Elija qué tipos de contenido (p. Ej., Página, Noticias, etc.) pueden georreferenciarse. Tenga en cuenta que, cuando cambia esta configuración, el sistema puede tardar bastante tiempo en aplicarlo a todo el sitio, especialmente si tiene muchos objetos dentro."
 
 #: ../interfaces.py:39
 msgid "Choose which layers will be activated on the map layout."
-msgstr ""
+msgstr "Elija qué capas se activarán en el diseño del mapa."
 
 #: ../interfaces.py:180
 msgid "Choose which properties of the georeferenced content will be displayed in the additional informations section of the balloon."
-msgstr ""
+msgstr "Elija qué propiedades del contenido georreferenciado se mostrarán en la sección de información adicional del globo."
 
 #: ../__init__.py:13
 msgid "Content Location"
@@ -111,7 +112,7 @@ msgstr "Fecha de efectividad"
 
 #: ../__init__.py:19
 msgid "End Date"
-msgstr ""
+msgstr "Fecha de finalización"
 
 #: ../__init__.py:17
 msgid "Expiration Date"
@@ -151,19 +152,19 @@ msgstr "Longitud"
 
 #: ../interfaces.py:131
 msgid "Map height"
-msgstr ""
+msgstr "Altura de Mapa"
 
 #: ../interfaces.py:112
 msgid "Map position"
-msgstr ""
+msgstr "Posición de Mapa"
 
 #: ../interfaces.py:122
 msgid "Map width"
-msgstr ""
+msgstr "Ancho de Mapa"
 
 #: ../interfaces.py:160
 msgid "Marker image"
-msgstr ""
+msgstr "Imagen de marca"
 
 #: ../interfaces.py:170
 msgid "Marker image size"
@@ -171,7 +172,7 @@ msgstr "Tamaño de imagen de marca"
 
 #: ../interfaces.py:60
 msgid "OpenLayers theme"
-msgstr ""
+msgstr "Tema OpenLayers"
 
 #: ../interfaces.py:154
 msgid "Polygon color"
@@ -179,41 +180,39 @@ msgstr "Color de polígono"
 
 #: ../interfaces.py:81
 msgid "Provide the Bing API code if you want to use the Bing Maps layer."
-msgstr ""
+msgstr "Proporcione el código de la API de Bing si desea usar la capa Bing Maps."
 
 #: ../interfaces.py:71
 msgid "Provide the Google API code if you want to use the Google Maps layer."
-msgstr ""
+msgstr "Proporcione el código de la API de Google si desea usar la capa Google Maps."
 
 #: ../interfaces.py:61
 msgid "Provide the base path of the OpenLayers theme. You can use an absolute URL or a TAL expression."
-msgstr ""
+msgstr "Proporcione la ruta base del tema OpenLayers. Puede usar una URL absoluta o una expresión TAL."
 
 #: ../__init__.py:22
-#, fuzzy
 msgid "Rights Statement"
-msgstr "Sentencias correctas"
+msgstr "Copyright"
 
 #: ../interfaces.py:92
 msgid "Specify which viewlet manager can contain the map displayed on the georeferenced content view. Insert them one per line, where each line has the 'dotted name|title' format.If you want to insert a new viewlet manager, you first have to make sure that the map viewlet ('collective.geo.kml.browser.viewlets.ContentViewlet') is registered for that manager (via ZCML)."
-msgstr ""
+msgstr "Especifique qué administrador de viewlet puede contener el mapa que se muestra en la vista de contenido georreferenciado. Insértelos uno por línea, donde cada línea tiene el formato 'nombre punteado|título'. Si desea insertar un nuevo administrador de viewlets, primero debe asegurarse de que el viewlet del mapa ('collective.geo.kml.browser.viewlets.ContentViewlet') está registrado para ese administrador (a través de ZCML)."
 
 #: ../__init__.py:18
 msgid "Start Date"
-msgstr ""
+msgstr "Fecha de inicio"
 
 #: ../__init__.py:12
-#, fuzzy
 msgid "Subject"
-msgstr "Asunto"
+msgstr "Categoría"
 
 #: ../interfaces.py:195
 msgid "Text displayed in the balloon."
-msgstr ""
+msgstr "Texto mostrado en el globo."
 
 #: ../interfaces.py:161
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
-msgstr ""
+msgstr "La ruta a la imagen utilizada como marcador en los mapas. Puede usar una URL absoluta o una expresión TAL."
 
 #: ../__init__.py:9
 msgid "Title"

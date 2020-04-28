@@ -5,7 +5,8 @@ Changelog
 4.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Updated Spanish translation
+  [macagua]
 
 
 4.0 (2019-01-23)
