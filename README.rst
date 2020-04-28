@@ -94,7 +94,7 @@ Tests status
 This add-on is tested using Travis CI. The current status of the add-on is:
 
 .. image:: https://img.shields.io/travis/collective/collective.geo.settings/master.svg
-    :target: http://travis-ci.org/collective/collective.geo.settings
+    :target: https://travis-ci.org/collective/collective.geo.settings
 
 .. image:: http://img.shields.io/pypi/v/collective.geo.settings.svg
    :target: https://pypi.org/project/collective.geo.settings
