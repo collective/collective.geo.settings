@@ -3,10 +3,6 @@ Introduction
 
 collective.geo.settings provides some utility to store settings of `collective.geo`_ packages.
 
-.. image:: https://secure.travis-ci.org/collective/collective.geo.settings.png
-    :target: http://travis-ci.org/collective/collective.geo.settings
-
-Found a bug? Please, use the `issue tracker`_.
 
 .. contents:: Table of contents
 
@@ -16,6 +12,13 @@ Requirements
 
 * `Plone`_ >= 4
 * `plone.app.registry`_
+
+
+Documentation
+=============
+
+Full documentation for end users can be found in the "docs" folder.
+It is also available online at https://collectivegeo.readthedocs.io/
 
 
 Translations
@@ -85,6 +88,28 @@ errors like this::
 you need to run the relevant upgrade step(s).
 
 
+Tests status
+============
+
+This add-on is tested using Travis CI. The current status of the add-on is:
+
+.. image:: https://img.shields.io/travis/collective/collective.geo.settings/master.svg
+    :target: http://travis-ci.org/collective/collective.geo.settings
+
+.. image:: http://img.shields.io/pypi/v/collective.geo.settings.svg
+   :target: https://pypi.python.org/pypi/collective.geo.settings
+
+
+Contribute
+==========
+
+Have an idea? Found a bug? Let us know by `opening a ticket`_.
+
+- Issue Tracker: https://github.com/collective/collective.geo.settings/issues
+- Source Code: https://github.com/collective/collective.geo.settings
+- Documentation: https://collectivegeo.readthedocs.io/
+
+
 Contributors
 ============
 
@@ -94,12 +119,17 @@ Contributors
 * Gerhard Weis - gweis
 * Rob Gietema - robgietema
 * TsungWei Hu - l34marr
-* Leonardo J. Caballero G - macagua
+* Leonardo J. Caballero G. - macagua
 * Denis Krienbühl - href
 
 
-.. _collective.geo: http://plone.org/products/collective.geo
+License
+=======
+
+The project is licensed under the GPL.
+
+.. _collective.geo: https://pypi.org/project/collective.geo.bundle/
 .. _Plone: http://plone.org
-.. _plone.app.registry: http://pypi.python.org/pypi/plone.app.registry
-.. _issue tracker: https://github.com/collective/collective.geo.bundle/issues
-.. _documentation: http://plone.org/documentation/kb/installing-add-ons-quick-how-to
+.. _plone.app.registry: https://pypi.org/project/plone.app.registry/
+.. _`opening a ticket`: https://github.com/collective/collective.geo.bundle/issues
+.. _documentation: https://docs.plone.org/manage/installing/installing_addons.html
