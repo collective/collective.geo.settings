@@ -97,7 +97,7 @@ This add-on is tested using Travis CI. The current status of the add-on is:
     :target: http://travis-ci.org/collective/collective.geo.settings
 
 .. image:: http://img.shields.io/pypi/v/collective.geo.settings.svg
-   :target: https://pypi.python.org/pypi/collective.geo.settings
+   :target: https://pypi.org/project/collective.geo.settings
 
 
 Contribute
