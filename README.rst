@@ -129,7 +129,7 @@ License
 The project is licensed under the GPL.
 
 .. _collective.geo: https://pypi.org/project/collective.geo.bundle/
-.. _Plone: http://plone.org
+.. _Plone: https://plone.org/
 .. _plone.app.registry: https://pypi.org/project/plone.app.registry/
 .. _`opening a ticket`: https://github.com/collective/collective.geo.bundle/issues
 .. _documentation: https://docs.plone.org/manage/installing/installing_addons.html
