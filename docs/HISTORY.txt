@@ -5,8 +5,12 @@ Changelog
 4.1 (unreleased)
 ----------------
 
+- Updated i18n support
+  [macagua]
+
 - Add Transifex.net service integration to manage the translation process.
   [macagua]
+
 - Updated Spanish translation
   [macagua]
 

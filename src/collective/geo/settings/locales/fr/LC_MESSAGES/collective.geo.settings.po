@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
-"POT-Creation-Date: 2015-05-02 13:43+0000\n"
+"POT-Creation-Date: 2020-05-01 21:35+0000\n"
 "PO-Revision-Date: 2011-05-15  21:28+0000\n"
 "Last-Translator: Matthias Broquet [tiazma] <mbroquet@atreal.fr>\n"
 "Language-Team: Fabien Moret <martronic@martronic.ch>\n"
@@ -17,87 +17,91 @@ msgstr ""
 "Domain: collective.geo.settings\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
-#: ../interfaces.py:179
+#: ../interfaces.py:189
 msgid "Balloon details"
 msgstr "Contenu des info-bulles"
 
-#: ../interfaces.py:194
+#: ../interfaces.py:204
 msgid "Balloon style"
 msgstr ""
 
-#: ../interfaces.py:80
+#: ../interfaces.py:90
 msgid "Bing API Code"
 msgstr "Code pour l'API Bing"
 
-#: ../interfaces.py:209
+#: ../interfaces.py:218
 msgid "Check this option if you want to customize the style of the geo features for this content"
 msgstr "Sélectionnez cette option si vous désirez personnaliser le style des annotations géographiques pour ce contenu."
 
-#: ../interfaces.py:113
+#: ../interfaces.py:123
 msgid "Choose if and where the map will be displayed within the georeferenced content view."
 msgstr "Choisissez où la carte s'affiche sur les contenus géolocalisés. Vous pouvez également choisir de ne pas l'afficher."
 
-#: ../interfaces.py:141
+#: ../interfaces.py:151
 msgid "Choose the color for the line feature"
 msgstr "Sélectionnez la couleur utilisée pour les lignes tracées sur la carte"
 
-#: ../interfaces.py:155
+#: ../interfaces.py:165
 msgid "Choose the color for the polygon feature"
 msgstr "Sélectionnez la couleur utilisée pour le remplissage des polygônes tracés sur la carte"
 
-#: ../interfaces.py:132
+#: ../interfaces.py:142
 msgid "Choose the height of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
 msgstr "Définissez la hauteur de la carte. La valeur peut être donnée sous forme absolue (ex. '450px' or '15em'), ou sous forme relative (ex. '100%')."
 
-#: ../interfaces.py:171
+#: ../interfaces.py:181
 msgid "Choose the scaling factor of the marker shown on maps."
 msgstr "Définissez le facteur qui est appliqué aux marqueurs sur la carte."
 
-#: ../interfaces.py:123
+#: ../interfaces.py:133
 msgid "Choose the width of the displayed map, specified as an absolute value (e.g. '450px' or '15em'), or relative (e.g. '100%') size."
 msgstr "Définissez la largeur de la carte. La valeur peut être donnée sous forme absolue (ex. '450px' or '15em'), ou sous forme relative (ex. '100%')."
 
-#: ../interfaces.py:149
+#: ../interfaces.py:159
 msgid "Choose the width of the line feature"
 msgstr "Sélectionnez la largeur de la ligne utilisée pour les tracés sur la carte"
 
-#: ../interfaces.py:19
-msgid "Choose which content types (e.g. Page, News Item, etc) can be georeferenced. Be aware that, when you change this setting, the system might take quite some time to apply it to the whole site, especially if you have many objects within it."
-msgstr "Sélectionnez quels types de contenu peuvent être géolocalisable. En cas de modification de ce paramètre, et s'il existe beaucoup de contenus sur ce portail, la validation de ce formulaire pourra prendre un certain temps, l'intégralité des contenus étant scanné pour leur appliquer les nouveaux paramètres."
-
-#: ../interfaces.py:39
+#: ../interfaces.py:49
 msgid "Choose which layers will be activated on the map layout."
 msgstr "Sélectionnez ici quels calques de géolocalisation sont disponibles."
 
-#: ../interfaces.py:180
+#: ../interfaces.py:190
 msgid "Choose which properties of the georeferenced content will be displayed in the additional informations section of the balloon."
 msgstr "Sélectionnez quelles propriétés sont affichées dans les info-bulles (zone qui apparaît lors d'un clic sur un marqueur)."
 
-#: ../__init__.py:13
+#: ../profiles.zcml:13
+msgid "Collective Geo settings"
+msgstr ""
+
+#: ../profiles.zcml:20
+msgid "Collective Geo settings (uninstall)"
+msgstr ""
+
+#: ../__init__.py:15
 msgid "Content Location"
 msgstr "Lieux"
 
-#: ../interfaces.py:30
+#: ../interfaces.py:40
 msgid "Content types"
 msgstr "Types de contenu"
 
-#: ../__init__.py:21
+#: ../__init__.py:23
 msgid "Contributors"
 msgstr "Contributeurs"
 
-#: ../__init__.py:15
+#: ../__init__.py:17
 msgid "Creation Date"
 msgstr "Date de création"
 
-#: ../__init__.py:20
+#: ../__init__.py:22
 msgid "Creators"
 msgstr "Auteurs"
 
-#: ../interfaces.py:36
+#: ../interfaces.py:46
 msgid "Default map layers"
 msgstr "Calques disponibles"
 
-#: ../__init__.py:10
+#: ../__init__.py:12
 msgid "Description"
 msgstr "Description"
 
@@ -105,131 +109,142 @@ msgstr "Description"
 msgid "Do not display map"
 msgstr "Ne pas afficher la carte"
 
-#: ../__init__.py:16
+#: ../__init__.py:18
 msgid "Effective Date"
 msgstr "Date effective"
 
-#: ../__init__.py:19
+#: ../__init__.py:21
 msgid "End Date"
 msgstr ""
 
-#: ../__init__.py:17
+#: ../__init__.py:19
 msgid "Expiration Date"
 msgstr ""
 
-#: ../interfaces.py:16
-msgid "Georeferenceable content types"
-msgstr "Contenu géo-référençable"
+#: ../profiles.zcml:13
+msgid "Extension profile for collective.geo.settings."
+msgstr ""
 
-#: ../interfaces.py:70
+#: ../interfaces.py:25
+msgid "Georeferenceable Archetypes content types"
+msgstr ""
+
+#: ../interfaces.py:80
 msgid "Google API Code"
 msgstr "Code API de Google Maps"
 
-#: ../__init__.py:8
+#: ../__init__.py:10
 msgid "ID"
 msgstr "Id"
 
-#: ../__init__.py:14
+#: ../__init__.py:16
 msgid "Last Modified Date"
 msgstr "Date de la dernière modification"
 
-#: ../interfaces.py:50
+#: ../interfaces.py:60
 msgid "Latitude"
 msgstr "Latitude"
 
-#: ../interfaces.py:140
+#: ../interfaces.py:150
 msgid "Line color"
 msgstr "Couleur de la ligne"
 
-#: ../interfaces.py:148
+#: ../interfaces.py:158
 msgid "Line width"
 msgstr "Largeur de la ligne"
 
-#: ../interfaces.py:45
+#: ../interfaces.py:55
 msgid "Longitude"
 msgstr "Longitude"
 
-#: ../interfaces.py:131
+#: ../interfaces.py:141
 msgid "Map height"
 msgstr "Hauteur de la carte"
 
-#: ../interfaces.py:112
+#: ../interfaces.py:122
 msgid "Map position"
 msgstr "Position de la carte"
 
-#: ../interfaces.py:122
+#: ../interfaces.py:132
 msgid "Map width"
 msgstr "Largeur de la carte"
 
-#: ../interfaces.py:160
+#: ../interfaces.py:170
 msgid "Marker image"
 msgstr "Image pour le marqueur"
 
-#: ../interfaces.py:170
+#: ../interfaces.py:180
 msgid "Marker image size"
 msgstr "Dimensions du marqueur"
 
-#: ../interfaces.py:60
+#: ../interfaces.py:70
 msgid "OpenLayers theme"
 msgstr "Thème OpenLayers"
 
-#: ../interfaces.py:154
+#: ../interfaces.py:28
+msgid "Please note that Dexterity content is managed via behaviors! Choose which Archetypes content types (e.g. Page, News Item, etc) can be georeferenced. Be aware that, when you change this setting, the system might take quite some time to apply it to the whole site, especially if you have many objects within it. "
+msgstr ""
+
+#: ../interfaces.py:164
 msgid "Polygon color"
 msgstr "Couleur du polygône"
 
-#: ../interfaces.py:81
+#: ../interfaces.py:91
 msgid "Provide the Bing API code if you want to use the Bing Maps layer."
 msgstr "Rajoutez votre code pour l'API Bing si vous souhaitez utiliser ce calque."
 
-#: ../interfaces.py:71
+#: ../interfaces.py:81
 msgid "Provide the Google API code if you want to use the Google Maps layer."
 msgstr "Rajoutez votre code pour l'API Google si vous souhaitez utiliser ce calque."
 
-#: ../interfaces.py:61
+#: ../interfaces.py:71
 msgid "Provide the base path of the OpenLayers theme. You can use an absolute URL or a TAL expression."
 msgstr "Indiquez ici le chemin du thème OpenLayers. Le format peut-être une URL absolue ou une expression TAL."
 
-#: ../__init__.py:22
+#: ../__init__.py:24
 msgid "Rights Statement"
 msgstr "Copyright"
 
-#: ../interfaces.py:92
+#: ../interfaces.py:102
 msgid "Specify which viewlet manager can contain the map displayed on the georeferenced content view. Insert them one per line, where each line has the 'dotted name|title' format.If you want to insert a new viewlet manager, you first have to make sure that the map viewlet ('collective.geo.kml.browser.viewlets.ContentViewlet') is registered for that manager (via ZCML)."
 msgstr "Indiquez quel gestionnaire de viewlet est susceptible de contenir la carte sur la vue du conteu géolocalisable. Un par ligne, chaque ligne devant respecter le format 'dotted name|title' (ex: plone.abovecontentbody|Above Content). Dans le cas où vous utilisez un autre gestionnaire de viewlet que ceux paramétrés par défaut, assurez-vous que le viewlet 'collective.geo.kml.browser.viewlets.ContentViewlet' est bien déclaré pour ce gestionnaire (dans vos .zcml)."
 
-#: ../__init__.py:18
+#: ../__init__.py:20
 msgid "Start Date"
 msgstr ""
 
-#: ../__init__.py:12
+#: ../__init__.py:14
 msgid "Subject"
 msgstr "Catégorie"
 
-#: ../interfaces.py:195
+#: ../interfaces.py:205
 msgid "Text displayed in the balloon."
 msgstr ""
 
-#: ../interfaces.py:161
+#: ../interfaces.py:171
 msgid "The path to the image used as marker in maps. You can use either an absolute URL or a TAL expression."
 msgstr "Indiquez ici le chemin de l'image utilisée pour le marquer. Le format peut-être une URL absolue ou une expression TAL."
 
-#: ../__init__.py:9
+#: ../__init__.py:11
 msgid "Title"
 msgstr "Titre"
 
-#: ../__init__.py:11
+#: ../__init__.py:13
 msgid "Type"
 msgstr "Type"
 
-#: ../interfaces.py:208
+#: ../profiles.zcml:20
+msgid "Uninstall extension profile for collective.geo.settings."
+msgstr ""
+
+#: ../interfaces.py:217
 msgid "Use custom styles?"
 msgstr "Utiliser les styles personnalisés ?"
 
-#: ../interfaces.py:89
+#: ../interfaces.py:99
 msgid "Viewlet managers"
 msgstr "Gestionnaires de viewlet"
 
-#: ../interfaces.py:55
+#: ../interfaces.py:65
 msgid "Zoom"
 msgstr "Zoom"
-
